@@ -1,12 +1,12 @@
-import AboutImage from "@/images/about-image.png";
-import LeftSplash from "@/images/about-us-left-splash.png";
-import VideoBG from "@/images/about-us-video-bg.png";
-import VideoSplash from "@/images/about-us-video-splash.png";
-import Image from "next/image";
+import AboutImage from '@/images/about-image.png';
+import LeftSplash from '@/images/about-us-left-splash.png';
+import VideoBG from '@/images/about-us-video-bg.png';
+import VideoSplash from '@/images/about-us-video-splash.png';
+import Image from 'next/image';
 
 function AboutUsMobile() {
   return (
-    <main className="visible md:hidden">
+    <main>
       <section className="relative -z-30 flex h-fit w-full flex-col justify-center bg-wall bg-cover text-white">
         <h1 className="mt-[4.75rem] px-5 text-center text-5xl sm:text-6xl">
           Tentang Kami

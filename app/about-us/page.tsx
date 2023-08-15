@@ -1,16 +1,13 @@
-"use client";
-
-import { Metadata } from "next";
-import AboutUsMobile from "./mobile";
-
-export const metadata: Metadata = {
-  title: "About Us",
-};
+'use client';
+import AboutUsMobile from './mobile';
+import AboutUsDesktop from './desktop';
+import MediaQuerySwitcher from '@/components/shared/Loader';
 
 export default function AboutUs() {
   return (
-    <>
-      <AboutUsMobile />
-    </>
+    <MediaQuerySwitcher
+      mobile={<AboutUsMobile />}
+      desktop={<AboutUsDesktop />}
+    />
   );
 }
