@@ -1,3 +1,13 @@
+'use client';
+import AboutUsMobile from './mobile';
+import AboutUsDesktop from './desktop';
+import MediaQuerySwitcher from '@/components/shared/Loader';
+
 export default function AboutUs() {
-	return <div>about us</div>;
+  return (
+    <MediaQuerySwitcher
+      mobile={<AboutUsMobile />}
+      desktop={<AboutUsDesktop />}
+    />
+  );
 }
