@@ -8,7 +8,7 @@ import el3 from '../public/assets/images/el3.png';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { useXAnimation } from '@/utils/useXAnimation';
+import { useXAnimation } from '../utils/useXAnimation';
 
 export default function HomeDesktop() {
   const [isClicked, setIsClicked] = useState<boolean>(false);

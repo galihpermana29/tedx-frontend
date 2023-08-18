@@ -7,7 +7,7 @@ import bgMemantikLong from '../../public/assets/images/memantik-bg.png';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 export default function MemantikDesktop() {
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
     if (containerRef.current) {
@@ -22,7 +22,6 @@ export default function MemantikDesktop() {
   return (
     <>
       <motion.div
-        className="scroll-container"
         ref={containerRef}
         className="w-screen overflow-x-scroll relative"
         onWheel={handleScroll}>
