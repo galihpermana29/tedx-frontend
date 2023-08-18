@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Ravager';
+    src: url('Ravager-Serif.eot');
+    src: url('Ravager-Serif.eot?#iefix') format('embedded-opentype'),
+        url('Ravager-Serif.woff2') format('woff2'),
+        url('Ravager-Serif.woff') format('woff'),
+        url('Ravager-Serif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ROSSELA';
+    src: url('ROSSELA.eot');
+    src: url('ROSSELA.eot?#iefix') format('embedded-opentype'),
+        url('ROSSELA.woff2') format('woff2'),
+        url('ROSSELA.woff') format('woff'),
+        url('ROSSELA.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

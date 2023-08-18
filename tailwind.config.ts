@@ -13,8 +13,11 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         paper: "url('/assets/images/bg-paper.png')",
-        'paper-mobile': "url('/assets/images/bg-paper-mobile.png')",
         wall: "url('/assets/images/wall-pattern.png')",
+        'wall-texture': "url('/assets/images/wall-texture.png')",
+        memantik: "url('/assets/images/memantik-bg.png')",
+        'memantik-2': "url('/assets/images/memantik-bg-2.png')",
+        'paper-mobile': "url('/assets/images/bg-paper-mobile.png')"
       },
       colors: {
         orange: {
