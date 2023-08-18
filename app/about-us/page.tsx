@@ -6,6 +6,7 @@ import MediaQuerySwitcher from '@/components/shared/Loader';
 export default function AboutUs() {
   return (
     <MediaQuerySwitcher
+      screenWidth={768}
       mobile={<AboutUsMobile />}
       desktop={<AboutUsDesktop />}
     />

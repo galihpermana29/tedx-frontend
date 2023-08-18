@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -12,31 +12,34 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'paper': "url('/assets/images/bg-paper.png')",
-        'wall': "url('/assets/images/wall-pattern.png')"
+        paper: "url('/assets/images/bg-paper.png')",
+        wall: "url('/assets/images/wall-pattern.png')",
+        'wall-texture': "url('/assets/images/wall-texture.png')",
+        memantik: "url('/assets/images/memantik-bg.png')",
+        'memantik-2': "url('/assets/images/memantik-bg-2.png')",
       },
       colors: {
         orange: {
-          'primary':'#E83F1C',
+          primary: '#E83F1C',
         },
-        blue:{
-          'primary':'#1E373E'
+        blue: {
+          primary: '#1E373E',
         },
-        black:{
-          'primary':'#0B0B0B'
-        }
-      }
+        black: {
+          primary: '#0B0B0B',
+        },
+      },
     },
     screens: {
       // min-width
-      'xs': '0px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      xs: '0px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       '2xl': '1536px',
-    }
+    },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
