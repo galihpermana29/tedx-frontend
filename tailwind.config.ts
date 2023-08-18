@@ -17,17 +17,22 @@ const config: Config = {
         'wall-texture': "url('/assets/images/wall-texture.png')",
         memantik: "url('/assets/images/memantik-bg.png')",
         'memantik-2': "url('/assets/images/memantik-bg-2.png')",
-        'paper-mobile': "url('/assets/images/bg-paper-mobile.png')"
+        'paper-mobile': "url('/assets/images/bg-paper-mobile.png')",
       },
       colors: {
         orange: {
           primary: '#E83F1C',
+          darker: '#AF2A0E',
         },
         blue: {
           primary: '#1E373E',
         },
         black: {
           primary: '#0B0B0B',
+        },
+        cream: '#F4D2A6',
+        grey: {
+          light: '#1111111A',
         },
       },
     },
