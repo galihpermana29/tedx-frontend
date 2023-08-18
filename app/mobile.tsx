@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Button from '@/components/shared/Button';
 import xImage from '../public/assets/images/xmob.png';
 import logo from '../public/assets/images/logo.png';
 import el1 from '../public/assets/images/el1.png';
@@ -13,6 +14,8 @@ import { useXAnimation } from '../utils/useXAnimation';
 export default function HomeMobile() {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const scope = useXAnimation(isClicked, 'mobile');
+
+  const MotionButton = motion(Button);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
@@ -67,11 +70,12 @@ export default function HomeMobile() {
           {"'' "}Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara{' '}
           {"'' "}
         </h1>
-        <motion.div
+        <MotionButton
+          as="button"
           onClick={() => setIsClicked(true)}
-          className="bg-[#E83F1C] px-[30px] py-[16px] rounded-[8px] max-w-max text-white cursor-pointer creato-display text-[16px] md:text-[20px] font-[700] ">
+          type="primary">
           Pantikan Baskaramu
-        </motion.div>
+        </MotionButton>
       </div>
     </main>
   );

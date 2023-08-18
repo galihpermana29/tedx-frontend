@@ -12,7 +12,9 @@ function AboutUsMobile() {
     <main className="overflow-hidden">
       <section className="relative -z-30 flex h-screen w-full flex-col bg-wall bg-cover text-white">
         <div className="h-1/5 flex justify-center items-center mt-20 px-5 text-center">
-          <h1 className="text-5xl min-[300px]:text-6xl">Tentang Kami</h1>
+          <h1 className="text-5xl min-[300px]:text-6xl text-cream rosela">
+            Tentang Kami
+          </h1>
         </div>
         <div className="relative h-4/5">
           <div className="absolute -bottom-20 h-full w-full">

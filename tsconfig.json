@@ -21,7 +21,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/images/*": ["./public/assets/images/*"]
+      "@/images/*": ["./public/assets/images/*"],
+      "@/videos/*": ["./public/assets/video/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
