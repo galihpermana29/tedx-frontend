@@ -3,7 +3,8 @@
 import AboutImage from '@/images/about-image.png';
 import VideoBG from '@/images/about-us-video-bg.png';
 import VideoSplash from '@/images/about-us-video-splash.png';
-import { textContent, textVariant } from '@/utils/data/about-us';
+import { textContent } from '@/utils/data/about-us';
+import { textBlurVariant } from '@/utils/data/animation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -60,11 +61,11 @@ function AboutUsMobile() {
                 }}
                 transition={{ duration: 0.5, staggerChildren: 0.5 }}>
                 <motion.h2
-                  variants={textVariant}
+                  variants={textBlurVariant}
                   className="mb-3 min-[300px]:text-xl font-bold sm:text-2xl">
                   {title}
                 </motion.h2>
-                <motion.p variants={textVariant}>{desc}</motion.p>
+                <motion.p variants={textBlurVariant}>{desc}</motion.p>
               </motion.div>
             );
           })}

@@ -1,5 +1,3 @@
-import { Variants } from 'framer-motion';
-
 type TextContent = {
   title: string;
   desc: string;
@@ -19,8 +17,3 @@ export const textContent: Array<TextContent> = [
     desc: `TEDxUniversitasBrawijaya merupakan salah satu dari TEDx event yang diselenggarakan secara independen dengan lisensi TEDx yang diinisiasi komunitas lingkup Universitas Brawijaya.`,
   },
 ];
-
-export const textVariant: Variants = {
-  visible: { filter: `blur(0rem)` },
-  hidden: { filter: `blur(0.2rem)` },
-};

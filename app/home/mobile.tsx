@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '@/components/shared/Button';
 import Frame from '@/images/card-1.png';
 import Photo from '@/images/home-photo.png';
@@ -8,6 +10,9 @@ import Pattern2 from '@/images/pattern-2.png';
 import UnknownSpeaker from '@/images/unknown-speaker.png';
 import GIF from '@/videos/home-content.gif';
 import Image from 'next/image';
+
+import { textBlurAnimationProps } from '@/utils/data/animation';
+import { motion } from 'framer-motion';
 
 function MemantikMobile() {
   return (
@@ -21,12 +26,12 @@ function MemantikMobile() {
             className="object-cover object-center"
           />
         </div>
-        <div className="px-5 sm:px-20 pt-10 text-center">
+        <div className="px-5 sm:px-20 md:px-44 pt-10 text-center">
           <h1 className="text-cream rosela text-2xl sm:text-3xl font-bold">
             “Mamantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara”
           </h1>
         </div>
-        <div className="flex flex-col px-10 sm:px-20 items-center gap-10">
+        <div className="flex flex-col px-10 sm:px-20 md:px-44 items-center gap-10">
           <div className="relative w-full aspect-[4/3] -rotate-6">
             <Image src={Frame} alt="Frame" fill />
           </div>
@@ -41,7 +46,7 @@ function MemantikMobile() {
           </div>
         </div>
 
-        <div className="px-5 py-10">
+        <div className="px-5 sm:px-20 md:px-44 md:px- py-10">
           <div className="relative overflow-hidden w-full aspect-[4/3]">
             <Image src={GIF} alt="gif" fill className="object-cover" />
           </div>
@@ -51,11 +56,13 @@ function MemantikMobile() {
           <Image src={Pattern2} alt="Pattern 2" fill className="object-cover" />
         </div>
 
-        <div className="px-5 text-justify">
-          <h2 className="text-7xl font-bold text-cream rosela mb-20 w-1/2">
+        <div className="px-5 sm:px-20 md:px-44 text-justify">
+          <motion.h2
+            {...textBlurAnimationProps}
+            className="text-7xl font-bold text-cream rosela mb-20 w-1/2">
             Gelora Djiwa
-          </h2>
-          <p>
+          </motion.h2>
+          <motion.p {...textBlurAnimationProps}>
             Reaksi fisiologis akan sukacita, keresahan, dan ragam lainnya muncul
             saat seseorang mampu memanifestasikan penerimaan diri. Dalam acara
             ini, masing-masing insan yang memiliki faktor luar biasa mampu
@@ -63,47 +70,54 @@ function MemantikMobile() {
             bertindak sebagai wujud proses untuk merayakan pengalaman kompleks
             yang secara alami dirasakan sebagai manusia hingga mampu mencapai
             penerimaan diri seutuhnya dan sisi eksternal secara apa adanya.
-          </p>
+          </motion.p>
         </div>
       </section>
-      <section className="bg-paper flex flex-col gap-10 mt-5 pt-44 pb-28 w-full bg-cover bg-center">
-        <div className="px-5 sm:px-20 flex flex-col gap-10">
-          <div className="relative w-full ml-3 aspect-square">
+      <div className="w-full h-20 bg-paper mt-5 -mb-2"></div>
+      <section className="flex flex-col gap-10 bg-paper-flat pt-14 pb-28 w-full">
+        <div className="px-5 sm:px-20 md:px-44 flex flex-col gap-10">
+          <div className="relative w-full ml-3 md:ml-4 aspect-square">
             <Image src={X} alt="X image" fill className="object-center" />
           </div>
           <div>
-            <h2 className="font-bold text-2xl mb-3">
+            <motion.h2
+              {...textBlurAnimationProps}
+              className="font-bold text-2xl mb-3">
               Segera Hadir: <br /> Panggung Swara Insan
-            </h2>
-            <p>
+            </motion.h2>
+            <motion.p
+              {...textBlurAnimationProps}
+              className="font-medium text-justify">
               Di panggung pre-event ini, kamu akan merasakan sensasi berbeda
               dalam eksplorasi ide-ide bersama para pembicara terkurasi.
-            </p>
+            </motion.p>
           </div>
-          <p className="italic linux-libertine-slanted font-bold text-center text-xl">
+          <motion.p
+            {...textBlurAnimationProps}
+            className="italic linux-libertine-slanted font-bold text-center text-xl">
             “Mari berikan ide dan gagasan kamu dalam Panggung Swara Insan!”
-          </p>
+          </motion.p>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
                 <Image src={UnknownSpeaker} alt="Speaker" fill />
               </div>
               <p className="font-bold text-xl">?????</p>
-              <p className="text-lg">The Speaker</p>
+              <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
                 <Image src={UnknownSpeaker} alt="Speaker" fill />
               </div>
               <p className="font-bold text-xl">?????</p>
-              <p className="text-lg">The Speaker</p>
+              <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
                 <Image src={UnknownSpeaker} alt="Speaker" fill />
               </div>
               <p className="font-bold text-xl">?????</p>
-              <p className="text-lg">The Speaker</p>
+              <p className="font-medium text-lg">The Speaker</p>
             </div>
           </div>
           <div className="flex flex-col gap-3">
@@ -132,8 +146,12 @@ function MemantikMobile() {
             </div>
           </div>
         </div>
-        <div className="px-5 sm:px-20 flex flex-col gap-10 mt-10">
-          <h2 className="font-extrabold text-5xl">Tickets Dropping Soon!</h2>
+        <div className="px-5 sm:px-20 md:px-44 flex flex-col gap-10 mt-10">
+          <motion.h2
+            {...textBlurAnimationProps}
+            className="font-extrabold text-5xl">
+            Tickets Dropping Soon!
+          </motion.h2>
           <Button
             as="client-link"
             type="primary"

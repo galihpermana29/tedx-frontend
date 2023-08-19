@@ -7,7 +7,7 @@ import MemantikDesktop from './desktop';
 export default function Home() {
   return (
     <MediaQuerySwitcher
-      screenWidth={768}
+      screenWidth={1024}
       mobile={<MemantikMobile />}
       desktop={<MemantikDesktop />}
     />
