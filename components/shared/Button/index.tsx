@@ -23,9 +23,9 @@ type ButtonStyle = {
 
 const baseButtonStyle: ButtonStyle = {
   primary:
-    'border text-center bg-orange-primary border-orange-primary text-white px-5 py-4 rounded-lg font-bold text-lg hover:bg-orange-darker',
+    'border text-center bg-orange-primary border-orange-primary text-white px-5 py-4 rounded-lg font-bold text-lg hover:bg-orange-darker duration-300',
   secondary:
-    'border text-center border-orange-primary text-orange-primary px-5 py-4 rounded-lg font-bold text-lg hover:bg-grey-light',
+    'border text-center border-orange-primary text-orange-primary px-5 py-4 rounded-lg font-bold text-lg hover:bg-grey-light duration-300',
 };
 
 function Button({ children, className, type, ...props }: ButtonProps) {

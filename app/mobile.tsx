@@ -8,6 +8,7 @@ import el3 from '../public/assets/images/el3.png';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
 
@@ -66,7 +67,7 @@ export default function HomeMobile() {
           src={logo}
           className="w-[200px] md:w-[300px] mb-[30px]"
         />
-        <h1 className="text-white text-[20px] md:text-[24px] md:max-w-[80%] text-[700] mb-[30px] max-w-[550px] linux-libertine-slanted italic">
+        <h1 className="text-white text-[20px] md:text-[24px] md:max-w-[80%] text-[700] mb-[30px] max-w-[550px] linux-libertine-slanted italic ">
           {"'' "}Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara{' '}
           {"'' "}
         </h1>
