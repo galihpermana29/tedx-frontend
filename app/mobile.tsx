@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import Button from '@/components/shared/Button';
 import xImage from '../public/assets/images/xmob.png';
 import logo from '../public/assets/images/logo.png';
 import el1 from '../public/assets/images/el1.png';
@@ -9,7 +8,12 @@ import el3 from '../public/assets/images/el3.png';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+<<<<<<< HEAD
 import { useXAnimation } from '../utils/useXAnimation';
+=======
+import { useXAnimation } from '@/utils/useXAnimation';
+import Button from '@/components/shared/Button';
+>>>>>>> 7e236a9eafa319b33de8e053b6d56df491470b5e
 
 export default function HomeMobile() {
   const [isClicked, setIsClicked] = useState<boolean>(false);

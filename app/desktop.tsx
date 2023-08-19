@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import Button from '@/components/shared/Button';
 import xImage from '../public/assets/images/x5.png';
 import logo from '../public/assets/images/logo.png';
 import el1 from '../public/assets/images/el1.png';
@@ -9,7 +8,8 @@ import el3 from '../public/assets/images/el3.png';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { useXAnimation } from '../utils/useXAnimation';
+import { useXAnimation } from '@/utils/useXAnimation';
+import Button from '@/components/shared/Button';
 
 export default function HomeDesktop() {
   const [isClicked, setIsClicked] = useState<boolean>(false);
