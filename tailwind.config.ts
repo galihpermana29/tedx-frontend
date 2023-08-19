@@ -18,6 +18,7 @@ const config: Config = {
         memantik: "url('/assets/images/memantik-bg.png')",
         'memantik-2': "url('/assets/images/memantik-bg-2.png')",
         'paper-mobile': "url('/assets/images/bg-paper-mobile.png')",
+        'paper-flat': "url('/assets/images/bg-paper-flat.png')",
       },
       colors: {
         orange: {
