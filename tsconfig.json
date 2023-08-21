@@ -22,6 +22,7 @@
     "paths": {
       "@/*": ["./*"],
       "@/images/*": ["./public/assets/images/*"],
+      "@/icons/*": ["./public/assets/icons/*"],
       "@/videos/*": ["./public/assets/video/*"]
     }
   },
