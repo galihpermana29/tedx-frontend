@@ -1,16 +1,15 @@
 'use client';
 
 import Footer from '@/components/shared/Footer';
-import type { Metadata } from 'next';
 import { usePathname } from 'next/navigation';
 import '../public/fonts/stylesheet.css';
 import './globals.scss';
 
-export const metadata: Metadata = {
-  title: 'TEDx Universitas Brawijaya',
-  description:
-    'TEDxUniversitasBrawijaya ingin membawa setiap individu untuk mengeksplorasi "baskara" yang terpendam akibat dari "eksklusivitas" di era modernisasi saat ini.',
-};
+// export const metadata = {
+//   title: 'TEDx Universitas Brawijaya',
+//   description:
+//     'TEDxUniversitasBrawijaya ingin membawa setiap individu untuk mengeksplorasi "baskara" yang terpendam akibat dari "eksklusivitas" di era modernisasi saat ini.',
+// };
 
 export default function RootLayout({
   children,

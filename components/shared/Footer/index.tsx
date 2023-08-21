@@ -3,19 +3,20 @@ import InstagramLogo from '@/icons/instagram.png';
 import TwitterLogo from '@/icons/twitter.png';
 import YoutubeLogo from '@/icons/youtube.png';
 import FooterLine from '@/images/footer-line.png';
+
 import Logo from '@/images/logo.png';
 import Image from 'next/image';
 
 function Footer() {
   return (
     <footer className="bg-green-fade text-white">
-      <div className="relative w-full aspect-[16/6] sm:aspect-[16/4]">
+      <div className="relative w-full aspect-[16/6] sm:aspect-[16/4] lg:aspect-[16/4]">
         <div className="relative w-full h-full z-10">
           <Image
             src={FooterLine}
             alt="Line Art"
             fill
-            className="object-cover -mt-10 lg:-mt-20"
+            className="object-cover -mt-10 lg:-mt-[7%] "
           />
         </div>
       </div>
