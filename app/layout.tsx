@@ -1,6 +1,10 @@
+'use client';
+
+import Footer from '@/components/shared/Footer';
+import type { Metadata } from 'next';
+import { usePathname } from 'next/navigation';
 import '../public/fonts/stylesheet.css';
 import './globals.scss';
-import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'TEDx Universitas Brawijaya',
@@ -13,9 +17,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathName = usePathname();
+  const footerExcludedPaths = ['/'];
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {!footerExcludedPaths.includes(pathName) && <Footer />}
+      </body>
     </html>
   );
 }

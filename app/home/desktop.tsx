@@ -292,7 +292,7 @@ export default function MemantikDesktop() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-row-reverse justify-between items-center gap-[50px] mt-[100px] bg-paper-desktop bg-cover bg-no-repeat">
+        <div className="pb-28 flex flex-row-reverse justify-between items-center gap-[50px] mt-[100px] bg-paper-desktop bg-cover bg-no-repeat">
           <div className="z-0 relative flex-1">
             <div className="relative w-full aspect-[4/3]">
               <Image src={Photo} alt="Staff photo" />

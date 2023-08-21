@@ -34,6 +34,9 @@ const config: Config = {
           primary: '#0B0B0B',
         },
         cream: '#F4D2A6',
+        green: {
+          fade: '#3F513B',
+        },
         grey: {
           light: '#1111111A',
         },
