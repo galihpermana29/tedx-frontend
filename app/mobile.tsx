@@ -7,13 +7,20 @@ import el2 from '../public/assets/images/el2.png';
 import el3 from '../public/assets/images/el3.png';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
+import React, { SetStateAction } from 'react';
 
-export default function HomeMobile() {
-  const [isClicked, setIsClicked] = useState<boolean>(false);
+interface HomeDesktopProps {
+  isClicked: boolean;
+  setIsClicked: React.Dispatch<SetStateAction<boolean>>;
+}
+
+export default function HomeMobile({
+  isClicked,
+  setIsClicked,
+}: HomeDesktopProps) {
   const scope = useXAnimation(isClicked, 'mobile');
 
   const MotionButton = motion(Button);
