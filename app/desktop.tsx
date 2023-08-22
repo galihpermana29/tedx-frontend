@@ -7,12 +7,19 @@ import el2 from '../public/assets/images/el2.png';
 import el3 from '../public/assets/images/el3.png';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
+import { SetStateAction } from 'react';
 
-export default function HomeDesktop() {
-  const [isClicked, setIsClicked] = useState<boolean>(false);
+interface HomeDesktopProps {
+  isClicked: boolean;
+  setIsClicked: React.Dispatch<SetStateAction<boolean>>;
+}
+
+export default function HomeDesktop({
+  isClicked,
+  setIsClicked,
+}: HomeDesktopProps) {
   const scope = useXAnimation(isClicked, 'desktop');
 
   const MotionButton = motion(Button);
@@ -24,22 +31,23 @@ export default function HomeDesktop() {
           animate={{ top: '10%' }}
           transition={{ duration: 1.5 }}
           className="absolute z-[3] xl:top-[-50%] xl:left-[15%] w-[26%] el1 lg:left-[10%]">
-          <Image src={el1} alt="element" />
+          <Image src={el1} alt="element" priority />
         </motion.div>
         <motion.div
           animate={{ left: '60%' }}
           transition={{ duration: 1.5 }}
           className="absolute z-[3] xl:top-[20%] xl:left-[200%] w-[26%] el2 lg:top-[20%]">
-          <Image src={el2} alt="element" />
+          <Image src={el2} alt="element" priority />
         </motion.div>
         <motion.div
           animate={{ top: '60%' }}
           transition={{ duration: 1.5 }}
           className="absolute z-[3] xl:top-[100%] xl:left-[40%] w-[26%] el3 lg:left-[30%]">
-          <Image src={el3} alt="element" />
+          <Image src={el3} alt="element" priority />
         </motion.div>
       </div>
       <video
+        onEnded={isClicked ? () => console.log('finis') : () => ({})}
         className="absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1] object-cover"
         autoPlay={true}
         loop={true}
@@ -57,6 +65,7 @@ export default function HomeDesktop() {
             src={xImage}
             alt="ximages"
             className="h-screen w-full object-cover"
+            priority
           />
         </div>
       </div>

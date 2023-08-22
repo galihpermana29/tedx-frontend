@@ -4,6 +4,7 @@ import Footer from '@/components/shared/Footer';
 import { usePathname } from 'next/navigation';
 import '../public/fonts/stylesheet.css';
 import './globals.scss';
+import Navigation from '@/components/shared/Navbar';
 
 // export const metadata = {
 //   title: 'TEDx Universitas Brawijaya',
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {!footerExcludedPaths.includes(pathName) && <Navigation />}
         {children}
         {!footerExcludedPaths.includes(pathName) && <Footer />}
       </body>

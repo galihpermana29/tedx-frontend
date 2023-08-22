@@ -128,6 +128,7 @@ export default function MemantikDesktop() {
                   src={bgMemantikLong}
                   alt="bg"
                   className="h-screen w-max object-cover"
+                  priority
                 />
               </motion.div>
             )}
@@ -138,25 +139,30 @@ export default function MemantikDesktop() {
               </h1>
               <div className="flex justify-center items-center mt-[50px] gap-[40px]">
                 <div className="-rotate-6">
-                  <Image alt="frame" src={frame1} />
+                  <Image alt="frame" src={frame1} priority />
                 </div>
                 <div className="rotate-6">
-                  <Image alt="frame" src={frame2} />
+                  <Image alt="frame" src={frame2} priority />
                 </div>
               </div>
             </div>
             <div className="w-screen h-screen flex items-center  justify-between">
               <div className="flex justify-center gap-[50px] pl-[100px] flex-1 flex-col ">
                 <div className="-rotate-6 w-[60%] ">
-                  <Image alt="frame" src={frame1} className="w-full" />
+                  <Image alt="frame" src={frame1} className="w-full" priority />
                 </div>
                 <div className="rotate-6 w-[60%]">
-                  <Image alt="frame" src={frame2} className="w-full" />
+                  <Image alt="frame" src={frame2} className="w-full" priority />
                 </div>
               </div>
               <div className="flex-1 ">
                 <div className="max-w-[90%]">
-                  <Image src={flower} alt="flower" className="w-full" />
+                  <Image
+                    src={flower}
+                    alt="flower"
+                    className="w-full"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -171,7 +177,12 @@ export default function MemantikDesktop() {
               <motion.div
                 style={horizontalScrollEnd ? { scale, y } : {}}
                 className="overflow-hidden w-[60%] aspect-[16/9]">
-                <Image src={GIF} alt="gif" className="object-cover w-full" />
+                <Image
+                  src={GIF}
+                  alt="gif"
+                  className="object-cover w-full"
+                  priority
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -184,6 +195,7 @@ export default function MemantikDesktop() {
             src={Pattern2}
             alt="Pattern 2"
             className="object-cover w-full"
+            priority
           />
         </div>
         <div className="text-justify flex justify-between items-center gap-[100px] w-full relative z-[2] px-[5%]">
@@ -205,24 +217,34 @@ export default function MemantikDesktop() {
             <motion.div
               style={{ x: xLeft }}
               className="relative z-[1] translate-x-[-40vw]">
-              <Image alt="awan" src={awanKiri} className="w-[1000px]" />
+              <Image
+                alt="awan"
+                src={awanKiri}
+                className="w-[1000px]"
+                priority
+              />
             </motion.div>
             <motion.div
               style={{ x: xRight }}
               className="relative z-[1] translate-x-[40vw]">
-              <Image alt="awan" src={awanKanan} className="w-[1000px]" />
+              <Image
+                alt="awan"
+                src={awanKanan}
+                className="w-[1000px]"
+                priority
+              />
             </motion.div>
           </div>
           <div className="flex justify-between absolute left-0 right-0 items-center top-[0vh]">
             <motion.div
               style={{ x: xLeftObj }}
               className="relative z-[2]  translate-x-[-40vw] ">
-              <Image alt="awan" src={objekKiri} />
+              <Image alt="awan" src={objekKiri} priority />
             </motion.div>
             <motion.div
               style={{ x: xRightObj }}
               className="relative z-[2] translate-x-[40vw]  ">
-              <Image alt="awan" src={objekKanan} />
+              <Image alt="awan" src={objekKanan} priority />
             </motion.div>
           </div>
         </div>
