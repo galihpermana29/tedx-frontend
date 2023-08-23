@@ -1,14 +1,14 @@
 'use client';
 import Image from 'next/image';
-import xImage from '../public/assets/images/x5.png';
 import logo from '../public/assets/images/logo.png';
-import el1 from '../public/assets/images/el1.png';
-import el2 from '../public/assets/images/el2.png';
-import el3 from '../public/assets/images/el3.png';
+import xImage from '../public/assets/images/x5.png';
 
-import { motion } from 'framer-motion';
-import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
+import Flower from '@/components/welcoming/Flower';
+import Moon from '@/components/welcoming/Moon';
+import Paint from '@/components/welcoming/Paint';
+import { useXAnimation } from '@/utils/useXAnimation';
+import { motion } from 'framer-motion';
 import { SetStateAction } from 'react';
 
 interface HomeDesktopProps {
@@ -30,20 +30,20 @@ export default function HomeDesktop({
         <motion.div
           animate={{ top: '10%' }}
           transition={{ duration: 1.5 }}
-          className="absolute z-[3] xl:top-[-50%] xl:left-[15%] w-[26%] el1 lg:left-[10%]">
-          <Image src={el1} alt="element" priority />
+          className="absolute z-[3] xl:top-[-50%] xl:left-[15%] w-[26%] el1 lg:left-[15%]">
+          <Paint className="w-full h-fit" />
         </motion.div>
         <motion.div
           animate={{ left: '60%' }}
           transition={{ duration: 1.5 }}
           className="absolute z-[3] xl:top-[20%] xl:left-[200%] w-[26%] el2 lg:top-[20%]">
-          <Image src={el2} alt="element" priority />
+          <Moon className="w-full h-fit" />
         </motion.div>
         <motion.div
           animate={{ top: '60%' }}
           transition={{ duration: 1.5 }}
           className="absolute z-[3] xl:top-[100%] xl:left-[40%] w-[26%] el3 lg:left-[30%]">
-          <Image src={el3} alt="element" priority />
+          <Flower className="w-full h-fit" />
         </motion.div>
       </div>
       <video

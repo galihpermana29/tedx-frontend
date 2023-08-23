@@ -1,26 +1,27 @@
 'use client';
 
-import Image from 'next/image';
-import frame1 from '../../public/assets/images/card-1.png';
-import frame2 from '../../public/assets/images/card-2.png';
-import bgMemantikLong from '../../public/assets/images/memantik-bg.png';
-import flower from '../../public/assets/images/flower.png';
-import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import GIF from '@/videos/home-content.gif';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import flower from '../../public/assets/images/flower.png';
+import bgMemantikLong from '../../public/assets/images/memantik-bg.png';
 
-import Pattern2 from '@/images/pattern_gelora.png';
+import Button from '@/components/shared/Button';
 import awanKanan from '@/images/awan-kanan.png';
 import awanKiri from '@/images/awan-kiri.png';
 import objekKanan from '@/images/objek-kanan.png';
 import objekKiri from '@/images/objek-kiri.png';
-import Button from '@/components/shared/Button';
+import Pattern2 from '@/images/pattern_gelora.png';
 import { textBlurAnimationProps } from '@/utils/data/animation';
 
+import Frame from '@/components/home/Frame';
+import Speaker1 from '@/components/home/Speaker1';
+import Speaker2 from '@/components/home/Speaker2';
+import Speaker3 from '@/components/home/Speaker3';
+import XArt from '@/components/home/X';
 import Photo from '@/images/home-photo-2.png';
 import Splash from '@/images/home-splash.png';
-import X from '@/images/home-x-2.png';
-import UnknownSpeaker from '@/images/unknown-speaker.png';
 
 export default function MemantikDesktop() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -137,25 +138,17 @@ export default function MemantikDesktop() {
                 “Mamantik Baskara: <br />
                 Tersulut Tak Membara, Terbakar Tak Bersuara”
               </h1>
-              <div className="flex justify-center items-center mt-[50px] gap-[40px]">
-                <div className="-rotate-6">
-                  <Image alt="frame" src={frame1} priority />
-                </div>
-                <div className="rotate-6">
-                  <Image alt="frame" src={frame2} priority />
-                </div>
+              <div className="flex justify-centers items-center mt-[50px] gap-[40px]">
+                <Frame className="-rotate-6 w-1/2 h-fit" />
+                <Frame className="rotate-6 w-1/2 h-fit" />
               </div>
             </div>
             <div className="w-screen h-screen flex items-center  justify-between">
               <div className="flex justify-center gap-[50px] pl-[100px] flex-1 flex-col ">
-                <div className="-rotate-6 w-[60%] ">
-                  <Image alt="frame" src={frame1} className="w-full" priority />
-                </div>
-                <div className="rotate-6 w-[60%]">
-                  <Image alt="frame" src={frame2} className="w-full" priority />
-                </div>
+                <Frame className="-rotate-6 w-[60%] h-fit" />
+                <Frame className="rotate-6 w-[60%] h-fit" />
               </div>
-              <div className="flex-1 ">
+              <div className="flex-1">
                 <div className="max-w-[90%]">
                   <Image
                     src={flower}
@@ -252,9 +245,7 @@ export default function MemantikDesktop() {
       <section className="flex flex-col gap-10 bg-paper-retak w-full pt-[20vh] bg-no-repeat bg-cover mt-[-5%] relative z-[7]">
         <div className="flex flex-col gap-10 px-[60px]">
           <div className="flex gap-10 w-full">
-            <div className="relative w-full max-w-[480px] ml-3 md:ml-4 aspect-square flex-1">
-              <Image src={X} alt="X image" fill className="object-center" />
-            </div>
+            <XArt className="w-full h-full max-w-[480px] ml-3 md:ml-4 flex-1" />
             <div className="flex-1 flex flex-col ">
               <motion.h2
                 {...textBlurAnimationProps}
@@ -276,23 +267,17 @@ export default function MemantikDesktop() {
           </div>
           <div className="flex w-full gap-[50px] mt-[80px]">
             <div className="flex flex-col gap-2 flex-1">
-              <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
-              </div>
+              <Speaker1 className="w-full h-full aspect-square" />
               <p className="font-bold text-xl ">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2 flex-1">
-              <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
-              </div>
+              <Speaker2 className="w-full h-full aspect-square" />
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2 flex-1">
-              <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
-              </div>
+              <Speaker3 className="w-full h-full" />
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
