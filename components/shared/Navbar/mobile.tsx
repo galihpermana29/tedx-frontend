@@ -47,11 +47,11 @@ export const NavbarMobile = () => {
           onClick={() => setNavbarHidden(true)}>
           <Image src={xIcon} alt="logo" className="max-w-[30px]" />
         </div>
-        <div className="left flex-1 flex flex-col mx-[5%] py-[50px] gap-[50px]">
+        <div className="left flex-1 flex flex-col mx-[7%] py-[30px] gap-[50px]">
           <div className="max-w-[170px]">
             <Image src={LogoHitam} alt="logo" />
           </div>
-          <div className="flex flex-col h-[65%] justify-between">
+          <div className="flex flex-col h-[60%] justify-between">
             <motion.div
               transition={
                 navbarHidden ? {} : { duration: 1, ease: 'easeInOut', delay: 0 }
