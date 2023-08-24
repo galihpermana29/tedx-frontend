@@ -110,7 +110,7 @@ export default function MemantikDesktop() {
 
   return (
     <>
-      <div className="relative" ref={extendedRef}>
+      <div className="relative bg-wall-texture" ref={extendedRef}>
         <motion.div
           className={`w-screen  ${
             horizontalScrollEnd
@@ -133,8 +133,8 @@ export default function MemantikDesktop() {
               </motion.div>
             )}
             <div className="w-screen h-screen  flex flex-col items-center justify-center relative z-[1]">
-              <h1 className="text-[40px] text-cream linux-libertine-slanted text-center">
-                “Mamantik Baskara: <br />
+              <h1 className="text-[40px] text-cream rosela font-bold text-center">
+                “Memantik Baskara: <br />
                 Tersulut Tak Membara, Terbakar Tak Bersuara”
               </h1>
               <div className="flex justify-center items-center mt-[50px] gap-[40px]">
@@ -284,7 +284,12 @@ export default function MemantikDesktop() {
             </div>
             <div className="flex flex-col gap-2 flex-1">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image
+                  src={UnknownSpeaker}
+                  alt="Speaker"
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
+                />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
