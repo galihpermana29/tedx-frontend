@@ -16,13 +16,14 @@ import { motion } from 'framer-motion';
 
 function MemantikMobile() {
   return (
-    <main className="bg-wall-texture overflow-hidden">
+    <main className="bg-wall-texture overflow-hidden pt-[70px]">
       <section className="relative z-0 flex flex-col gap-10 text-white w-full bg-cover">
         <div className="absolute -z-10 w-full aspect-square">
           <Image
             src={Pattern1}
             alt="Pattern 1"
             fill
+            sizes="100vh"
             className="object-cover object-center"
           />
         </div>
@@ -33,27 +34,39 @@ function MemantikMobile() {
         </div>
         <div className="flex flex-col px-10 sm:px-20 md:px-44 items-center gap-10">
           <div className="relative w-full aspect-[4/3] -rotate-6">
-            <Image src={Frame} alt="Frame" fill />
+            <Image src={Frame} alt="Frame" fill sizes="100vh" />
           </div>
           <div className="relative w-full aspect-[4/3] rotate-6">
-            <Image src={Frame} alt="Frame" fill />
+            <Image src={Frame} alt="Frame" fill sizes="100vh" />
           </div>
           <div className="relative w-full aspect-[4/3] -rotate-6">
-            <Image src={Frame} alt="Frame" fill />
+            <Image src={Frame} alt="Frame" fill sizes="100vh" />
           </div>
           <div className="relative w-full aspect-[4/3] rotate-6">
-            <Image src={Frame} alt="Frame" fill />
+            <Image src={Frame} alt="Frame" fill sizes="100vh" />
           </div>
         </div>
 
         <div className="px-5 sm:px-20 md:px-44 md:px- py-10">
           <div className="relative overflow-hidden w-full aspect-[4/3]">
-            <Image src={GIF} alt="gif" fill className="object-cover" />
+            <Image
+              src={GIF}
+              alt="gif"
+              fill
+              sizes="100vh"
+              className="object-cover"
+            />
           </div>
         </div>
 
         <div className="relative w-full aspect-square">
-          <Image src={Pattern2} alt="Pattern 2" fill className="object-cover" />
+          <Image
+            src={Pattern2}
+            alt="Pattern 2"
+            fill
+            sizes="100vh"
+            className="object-cover"
+          />
         </div>
 
         <div className="px-5 sm:px-20 md:px-44 text-justify">
@@ -77,7 +90,13 @@ function MemantikMobile() {
       <section className="flex flex-col gap-10 bg-paper-flat pt-14 pb-28 w-full">
         <div className="px-5 sm:px-20 md:px-44 flex flex-col gap-10">
           <div className="relative w-full ml-3 md:ml-4 aspect-square">
-            <Image src={X} alt="X image" fill className="object-center" />
+            <Image
+              src={X}
+              alt="X image"
+              fill
+              sizes="100vh"
+              className="object-center"
+            />
           </div>
           <div>
             <motion.h2
@@ -100,21 +119,21 @@ function MemantikMobile() {
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image src={UnknownSpeaker} alt="Speaker" fill sizes="100vh" />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image src={UnknownSpeaker} alt="Speaker" fill sizes="100vh" />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image src={UnknownSpeaker} alt="Speaker" fill sizes="100vh" />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
@@ -140,9 +159,9 @@ function MemantikMobile() {
 
         <div className="mt-20 z-0">
           <div className="relative w-full aspect-[4/3]">
-            <Image src={Photo} alt="Staff photo" fill />
+            <Image src={Photo} alt="Staff photo" fill sizes="100vh" />
             <div className="absolute -z-10 w-full aspect-[16/15] -top-14">
-              <Image src={Splash} alt="Staff photo" fill />
+              <Image src={Splash} alt="Staff photo" fill sizes="100vh" />
             </div>
           </div>
         </div>

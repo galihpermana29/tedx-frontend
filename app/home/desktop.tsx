@@ -42,7 +42,7 @@ export default function MemantikDesktop() {
   const scale = useTransform(
     scrollYProgressIncludingOverlap,
     [0.1, 0.4, 0.75, 1],
-    [1, 1, 1.3, 1]
+    [1, 1, 0.9, 0.8]
   );
 
   const xRight = useTransform(
@@ -72,7 +72,7 @@ export default function MemantikDesktop() {
   const y = useTransform(
     scrollYProgressIncludingOverlap,
     [0.1, 0.4, 0.5, 0.6, 0.7, 1],
-    ['0', '0', '0', '50vh', '70vh', '100vh']
+    ['0', '0', '0', '30vh', '40vh', '100vh']
   );
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
@@ -110,7 +110,7 @@ export default function MemantikDesktop() {
 
   return (
     <>
-      <div className="relative" ref={extendedRef}>
+      <div className="relative bg-wall-texture" ref={extendedRef}>
         <motion.div
           className={`w-screen  ${
             horizontalScrollEnd
@@ -133,8 +133,8 @@ export default function MemantikDesktop() {
               </motion.div>
             )}
             <div className="w-screen h-screen  flex flex-col items-center justify-center relative z-[1]">
-              <h1 className="text-[40px] text-cream linux-libertine-slanted text-center">
-                “Mamantik Baskara: <br />
+              <h1 className="text-[40px] text-cream rosela font-bold text-center">
+                “Memantik Baskara: <br />
                 Tersulut Tak Membara, Terbakar Tak Bersuara”
               </h1>
               <div className="flex justify-center items-center mt-[50px] gap-[40px]">
@@ -176,7 +176,7 @@ export default function MemantikDesktop() {
               }`}>
               <motion.div
                 style={horizontalScrollEnd ? { scale, y } : {}}
-                className="overflow-hidden w-[60%] aspect-[16/9]">
+                className="overflow-hidden w-[75%] aspect-[16/9]">
                 <Image
                   src={GIF}
                   alt="gif"
@@ -284,7 +284,12 @@ export default function MemantikDesktop() {
             </div>
             <div className="flex flex-col gap-2 flex-1">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image
+                  src={UnknownSpeaker}
+                  alt="Speaker"
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
+                />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import '../public/fonts/stylesheet.css';
 import './globals.scss';
 import Navigation from '@/components/shared/Navbar';
+import { LoadingPage } from '@/components/shared/Loading';
 
 // export const metadata = {
 //   title: 'TEDx Universitas Brawijaya',
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <LoadingPage />
         {!footerExcludedPaths.includes(pathName) && <Navigation />}
         {children}
         {!footerExcludedPaths.includes(pathName) && <Footer />}
