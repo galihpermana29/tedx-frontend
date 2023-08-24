@@ -42,7 +42,7 @@ export default function MemantikDesktop() {
   const scale = useTransform(
     scrollYProgressIncludingOverlap,
     [0.1, 0.4, 0.75, 1],
-    [1, 1, 1.3, 1]
+    [1, 1, 0.9, 0.8]
   );
 
   const xRight = useTransform(
@@ -72,7 +72,7 @@ export default function MemantikDesktop() {
   const y = useTransform(
     scrollYProgressIncludingOverlap,
     [0.1, 0.4, 0.5, 0.6, 0.7, 1],
-    ['0', '0', '0', '50vh', '70vh', '100vh']
+    ['0', '0', '0', '30vh', '40vh', '100vh']
   );
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
@@ -176,7 +176,7 @@ export default function MemantikDesktop() {
               }`}>
               <motion.div
                 style={horizontalScrollEnd ? { scale, y } : {}}
-                className="overflow-hidden w-[60%] aspect-[16/9]">
+                className="overflow-hidden w-[75%] aspect-[16/9]">
                 <Image
                   src={GIF}
                   alt="gif"
