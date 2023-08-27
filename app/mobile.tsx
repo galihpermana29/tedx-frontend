@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
-import React, { SetStateAction } from 'react';
+import React, { SetStateAction, useRef } from 'react';
 
 interface HomeDesktopProps {
   isClicked: boolean;
@@ -22,12 +22,17 @@ export default function HomeMobile({
   setIsClicked,
 }: HomeDesktopProps) {
   const scope = useXAnimation(isClicked, 'mobile');
-
+  const vidRef = useRef<HTMLVideoElement | null>(null);
+  const handlePlayVideo = () => {
+    if (vidRef.current) {
+      vidRef.current.play();
+    }
+  };
   const MotionButton = motion(Button);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
-      <div className="relative z-[3] w-full h-screen">
+      <div className="relative z-[6] w-full h-screen">
         <motion.div
           animate={{ top: '10%' }}
           transition={{ duration: 1.5 }}
@@ -48,18 +53,32 @@ export default function HomeMobile({
         </motion.div>
       </div>
       <video
-        className="absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1] object-cover"
+        ref={vidRef}
+        className="absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] object-cover"
+        loop={true}
+        muted
+        playsInline
+        preload="auto">
+        <source
+          src={require('../public/assets/video/bumper_long.mp4')}
+          type="video/mp4"
+        />
+      </video>
+      <video
+        className={`absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] object-cover ${
+          isClicked ? 'z-[1]' : 'z-[3]'
+        }`}
         autoPlay={true}
         loop={true}
         muted
         playsInline
         preload="auto">
         <source
-          src={require('../public/assets/video/dummy.mp4')}
+          src={require('../public/assets/video/bumper_for_x.mp4')}
           type="video/mp4"
         />
       </video>
-      <div className="absolute top-0 z-[1]  h-screen w-full">
+      <div className="absolute top-0 z-[5]  h-screen w-full">
         <div className="x">
           <Image
             src={xImage}
@@ -68,7 +87,7 @@ export default function HomeMobile({
           />
         </div>
       </div>
-      <div className="absolute top-[50%] translate-y-[-50%] m-auto z-[5] text px-[10%]">
+      <div className="absolute top-[50%] translate-y-[-50%] m-auto z-[7] text px-[10%]">
         <Image
           alt="images"
           src={logo}
@@ -80,7 +99,10 @@ export default function HomeMobile({
         </h1>
         <MotionButton
           as="button"
-          onClick={() => setIsClicked(true)}
+          onClick={() => {
+            handlePlayVideo();
+            setIsClicked(true);
+          }}
           type="primary">
           Pantikan Baskaramu
         </MotionButton>

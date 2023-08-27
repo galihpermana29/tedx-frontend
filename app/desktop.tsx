@@ -9,7 +9,7 @@ import el3 from '../public/assets/images/el3.png';
 import { motion } from 'framer-motion';
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
-import { SetStateAction } from 'react';
+import { SetStateAction, useRef } from 'react';
 
 interface HomeDesktopProps {
   isClicked: boolean;
@@ -20,46 +20,66 @@ export default function HomeDesktop({
   isClicked,
   setIsClicked,
 }: HomeDesktopProps) {
+  const vidRef = useRef<HTMLVideoElement | null>(null);
+  const handlePlayVideo = () => {
+    if (vidRef.current) {
+      vidRef.current.play();
+    }
+  };
   const scope = useXAnimation(isClicked, 'desktop');
 
   const MotionButton = motion(Button);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
-      <div className="relative z-[3] w-[60%] h-screen ">
+      <div className="relative z-[4] w-[60%] h-screen ">
         <motion.div
           animate={{ top: '10%' }}
           transition={{ duration: 1.5 }}
-          className="absolute z-[3] xl:top-[-50%] xl:left-[15%] w-[26%] el1 lg:left-[10%]">
+          className="absolute z-[4] xl:top-[-50%] xl:left-[15%] w-[26%] el1 lg:left-[10%]">
           <Image src={el1} alt="element" priority />
         </motion.div>
         <motion.div
           animate={{ left: '60%' }}
           transition={{ duration: 1.5 }}
-          className="absolute z-[3] xl:top-[20%] xl:left-[200%] w-[26%] el2 lg:top-[20%]">
+          className="absolute z-[4] xl:top-[20%] xl:left-[200%] w-[26%] el2 lg:top-[20%]">
           <Image src={el2} alt="element" priority />
         </motion.div>
         <motion.div
           animate={{ top: '60%' }}
           transition={{ duration: 1.5 }}
-          className="absolute z-[3] xl:top-[100%] xl:left-[40%] w-[26%] el3 lg:left-[30%]">
+          className="absolute z-[4] xl:top-[100%] xl:left-[40%] w-[26%] el3 lg:left-[30%]">
           <Image src={el3} alt="element" priority />
         </motion.div>
       </div>
       <video
-        onEnded={isClicked ? () => console.log('finis') : () => ({})}
-        className="absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1] object-cover"
+        ref={vidRef}
+        className="absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] object-cover"
+        loop={true}
+        muted
+        playsInline
+        preload="auto">
+        <source
+          src={require('../public/assets/video/bumper_long.mp4')}
+          type="video/mp4"
+        />
+      </video>
+      <video
+        className={`absolute h-auto w-auto min-h-[100%] min-w-[100%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] object-cover ${
+          isClicked ? 'z-[1]' : 'z-[3]'
+        }`}
         autoPlay={true}
         loop={true}
         muted
         playsInline
         preload="auto">
         <source
-          src={require('../public/assets/video/dummy.mp4')}
+          src={require('../public/assets/video/bumper_for_x.mp4')}
           type="video/mp4"
         />
       </video>
-      <div className="absolute top-0 z-[1]  h-screen w-full">
+
+      <div className="absolute top-0 z-[3]  h-screen w-full">
         <div className="x">
           <Image
             src={xImage}
@@ -77,7 +97,10 @@ export default function HomeDesktop({
         </h1>
         <MotionButton
           as="button"
-          onClick={() => setIsClicked(true)}
+          onClick={() => {
+            handlePlayVideo();
+            setIsClicked(true);
+          }}
           type="primary">
           Pantikan Baskaramu
         </MotionButton>
