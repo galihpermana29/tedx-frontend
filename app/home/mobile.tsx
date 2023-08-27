@@ -8,11 +8,11 @@ import X from '@/images/home-x.png';
 import Pattern1 from '@/images/memantik-bg.png';
 import Pattern2 from '@/images/pattern-2.png';
 import UnknownSpeaker from '@/images/unknown-speaker.png';
-import GIF from '@/videos/home-content.gif';
 import Image from 'next/image';
 
 import { textBlurAnimationProps } from '@/utils/data/animation';
 import { motion } from 'framer-motion';
+import ReactPlayer from 'react-player/lazy';
 
 function MemantikMobile() {
   return (
@@ -49,13 +49,19 @@ function MemantikMobile() {
 
         <div className="px-5 sm:px-20 md:px-44 md:px- py-10">
           <div className="relative overflow-hidden w-full aspect-[4/3]">
-            <Image
+            <ReactPlayer
+              width={'100%'}
+              height={'100%'}
+              controls={true}
+              url={require('../../public/assets/video/propa1.mp4')}
+            />
+            {/* <Image
               src={GIF}
               alt="gif"
               fill
               sizes="100vh"
               className="object-cover"
-            />
+            /> */}
           </div>
         </div>
 

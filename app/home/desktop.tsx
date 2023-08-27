@@ -7,7 +7,6 @@ import bgMemantikLong from '../../public/assets/images/memantik-bg.png';
 import flower from '../../public/assets/images/flower.png';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import GIF from '@/videos/home-content.gif';
 
 import Pattern2 from '@/images/pattern_gelora.png';
 import awanKanan from '@/images/awan-kanan.png';
@@ -21,6 +20,7 @@ import Photo from '@/images/home-photo-2.png';
 import Splash from '@/images/home-splash.png';
 import X from '@/images/home-x-2.png';
 import UnknownSpeaker from '@/images/unknown-speaker.png';
+import ReactPlayer from 'react-player/lazy';
 
 export default function MemantikDesktop() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,13 +60,13 @@ export default function MemantikDesktop() {
   const xRightObj = useTransform(
     scrollYProgress,
     [0.1, 0.25, 0.55, 0.75, 1],
-    ['5vw', '5vw', '10vw', '20vw', '40vw']
+    ['0vw', '5vw', '10vw', '20vw', '40vw']
   );
 
   const xLeftObj = useTransform(
     scrollYProgress,
     [0.1, 0.25, 0.55, 0.75, 1],
-    ['-5vw', '-5vw', '-10vw', '-20vw', '-40vw']
+    ['-0vw', '-5vw', '-10vw', '-20vw', '-40vw']
   );
 
   const y = useTransform(
@@ -176,13 +176,19 @@ export default function MemantikDesktop() {
               }`}>
               <motion.div
                 style={horizontalScrollEnd ? { scale, y } : {}}
-                className="overflow-hidden w-[75%] aspect-[16/9]">
-                <Image
+                className="overflow-hidden w-[70%] aspect-[16/9]">
+                <ReactPlayer
+                  width={'100%'}
+                  height={'100%'}
+                  controls={true}
+                  url={require('../../public/assets/video/propa1.mp4')}
+                />
+                {/* <Image
                   src={GIF}
                   alt="gif"
                   className="object-cover w-full"
                   priority
-                />
+                /> */}
               </motion.div>
             </motion.div>
           </div>
@@ -215,6 +221,7 @@ export default function MemantikDesktop() {
         <div ref={scrollCloudRef} className="relative top-[-60vh]">
           <div className="relative flex">
             <motion.div
+              transition={{ ease: 'easeInOut' }}
               style={{ x: xLeft }}
               className="relative z-[1] translate-x-[-40vw]">
               <Image
@@ -225,6 +232,7 @@ export default function MemantikDesktop() {
               />
             </motion.div>
             <motion.div
+              transition={{ ease: 'easeInOut' }}
               style={{ x: xRight }}
               className="relative z-[1] translate-x-[40vw]">
               <Image
@@ -237,11 +245,13 @@ export default function MemantikDesktop() {
           </div>
           <div className="flex justify-between absolute left-0 right-0 items-center top-[0vh]">
             <motion.div
+              transition={{ ease: 'easeInOut' }}
               style={{ x: xLeftObj }}
               className="relative z-[2]  translate-x-[-40vw] ">
               <Image alt="awan" src={objekKiri} priority />
             </motion.div>
             <motion.div
+              transition={{ ease: 'easeInOut' }}
               style={{ x: xRightObj }}
               className="relative z-[2] translate-x-[40vw]  ">
               <Image alt="awan" src={objekKanan} priority />
