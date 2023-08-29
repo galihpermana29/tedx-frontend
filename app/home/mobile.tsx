@@ -33,7 +33,7 @@ function MemantikMobile() {
         </div>
         <div className="px-5 sm:px-20 md:px-44 pt-10 text-center">
           <h1 className="text-cream rosela text-2xl sm:text-3xl font-bold">
-            “Mamantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara”
+            “Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara”
           </h1>
         </div>
         <div className="flex flex-col px-5 sm:px-20 md:px-44 items-center">

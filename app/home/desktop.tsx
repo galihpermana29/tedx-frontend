@@ -150,11 +150,11 @@ export default function MemantikDesktop() {
               </div>
             </div>
             <div className="w-screen h-screen flex items-center  justify-between">
-              <div className="flex justify-center gap-[50px] pl-[100px] flex-1 flex-col ">
-                <div className="-rotate-6 w-[65%] ">
+              <div className="flex justify-center gap-[2px] pl-[100px] flex-1 flex-col">
+                <div className="-rotate-6 w-[70%] ">
                   <Image alt="frame" src={Frame3} className="w-full" priority />
                 </div>
-                <div className="rotate-6 w-[60%]">
+                <div className="rotate-6 w-[70%]">
                   <Image alt="frame" src={Frame4} className="w-full" priority />
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function MemantikDesktop() {
         </div>
         <div className="flex flex-row-reverse justify-between items-center gap-[50px] mt-10 bg-cover bg-no-repeat">
           <div className="z-0 relative flex-1">
-            <div className="relative w-full aspect-[4/3]">
+            <div className="relative w-full  flex justify-end items-center">
               <Image src={Photo} alt="Event photo" />
             </div>
           </div>
