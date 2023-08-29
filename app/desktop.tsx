@@ -102,7 +102,7 @@ export default function HomeDesktop({
             setIsClicked(true);
           }}
           type="primary">
-          Pantikan Baskaramu
+          Pantikkan Baskaramu
         </MotionButton>
       </div>
     </main>

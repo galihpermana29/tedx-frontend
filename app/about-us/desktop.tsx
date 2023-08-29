@@ -1,6 +1,7 @@
 'use client';
 
 import AboutImage from '@/images/about-image.png';
+import AboutUsPhoto from '@/images/about-us-photo.png';
 import VideoBG from '@/images/about-us-video-bg.png';
 import VideoSplash from '@/images/about-us-video-splash.png';
 import { textContent } from '@/utils/data/about-us';
@@ -26,14 +27,28 @@ function AboutUsDesktop() {
           </div>
         </div>
       </section>
-      <section className="relative -z-20 flex w-full flex-row-reverse items-center gap-[100px] overflow-hidden bg-paper-retak bg-cover bg-no-repeat px-5 py-[20%] sm:px-20">
+      <section className="relative -z-20 flex w-full flex-row-reverse items-center gap-[100px] overflow-hidden bg-paper bg-cover bg-no-repeat px-5 py-[20%] sm:px-20">
         {/* image */}
         <div className="relative flex max-w-[40%] sm:w-2/3 flex-1 ">
           <div className="relative mr-0 ml-auto aspect-[2/3] w-[90%] ">
-            <Image src={VideoBG} alt="Video Background" fill />
+            <Image
+              src={VideoBG}
+              alt="Video Background"
+              fill
+              sizes="100vh"
+              placeholder="blur"
+            />
           </div>
 
-          <div className="absolute left-0 z-10 h-full w-[90%] bg-zinc-500"></div>
+          <div className="absolute left-0 z-10 h-full w-[90%] bg-zinc-500">
+            <Image
+              src={AboutUsPhoto}
+              alt="Event Photo"
+              fill
+              sizes="100vh"
+              placeholder="blur"
+            />
+          </div>
 
           <div className="absolute -right-[32rem] -top-48 -z-10 aspect-[16/8.7] w-[80rem] sm:-right-[40rem]">
             <Image
