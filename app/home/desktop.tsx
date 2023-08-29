@@ -1,25 +1,28 @@
 'use client';
 
-import Image from 'next/image';
-import frame1 from '../../public/assets/images/card-1.png';
-import frame2 from '../../public/assets/images/card-2.png';
-import bgMemantikLong from '../../public/assets/images/memantik-bg.png';
-import flower from '../../public/assets/images/flower.png';
-import { useEffect, useRef, useState } from 'react';
+import flower from '@/images/flower.png';
+import Frame1 from '@/images/frame-1.png';
+import Frame2 from '@/images/frame-2.png';
+import Frame3 from '@/images/frame-3.png';
+import Frame4 from '@/images/frame-4.png';
+import bgMemantikLong from '@/images/memantik-bg.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
-import Pattern2 from '@/images/pattern_gelora.png';
+import Button from '@/components/shared/Button';
 import awanKanan from '@/images/awan-kanan.png';
 import awanKiri from '@/images/awan-kiri.png';
 import objekKanan from '@/images/objek-kanan.png';
 import objekKiri from '@/images/objek-kiri.png';
-import Button from '@/components/shared/Button';
+import Pattern2 from '@/images/pattern_gelora.png';
 import { textBlurAnimationProps } from '@/utils/data/animation';
 
-import Photo from '@/images/home-photo-2.png';
-import Splash from '@/images/home-splash.png';
+import Photo from '@/images/home-photo.png';
 import X from '@/images/home-x-2.png';
-import UnknownSpeaker from '@/images/unknown-speaker.png';
+import Speaker1 from '@/images/speaker-1.png';
+import Speaker2 from '@/images/speaker-2.png';
+import Speaker3 from '@/images/speaker-3.png';
 import ReactPlayer from 'react-player/lazy';
 
 export default function MemantikDesktop() {
@@ -137,22 +140,22 @@ export default function MemantikDesktop() {
                 “Memantik Baskara: <br />
                 Tersulut Tak Membara, Terbakar Tak Bersuara”
               </h1>
-              <div className="flex justify-center items-center mt-[50px] gap-[40px]">
-                <div className="-rotate-6">
-                  <Image alt="frame" src={frame1} priority />
+              <div className="flex justify-center items-center gap-[40px]">
+                <div className="-rotate-6 relative w-[40%] aspect-video">
+                  <Image alt="frame" src={Frame1} priority />
                 </div>
-                <div className="rotate-6">
-                  <Image alt="frame" src={frame2} priority />
+                <div className="rotate-6 relative w-[40%] aspect-video">
+                  <Image alt="frame" src={Frame2} priority />
                 </div>
               </div>
             </div>
             <div className="w-screen h-screen flex items-center  justify-between">
               <div className="flex justify-center gap-[50px] pl-[100px] flex-1 flex-col ">
-                <div className="-rotate-6 w-[60%] ">
-                  <Image alt="frame" src={frame1} className="w-full" priority />
+                <div className="-rotate-6 w-[65%] ">
+                  <Image alt="frame" src={Frame3} className="w-full" priority />
                 </div>
                 <div className="rotate-6 w-[60%]">
-                  <Image alt="frame" src={frame2} className="w-full" priority />
+                  <Image alt="frame" src={Frame4} className="w-full" priority />
                 </div>
               </div>
               <div className="flex-1 ">
@@ -259,7 +262,7 @@ export default function MemantikDesktop() {
           </div>
         </div>
       </div>
-      <section className="flex flex-col gap-10 bg-paper-retak w-full pt-[20vh] bg-no-repeat bg-cover mt-[-5%] relative z-[7]">
+      <section className="flex flex-col gap-10 bg-paper w-full pb-32 pt-[20vh] bg-no-repeat bg-cover mt-[-5%] relative z-[7]">
         <div className="flex flex-col gap-10 px-[60px]">
           <div className="flex gap-10 w-full">
             <div className="relative w-full max-w-[480px] ml-3 md:ml-4 aspect-square flex-1">
@@ -287,7 +290,7 @@ export default function MemantikDesktop() {
           <div className="flex w-full gap-[50px] mt-[80px]">
             <div className="flex flex-col gap-2 flex-1">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image src={Speaker1} alt="Speaker" fill />
               </div>
               <p className="font-bold text-xl ">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
@@ -295,7 +298,7 @@ export default function MemantikDesktop() {
             <div className="flex flex-col gap-2 flex-1">
               <div className="relative w-full aspect-square">
                 <Image
-                  src={UnknownSpeaker}
+                  src={Speaker2}
                   alt="Speaker"
                   fill
                   sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
@@ -306,7 +309,7 @@ export default function MemantikDesktop() {
             </div>
             <div className="flex flex-col gap-2 flex-1">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill />
+                <Image src={Speaker3} alt="Speaker" fill />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
@@ -329,16 +332,13 @@ export default function MemantikDesktop() {
             </Button>
           </div>
         </div>
-        <div className="pb-28 flex flex-row-reverse justify-between items-center gap-[50px] mt-[100px] bg-paper-desktop bg-cover bg-no-repeat">
+        <div className="flex flex-row-reverse justify-between items-center gap-[50px] mt-10 bg-cover bg-no-repeat">
           <div className="z-0 relative flex-1">
             <div className="relative w-full aspect-[4/3]">
-              <Image src={Photo} alt="Staff photo" />
-              <div className="absolute -z-10 w-full aspect-[16/15] -top-14">
-                <Image src={Splash} alt="Staff photo" />
-              </div>
+              <Image src={Photo} alt="Event photo" />
             </div>
           </div>
-          <div className="flex flex-col gap-10 ml-[60px] flex-1">
+          <div className="flex flex-col gap-10 ml-[60px]">
             <motion.h2
               {...textBlurAnimationProps}
               className="font-[800] text-[90px] max-w-[20vw] creato-display">

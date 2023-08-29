@@ -1,13 +1,17 @@
 'use client';
 
 import Button from '@/components/shared/Button';
-import Frame from '@/images/card-1.png';
+import Frame1 from '@/images/frame-1.png';
+import Frame2 from '@/images/frame-2.png';
+import Frame3 from '@/images/frame-3.png';
+import Frame4 from '@/images/frame-4.png';
 import Photo from '@/images/home-photo.png';
-import Splash from '@/images/home-splash.png';
 import X from '@/images/home-x.png';
 import Pattern1 from '@/images/memantik-bg.png';
 import Pattern2 from '@/images/pattern-2.png';
-import UnknownSpeaker from '@/images/unknown-speaker.png';
+import Speaker1 from '@/images/speaker-1.png';
+import Speaker2 from '@/images/speaker-2.png';
+import Speaker3 from '@/images/speaker-3.png';
 import Image from 'next/image';
 
 import { textBlurAnimationProps } from '@/utils/data/animation';
@@ -32,18 +36,18 @@ function MemantikMobile() {
             “Mamantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara”
           </h1>
         </div>
-        <div className="flex flex-col px-10 sm:px-20 md:px-44 items-center gap-10">
+        <div className="flex flex-col px-5 sm:px-20 md:px-44 items-center">
           <div className="relative w-full aspect-[4/3] -rotate-6">
-            <Image src={Frame} alt="Frame" fill sizes="100vh" />
+            <Image src={Frame1} alt="Frame" fill sizes="100vh" />
           </div>
           <div className="relative w-full aspect-[4/3] rotate-6">
-            <Image src={Frame} alt="Frame" fill sizes="100vh" />
+            <Image src={Frame2} alt="Frame" fill sizes="100vh" />
           </div>
           <div className="relative w-full aspect-[4/3] -rotate-6">
-            <Image src={Frame} alt="Frame" fill sizes="100vh" />
+            <Image src={Frame3} alt="Frame" fill sizes="100vh" />
           </div>
           <div className="relative w-full aspect-[4/3] rotate-6">
-            <Image src={Frame} alt="Frame" fill sizes="100vh" />
+            <Image src={Frame4} alt="Frame" fill sizes="100vh" />
           </div>
         </div>
 
@@ -55,13 +59,6 @@ function MemantikMobile() {
               controls={true}
               url={require('../../public/assets/video/propa1.mp4')}
             />
-            {/* <Image
-              src={GIF}
-              alt="gif"
-              fill
-              sizes="100vh"
-              className="object-cover"
-            /> */}
           </div>
         </div>
 
@@ -92,7 +89,7 @@ function MemantikMobile() {
           </motion.p>
         </div>
       </section>
-      <div className="w-full h-20 bg-paper mt-5 -mb-2"></div>
+      <div className="w-full h-20 bg-paper-mobile mt-5 -mb-2"></div>
       <section className="flex flex-col gap-10 bg-paper-flat pt-14 pb-28 w-full">
         <div className="px-5 sm:px-20 md:px-44 flex flex-col gap-10">
           <div className="relative w-full ml-3 md:ml-4 aspect-square">
@@ -125,21 +122,39 @@ function MemantikMobile() {
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill sizes="100vh" />
+                <Image
+                  src={Speaker1}
+                  alt="Speaker"
+                  fill
+                  sizes="100vh"
+                  placeholder="blur"
+                />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill sizes="100vh" />
+                <Image
+                  src={Speaker2}
+                  alt="Speaker"
+                  fill
+                  sizes="100vh"
+                  placeholder="blur"
+                />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative w-full aspect-square">
-                <Image src={UnknownSpeaker} alt="Speaker" fill sizes="100vh" />
+                <Image
+                  src={Speaker3}
+                  alt="Speaker"
+                  fill
+                  sizes="100vh"
+                  placeholder="blur"
+                />
               </div>
               <p className="font-bold text-xl">?????</p>
               <p className="font-medium text-lg">The Speaker</p>
@@ -163,12 +178,15 @@ function MemantikMobile() {
           </div>
         </div>
 
-        <div className="mt-20 z-0">
-          <div className="relative w-full aspect-[4/3]">
-            <Image src={Photo} alt="Staff photo" fill sizes="100vh" />
-            <div className="absolute -z-10 w-full aspect-[16/15] -top-14">
-              <Image src={Splash} alt="Staff photo" fill sizes="100vh" />
-            </div>
+        <div className="relative w-full flex justify-center aspect-square mt-10 z-0 overflow-hidden">
+          <div className="absolute w-[120%] h-full object-center">
+            <Image
+              src={Photo}
+              alt="Event photo"
+              fill
+              sizes="100vh"
+              className="object-right"
+            />
           </div>
         </div>
         <div className="px-5 sm:px-20 md:px-44 flex flex-col gap-10 mt-10">

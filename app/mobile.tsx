@@ -104,7 +104,7 @@ export default function HomeMobile({
             setIsClicked(true);
           }}
           type="primary">
-          Pantikan Baskaramu
+          Pantikkan Baskaramu
         </MotionButton>
       </div>
     </main>
