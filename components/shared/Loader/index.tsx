@@ -7,10 +7,11 @@ interface MeduaQueryInterface {
 }
 
 export default function MediaQuerySwitcher({
-  mobile,
-  desktop,
+  mobile = <div />,
+  desktop = <div />,
   screenWidth = 768,
 }: MeduaQueryInterface) {
   const mediaMatches = useMediaQuery(screenWidth);
-  return <div>{mediaMatches ? desktop : mobile}</div>;
+  if (mediaMatches) return desktop;
+  return mobile;
 }

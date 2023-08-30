@@ -131,8 +131,8 @@ export const NavbarMobile = () => {
                 animate={navbarHidden ? {} : { opacity: 1 }}
                 initial={{ opacity: 0 }}>
                 <Link
-                  href={'/'}
-                  className="creato-display text-[15px] font-[500] ml-[20px]">
+                  href={'/pre-event'}
+                  className="creato-display text-[15px] font-[500] ml-[20px] hover:underline">
                   Pre Event
                 </Link>
               </motion.div>

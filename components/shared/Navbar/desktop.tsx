@@ -15,7 +15,7 @@ export const NavbarDesktop = () => {
   const MotionButton = motion(Button);
   return (
     <div>
-      <div className="absolute left-0 right-0  z-[99] h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer">
+      <div className="fixed left-0 right-0  z-[99] h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer">
         <div className="flex-1 max-w-[170px]">
           <Link href={'/'}>
             <Image src={Logo} alt="logo" />
@@ -113,7 +113,7 @@ export const NavbarDesktop = () => {
                 initial={{ opacity: 0 }}>
                 <Link
                   href={'/'}
-                  className="creato-display text-[20px] font-[500] ml-[20px] hover:underline">
+                  className="creato-display text-[20px] font-[500] ml-[20px] ">
                   Our Team
                 </Link>
               </motion.div>
@@ -141,8 +141,8 @@ export const NavbarDesktop = () => {
                 animate={navbarHidden ? {} : { opacity: 1 }}
                 initial={{ opacity: 0 }}>
                 <Link
-                  href={'/'}
-                  className="creato-display text-[20px] font-[500] ml-[20px]">
+                  href={'/pre-event'}
+                  className="creato-display text-[20px] font-[500] ml-[20px] hover:underline">
                   Pre Event
                 </Link>
               </motion.div>

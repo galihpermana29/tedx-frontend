@@ -5,10 +5,12 @@ import MediaQuerySwitcher from '@/components/shared/Loader';
 
 export default function AboutUs() {
   return (
-    <MediaQuerySwitcher
-      screenWidth={1024}
-      mobile={<AboutUsMobile />}
-      desktop={<AboutUsDesktop />}
-    />
+    <div>
+      <MediaQuerySwitcher
+        screenWidth={1024}
+        mobile={<AboutUsMobile />}
+        desktop={<AboutUsDesktop />}
+      />
+    </div>
   );
 }
