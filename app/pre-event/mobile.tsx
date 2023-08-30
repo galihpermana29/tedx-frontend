@@ -19,7 +19,7 @@ import Carousel from '@/components/shared/Carousel';
 
 function PreEventMobile() {
   return (
-    <main className="bg-wall-texture pb-20 overflow-hidden">
+    <main className="bg-wall-texture py-20 overflow-hidden">
       <section className="pb-20 px-5 sm:px-20 md:px-44 flex w-full flex-col text-white">
         <div className="h-1/5 flex justify-center items-center mt-20 text-center">
           <h1 className="text-5xl min-[300px]:text-6xl text-cream rosela">

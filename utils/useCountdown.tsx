@@ -19,7 +19,12 @@ export const useCountdown = (targetDate: Date) => {
 };
 
 const getReturnValues = (countDown: number) => {
-  const hours = Math.floor(countDown / (1000 * 60 * 60))
+  const days = Math.floor(countDown / (1000 * 60 * 60 * 24))
+    .toString()
+    .padStart(2, '0');
+  const hours = Math.floor(
+    (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  )
     .toString()
     .padStart(2, '0');
   const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60))
@@ -29,5 +34,5 @@ const getReturnValues = (countDown: number) => {
     .toString()
     .padStart(2, '0');
 
-  return [hours, minutes, seconds];
+  return [days, hours, minutes, seconds];
 };
