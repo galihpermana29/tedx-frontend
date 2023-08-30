@@ -1,3 +1,4 @@
+'use client';
 import GmailLogo from '@/icons/gmail.png';
 import InstagramLogo from '@/icons/instagram.png';
 import TwitterLogo from '@/icons/twitter.png';
@@ -5,10 +6,16 @@ import YoutubeLogo from '@/icons/youtube.png';
 import FooterLine from '@/images/footer-line.png';
 import Logo from '@/images/logo.png';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 function Footer() {
+  const pathName = usePathname();
+
   return (
-    <footer className="bg-green-fade text-white">
+    <footer
+      className={`bg-green-fade text-white ${
+        pathName === '/' ? 'hidden' : 'visible'
+      }`}>
       <div className="relative w-full aspect-[16/6] sm:aspect-[16/4] lg:aspect-[16/4]">
         <div className="relative w-full h-full z-10">
           <Image

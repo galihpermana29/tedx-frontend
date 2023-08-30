@@ -2,11 +2,12 @@
 import MediaQuerySwitcher from '@/components/shared/Loader';
 import HomeDesktop from './desktop';
 import HomeMobile from './mobile';
-import { Suspense, useState } from 'react';
+// import { Suspense, useState } from 'react';
 import Navigation from '@/components/shared/Navbar';
 import Image from 'next/image';
 import xIcon from '@/images/x-icon.png';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Home() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div>
       {!isClicked && <Navigation />}
       {isClicked && (
         <div
@@ -26,17 +27,21 @@ export default function Home() {
           <Image src={xIcon} alt="logo" className="max-w-[30px]" />
         </div>
       )}
-      <Suspense fallback={<p>Loading feed...</p>}>
-        <MediaQuerySwitcher
-          screenWidth={1024}
-          mobile={
+      {/* <Suspense fallback={<p>Loading feed...</p>}> */}
+      <MediaQuerySwitcher
+        screenWidth={1024}
+        mobile={
+          <div>
             <HomeMobile isClicked={isClicked} setIsClicked={setIsClicked} />
-          }
-          desktop={
+          </div>
+        }
+        desktop={
+          <div>
             <HomeDesktop isClicked={isClicked} setIsClicked={setIsClicked} />
-          }
-        />
-      </Suspense>
-    </>
+          </div>
+        }
+      />
+      {/* </Suspense> */}
+    </div>
   );
 }

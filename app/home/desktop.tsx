@@ -151,15 +151,15 @@ export default function MemantikDesktop() {
             </div>
             <div className="w-screen h-screen flex items-center  justify-between">
               <div className="flex justify-center gap-[2px] pl-[100px] flex-1 flex-col">
-                <div className="-rotate-6 w-[70%] ">
+                <div className="-rotate-6 w-[60%] ">
                   <Image alt="frame" src={Frame3} className="w-full" priority />
                 </div>
-                <div className="rotate-6 w-[70%]">
+                <div className="rotate-6 w-[60%]">
                   <Image alt="frame" src={Frame4} className="w-full" priority />
                 </div>
               </div>
               <div className="flex-1 ">
-                <div className="max-w-[90%]">
+                <div className="max-w-[70%]">
                   <Image
                     src={flower}
                     alt="flower"
