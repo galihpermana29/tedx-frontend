@@ -7,6 +7,7 @@ import Navigation from '@/components/shared/Navbar';
 import Image from 'next/image';
 import xIcon from '@/images/x-icon.png';
 import { useRouter } from 'next/navigation';
+
 export default function Home() {
   const router = useRouter();
   const [isClicked, setIsClicked] = useState<boolean>(false);
