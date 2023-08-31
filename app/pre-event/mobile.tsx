@@ -1,32 +1,81 @@
+'use client';
+
 import Button from '@/components/shared/Button';
+import Carousel from '@/components/shared/Carousel';
 import SpeakerCard from '@/components/shared/SpeakerCard';
 import TimeCountdown from '@/components/shared/TimeCountdown';
-import Art from '@/images/pre-event-art.png';
-import SmallFlower from '@/images/pre-event-small-flower.png';
+import WidthFlower from '@/images/flowergroup.png';
+import LeftHand from '@/images/lefthanded.png';
 import BigFlower from '@/images/pre-event-big-flower.png';
-import RightHand from '@/images/pre-event-hand-right.png';
-import LeftHand from '@/images/pre-event-hand-left.png';
-import Venue from '@/images/pre-event-venue.png';
-import FAQCover from '@/images/pre-event-faq-cover.png';
 import FAQ1 from '@/images/pre-event-faq-1.png';
 import FAQ2 from '@/images/pre-event-faq-2.png';
 import FAQ3 from '@/images/pre-event-faq-3.png';
 import FAQ4 from '@/images/pre-event-faq-4.png';
+import TEDx from '@/images/pre-event-tedx-chars.png';
+import FAQCover from '@/images/pre-event-faq-cover.png';
+import SmallFlower from '@/images/pre-event-small-flower.png';
 import LeftSplash from '@/images/pre-event-splash-left.png';
 import RightSplash from '@/images/pre-event-splash-right.png';
+import Venue from '@/images/pre-event-venue.png';
+import RightHand from '@/images/righthanded.png';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import Carousel from '@/components/shared/Carousel';
+import { useRef } from 'react';
+
+import backCatat from '@/images/Back.png';
+import frontCatat from '@/images/Fornt.png';
+import bgCatat from '@/images/bg-catat-mobile.png';
 
 function PreEventMobile() {
+  const extendedRef = useRef<HTMLDivElement | null>(null);
+  const extendedRefVid = useRef<HTMLDivElement | null>(null);
+  const handRefMobile = useRef<HTMLDivElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: extendedRefVid,
+    offset: ['start end', 'end end'],
+  });
+  const { scrollYProgress: scrollFlower } = useScroll({
+    target: extendedRef,
+    offset: ['start end', 'end end'],
+  });
+  const { scrollYProgress: scrollHand } = useScroll({
+    target: handRefMobile,
+    offset: ['start end', 'end end'],
+  });
+  const scaleSpring = useSpring(scrollYProgress, {
+    stiffness: 160,
+    damping: 60,
+    restDelta: 0.001,
+  });
+
+  const y = useTransform(scrollYProgress, [0.7, 1], ['10vh', '20vh']);
+
+  const scale = useTransform(
+    scaleSpring,
+    [0.6, 0.7, 1],
+    ['10vh', '20vh', '70vh']
+  );
+  const widthFlow = useTransform(scrollFlower, [0.1, 0.6], ['10px', '800px']);
+  const widthFlow2 = useTransform(scrollFlower, [0.1, 0.6], ['200px', '600px']);
+  const rotateFlow = useTransform(
+    scrollFlower,
+    [0.1, 0.5],
+    ['-180deg', '0deg']
+  );
+
+  const right = useTransform(scrollHand, [0.1, 1], ['400px', '10px']);
+  const left = useTransform(scrollHand, [0.1, 1], ['-400px', '50px']);
+
   return (
     <main className="bg-wall-texture py-20 overflow-hidden">
-      <section className="pb-20 px-5 sm:px-20 md:px-44 flex w-full flex-col text-white">
-        <div className="h-1/5 flex justify-center items-center mt-20 text-center">
+      <section ref={extendedRefVid} className="flex w-full flex-col text-white">
+        <div className="h-1/5 px-5 sm:px-20 md:px-44 flex justify-center items-center mt-20 text-center">
           <h1 className="text-5xl min-[300px]:text-6xl text-cream rosela">
             Panggung Swara Insan
           </h1>
         </div>
-        <div className="flex flex-col gap-5 mt-10 text-center">
+        <div className="flex flex-col gap-5 px-5 sm:px-20 md:px-44 mt-10 text-center">
           <p>
             Panggung Swara Insan adalah wadah yang mendorong pembicara berbakat
             dari kalangan mahasiswa untuk menemukan keberanian mereka dalam
@@ -46,17 +95,35 @@ function PreEventMobile() {
             Insan.
           </p>
         </div>
-        <div className="mt-28 flex justify-center">
-          <iframe
-            className="w-[75%] sm:w-[70%] aspect-[4/3] -rotate-6"
-            src="https://www.youtube.com/embed/nAkCmxc8cwI?si=zra8MAgrXfZDfVYl&amp;controls=0"
-            title="YouTube video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        <div className="relative min-h-[93vh]">
+          <motion.div
+            style={{ height: scale, y }}
+            className="mt-[30px] flex justify-center h-screen w-full absolute">
+            <iframe
+              className="aspect-[16/9]"
+              src="https://www.youtube.com/embed/nAkCmxc8cwI?si=zra8MAgrXfZDfVYl&amp;controls=1"
+              title="YouTube video"></iframe>
+          </motion.div>
         </div>
       </section>
-      <section className="bg-paper-flat px-5 sm:px-20 md:px-44 flex flex-col gap-20 items-center pt-14 pb-32">
-        <div className="relative w-2/3 aspect-square">
-          <Image src={BigFlower} alt="Flower" fill sizes="100vh" />
+      <section
+        ref={extendedRef}
+        className="bg-paper-flat z-0 px-5 sm:px-20 md:px-44 flex flex-col gap-10 items-center pt-16 pb-32">
+        <div className="relative w-full aspect-square">
+          <div className="absolute w-full z-[2] top-[50%] ml-5 translate-y-[-50%] flex justify-center">
+            <motion.div
+              style={{ rotate: rotateFlow, width: widthFlow2 }}
+              className="w-full max-w-[600px]">
+              <Image src={BigFlower} alt="Flower" className=" w-full" />
+            </motion.div>
+          </div>
+          <div className="absolute w-full z-[1] top-[50%] ml- translate-y-[-50%] flex justify-center">
+            <motion.div
+              style={{ width: widthFlow }}
+              className="w-full max-w-[900px]">
+              <Image src={WidthFlower} alt="Flower" className=" w-full" />
+            </motion.div>
+          </div>
         </div>
         <div className="text-center">
           <h1 className="text-2xl font-extrabold mb-6">
@@ -67,6 +134,11 @@ function PreEventMobile() {
             <li>Student Speakers</li>
             <li>Special Performers</li>
           </ul>
+        </div>
+        <div className="relative w-[120vw] -translate-y-[20rem]">
+          <div className="absolute w-full aspect-square">
+            <Image src={TEDx} alt="TEDx characters" fill sizes="100vh" />
+          </div>
         </div>
         <Carousel
           containerClassName="w-full"
@@ -101,13 +173,17 @@ function PreEventMobile() {
           </div>
         </Carousel>
       </section>
-      <div className="relative w-full">
-        <div className="absolute w-[50%] sm:w-[40%] -top-24 sm:-top-44 -left-14 aspect-[16/11]">
+      <div className="relative w-full" ref={handRefMobile}>
+        <motion.div
+          style={{ x: left }}
+          className="absolute w-[50%] sm:w-[40%] -top-24 sm:-top-44 -left-14 aspect-[16/9]">
           <Image src={LeftHand} alt="Left Hand" fill sizes="100vh" />
-        </div>
-        <div className="absolute w-[40%] sm:w-[35%] -top-3 sm:-top-14 right-0 aspect-[16/11]">
+        </motion.div>
+        <motion.div
+          style={{ x: right }}
+          className="absolute w-[40%] sm:w-[35%] -top-3 sm:-top-14 right-0 aspect-[16/9]">
           <Image src={RightHand} alt="Right Hand" fill sizes="100vh" />
-        </div>
+        </motion.div>
       </div>
       <section className="text-white flex flex-col gap-14 items-center pt-32">
         <div className="flex flex-col items-center px-5 sm:px-20 md:px-44">
@@ -132,13 +208,59 @@ function PreEventMobile() {
           </table>
         </div>
         <TimeCountdown className="pt-10 px-5 sm:px-20 md:px-44" />
-        <div className="relative w-full aspect-[5/4] pb-20 px-5 sm:px-20 md:px-44">
-          <Image src={Art} alt="Art" fill sizes="100vh" />
+        <div className="flex-1 relative w-full">
+          <div className="min-h-[80vh]">
+            <div className="absolute z-[1] mt-44 translate-x-7 w-full right-0">
+              <Image src={bgCatat} alt="bg" className="w-full" />
+            </div>
+            <motion.div
+              animate={{
+                filter: ['blur(2px)', 'blur(0px)', 'blur(2px)'],
+                scale: [1, 1.1, 1],
+                position: 'absolute',
+                top: ['50%', '50%'],
+                left: ['50%', '50%'],
+                width: '100%',
+                translateX: ['-50%', '-50%'],
+                translateY: ['-50%', '-50%'],
+              }}
+              transition={{
+                duration: 3,
+                ease: 'easeInOut',
+                times: [0, 0.5, 1],
+                repeat: Infinity,
+                repeatDelay: 1,
+              }}
+              className="absolute z-[2] top-[50%] w-full ml-5 translate-y-[-50%]">
+              <Image src={backCatat} alt="bg" className="w-[90%]" />
+            </motion.div>
+            <motion.div
+              animate={{
+                filter: ['blur(0px)', 'blur(2px)', 'blur(0px)'],
+                scale: [1.1, 1, 1.1],
+                position: 'absolute',
+                top: ['60%', '60%'],
+                left: ['50%', '50%'],
+                width: '100%',
+                translateX: ['-50%', '-50%'],
+                translateY: ['-50%', '-50%'],
+              }}
+              transition={{
+                duration: 3,
+                ease: 'easeInOut',
+                times: [0, 0.5, 1],
+                repeat: Infinity,
+                repeatDelay: 1,
+              }}
+              className="absolute z-[3] top-[60%] ml-5 w-full left-[50%] translate-y-[-50%]">
+              <Image src={frontCatat} alt="bg" className="w-full" />
+            </motion.div>
+          </div>
         </div>
         <div className="px-5 sm:px-20 md:px-44">
-          <p className="linux-libertine-slanted italic font-bold text-center">
-            “Jangan lewatkan tanggalnya! Pencarian student speaker dibuka sejak
-            tanggal 1 hingga 5 September 2023”
+          <p className="font-bold text-center">
+            Jangan lewatkan tanggalnya! Pencarian student speaker dibuka sejak
+            tanggal 1 hingga 6 September 2023
           </p>
         </div>
         <div className="flex w-full flex-col gap-14 px-5 sm:px-20 md:px-44">
@@ -163,7 +285,7 @@ function PreEventMobile() {
           </Button>
         </div>
         <div className="relative w-full flex justify-center mt-10">
-          <div className="relative w-[175px] aspect-[16/8]">
+          <div className="relative w-[40%] aspect-[16/8]">
             <Image src={SmallFlower} alt="Small Flower" fill sizes="100vh" />
           </div>
           <div className="absolute w-[40%] sm:w-[30%] -top-32 left-0 aspect-square">
