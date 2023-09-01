@@ -34,7 +34,7 @@ export const NavbarMobile = () => {
     <div
       className={`${!includedPaths.includes(pathName) ? 'hidden' : 'visible'}`}>
       <div
-        className={`fixed left-0 right-0 z-[99] h-[80px] w-full justify-between items-center flex px-[20px] hover:bg-[#1E373E] duration-300 cursor-pointer hover:opacity-70 ${
+        className={`fixed left-0 right-0 z-50 h-[80px] w-full justify-between items-center flex px-[20px] hover:bg-[#1E373E] duration-300 cursor-pointer hover:opacity-70 ${
           changeNav ? 'bg-blue-primary' : 'bg-transparent'
         }`}>
         <div className="flex-1 max-w-[150px]">

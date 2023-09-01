@@ -35,7 +35,7 @@ export const NavbarDesktop = () => {
     <div
       className={`${!includedPaths.includes(pathName) ? 'hidden' : 'visible'}`}>
       <div
-        className={`fixed left-0 right-0  z-[99] h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer ${
+        className={`fixed left-0 right-0  z-50 h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer ${
           changeNav ? 'bg-blue-primary' : 'bg-transparent'
         }`}>
         <div className="flex-1 max-w-[170px]">

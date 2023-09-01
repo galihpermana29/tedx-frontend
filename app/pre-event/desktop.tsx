@@ -1,30 +1,27 @@
 'use client';
 
-import Carousel from '@/components/shared/Carousel';
-import Image from 'next/image';
-import Venue from '@/images/pre-event-venue.png';
-import BigFlower from '@/images/pre-event-big-flower.png';
-import WidthFlower from '@/images/flowergroup.png';
-import { useScroll, useTransform, motion, useSpring } from 'framer-motion';
-import { useRef } from 'react';
 import Button from '@/components/shared/Button';
+import Carousel from '@/components/shared/Carousel';
 import SpeakerCard from '@/components/shared/SpeakerCard';
 import TimeCountdown from '@/components/shared/TimeCountdown';
+import WidthFlower from '@/images/flowergroup.png';
+import BigFlower from '@/images/pre-event-big-flower.png';
+import Venue from '@/images/pre-event-venue.png';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import { useRef } from 'react';
 
-import SmallFlower from '@/images/pre-event-small-flower.png';
-import RightHand from '@/images/righthanded.png';
 import LeftHand from '@/images/lefthanded.png';
 import FAQCover from '@/images/pre-event-faq-cover.png';
-import FAQ1 from '@/images/pre-event-faq-1.png';
-import FAQ2 from '@/images/pre-event-faq-2.png';
-import FAQ3 from '@/images/pre-event-faq-3.png';
-import FAQ4 from '@/images/pre-event-faq-4.png';
+import SmallFlower from '@/images/pre-event-small-flower.png';
 import LeftSplash from '@/images/pre-event-splash-left.png';
 import RightSplash from '@/images/pre-event-splash-right.png';
+import RightHand from '@/images/righthanded.png';
 
-import bgCatat from '@/images/bg-catat.png';
+import Modal from '@/components/shared/Modal';
 import backCatat from '@/images/Back.png';
 import frontCatat from '@/images/Fornt.png';
+import bgCatat from '@/images/bg-catat.png';
 
 function PreEventDesktop() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -71,7 +68,6 @@ function PreEventDesktop() {
 
   return (
     <div>
-      {' '}
       <main className="bg-wall-texture py-20 overflow-hidden">
         <section
           className="pb-20  flex w-full flex-col text-white"
@@ -109,13 +105,13 @@ function PreEventDesktop() {
               style={{ height: scale, y }}
               className="mt-[30px] flex justify-center h-screen w-full absolute">
               <iframe
-                className="aspect-[16/9]"
-                src="https://www.youtube.com/embed/nAkCmxc8cwI?si=zra8MAgrXfZDfVYl&amp;controls=1"
-                title="YouTube video"></iframe>
+                className="aspect-video"
+                src="https://www.youtube.com/embed/aYsIYGatsWk?si=h0AtJIXLQ2Gs8fTd&amp;controls=0"
+                title="YouTube video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </motion.div>
           </div>
         </section>
-        {/* <section className="h-[110vh]">s</section> */}
         <section className="h-[30vh]">s</section>
         <section
           ref={extendedRef}
@@ -277,15 +273,12 @@ function PreEventDesktop() {
                   <Image src={frontCatat} alt="bg" className="w-full" />
                 </motion.div>
               </div>
-              {/* <div className="relative w-full aspect-[5/4] pb-20">
-                <Image src={Art} alt="Art" fill sizes="100vh" />
-              </div> */}
             </div>
           </div>
           <div className="px-5 sm:px-20 md:px-44 pt-[200px]">
             <p className="creato-display text-[32px] font-bold text-center">
               Jangan sampai lewatkan! <br /> Pencarian Student Speaker hanya
-              dibuka di tanggal 1 - 6 September 2023
+              dibuka di tanggal 1 - 6 September 2023”
             </p>
           </div>
           <div className="flex w-full gap-[40px] px-[100px]">
@@ -300,13 +293,7 @@ function PreEventDesktop() {
             </div>
           </div>
           <div className="z-10 flex gap-3 w-full mt-14 px-5 sm:px-20 md:px-44 justify-center">
-            <Button
-              as="client-link"
-              type="secondary"
-              href="/pre-event"
-              className="w-max">
-              Syarat dan Ketentuan
-            </Button>
+            <Modal buttonClassName="w-max" />
             <Button
               as="anchor"
               type="primary"
@@ -328,22 +315,98 @@ function PreEventDesktop() {
           </div>
           <Carousel
             containerClassName="w-full px-[100px] mb-[100px]"
-            className="w-1/2 text-white"
+            className="w-1/2 text-black-primary"
             options={{ dragFree: false, align: 'center' }}>
             <div className="w-[400px] shrink-0">
               <Image src={FAQCover} alt="FAQ" sizes="70vh" />
             </div>
-            <div className="w-[400px] shrink-0">
-              <Image src={FAQ1} alt="FAQ" sizes="70vh" />
+            {/* card */}
+            <div className="relative p-5 rounded-xl shrink-0 w-[400px] bg-flower">
+              <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
+                <h1 className="font-bold text-lg mb-5">
+                  Apa itu &quot;Student Speaker&quot; dalam
+                  TEDxUniversitasBrawijaya?
+                </h1>
+                <p>
+                  Student Speaker adalah mahasiswa atau pelajar yang memberikan
+                  speech mengenai ide atau gagasan kreatif yang menginspirasi.
+                  Pemilihan student speaker ini melalui tahap penyaringan
+                  ide-ide dalam bentuk esai yang diajukan calon student speaker
+                  kepada pihak TEDxUniversitasBrawijaya selaku penyelenggara
+                </p>
+              </div>
             </div>
-            <div className="w-[400px] shrink-0">
-              <Image src={FAQ2} alt="FAQ" sizes="70vh" />
+            {/* card */}
+            <div className="relative p-5 rounded-xl shrink-0 w-[400px] bg-flower aspect-square">
+              <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
+                <h1 className="font-bold text-lg mb-5">
+                  Apa perbedaan student speaker dan attendees?
+                </h1>
+                <p>
+                  Perbedaannya adalah student speaker dalam acara
+                  TEDxUniversitasBrawijaya berperan untuk menyampaikan ide dan
+                  gagasan melalui speech yang inspiratif, sedangkan attendees
+                  adalah peserta dalam acara TEDxUniversitasBrawijaya
+                </p>
+              </div>
             </div>
-            <div className="w-[400px] shrink-0">
-              <Image src={FAQ3} alt="FAQ" sizes="70vh" />
+            {/* card */}
+            <div className="relative p-5 rounded-xl shrink-0 w-[400px] bg-flower aspect-square">
+              <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
+                <h1 className="font-bold text-lg mb-5">
+                  Apa saja persyaratan pendaftaran untuk menjadi seorang student
+                  speaker?
+                </h1>
+                <ul className="list-disc list-inside">
+                  <li>
+                    Pendaftar merupakan mahasiswa aktif Universitas Brawijaya,
+                    tanpa memandang gender, disabilitas, ras, etnis, atau
+                    karakteristik lainnya
+                  </li>
+                  <li>
+                    Pendaftar bebas untuk bereksplorasi dengan ketentuan format
+                    penulisan esai yang akan diunggah pada saat registrasi
+                    student speaker dibuka melalui website{' '}
+                    <a
+                      target="_blank"
+                      href="https://tedxuniversitasbrawijaya.org/"
+                      className="underline">
+                      www.tedxuniversitasbrawijaya.org
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="w-[400px] shrink-0">
-              <Image src={FAQ4} alt="FAQ" sizes="70vh" />
+            {/* card */}
+            <div className="relative p-5 rounded-xl shrink-0 w-[400px] bg-flower aspect-square">
+              <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
+                <h1 className="font-bold text-lg mb-5">
+                  Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya,
+                  jika saya memiliki pertanyaan lebih lanjut tentang kegiatan
+                  yang berhubungan dengan Pre-Event TEDx Universitas Brawijaya:
+                  Panggung Swara Insan?
+                </h1>
+                <p>
+                  Segala bentuk pertanyaan mengenai kegiatan yang berhubungan
+                  dengan TEDxUniversitasBrawijaya dapat disampaikan melalui :{' '}
+                </p>
+                <ul className="list-disc list-inside">
+                  <li>
+                    Instagram{' '}
+                    <a
+                      href="https://www.instagram.com/tedxuniversitasbrawijaya"
+                      className="font-bold underline">
+                      @tedxuniversitasbrawijaya
+                    </a>
+                  </li>
+                  <li>
+                    Contact Person{' '}
+                    <span className="font-bold">
+                      Maria Desvita - 081234847606
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </Carousel>
         </section>
