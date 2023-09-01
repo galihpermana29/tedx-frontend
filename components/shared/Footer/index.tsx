@@ -11,12 +11,14 @@ import { usePathname } from 'next/navigation';
 function Footer() {
   const pathName = usePathname();
 
+  const includedPaths = ['/home', '/about-us', '/pre-event'];
+
   return (
     <footer
       className={`bg-green-fade text-white ${
-        pathName === '/' ? 'hidden' : 'visible'
+        !includedPaths.includes(pathName) ? 'hidden' : 'visible'
       }`}>
-      <div className="relative w-full aspect-[16/6] sm:aspect-[16/4] lg:aspect-[16/4]">
+      <div className="relative w-full aspect-[16/6] sm:aspect-[16/4] lg:aspect-[16/3]">
         <div className="relative w-full h-full z-10">
           <Image
             src={FooterLine}

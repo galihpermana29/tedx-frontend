@@ -5,7 +5,10 @@ import AboutUsPhoto from '@/images/about-us-photo.png';
 import VideoBG from '@/images/about-us-video-bg.png';
 import VideoSplash from '@/images/about-us-video-splash.png';
 import { textContent } from '@/utils/data/about-us';
-import { textBlurVariant } from '@/utils/data/animation';
+import {
+  textBlurAnimationProps,
+  textFadeUpAnimationProps,
+} from '@/utils/data/animation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -67,19 +70,26 @@ function AboutUsMobile() {
             return (
               <motion.div
                 key={index}
-                initial="hidden"
-                whileInView="visible"
                 viewport={{
-                  once: false,
                   margin: '0px 0px -30% 0px',
                 }}
-                transition={{ duration: 0.5, staggerChildren: 0.5 }}>
+                transition={{
+                  duration: 0.8,
+                  staggerChildren: 0.2,
+                  type: 'tween',
+                }}>
                 <motion.h2
-                  variants={textBlurVariant}
+                  {...textBlurAnimationProps}
                   className="mb-3 min-[300px]:text-xl font-bold sm:text-2xl">
                   {title}
                 </motion.h2>
-                <motion.p variants={textBlurVariant}>{desc}</motion.p>
+                <motion.p
+                  viewport={{
+                    once: true,
+                  }}
+                  {...textFadeUpAnimationProps}>
+                  {desc}
+                </motion.p>
               </motion.div>
             );
           })}

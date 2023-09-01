@@ -285,7 +285,7 @@ function PreEventDesktop() {
           <div className="px-5 sm:px-20 md:px-44 pt-[200px]">
             <p className="creato-display text-[32px] font-bold text-center">
               Jangan sampai lewatkan! <br /> Pencarian Student Speaker hanya
-              dibuka di tanggal 1 - 6 September 2023”
+              dibuka di tanggal 1 - 6 September 2023
             </p>
           </div>
           <div className="flex w-full gap-[40px] px-[100px]">
@@ -308,9 +308,9 @@ function PreEventDesktop() {
               Syarat dan Ketentuan
             </Button>
             <Button
-              as="client-link"
+              as="anchor"
               type="primary"
-              href="/pre-event"
+              href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
               className="w-max">
               Jadilah Speaker!
             </Button>

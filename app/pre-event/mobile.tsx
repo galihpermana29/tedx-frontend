@@ -284,9 +284,9 @@ function PreEventMobile() {
             Syarat dan Ketentuan
           </Button>
           <Button
-            as="client-link"
+            as="anchor"
             type="primary"
-            href="/pre-event"
+            href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
             className="w-full">
             Jadilah Speaker!
           </Button>

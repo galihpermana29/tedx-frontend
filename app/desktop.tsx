@@ -92,8 +92,8 @@ export default function HomeDesktop({
       <div className="absolute top-[50%] right-[50%] translate-y-[-50%] translate-x-[100%] m-auto z-[5] text">
         <Image alt="images" src={logo} className="w-[320px] mb-[30px]" />
         <h1 className="text-white text-[24px] text-[700] mb-[30px] max-w-[550px] linux-libertine-slanted italic">
-          {"'' "}Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara{' '}
-          {"'' "}
+          &quot;Memantik Baskara: Tersulut Tak Membara, Terbakar Tak
+          Bersuara&quot;
         </h1>
         <MotionButton
           as="button"

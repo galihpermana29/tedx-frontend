@@ -94,8 +94,8 @@ export default function HomeMobile({
           className="w-[200px] md:w-[300px] mb-[30px]"
         />
         <h1 className="text-white text-[20px] md:text-[24px] md:max-w-[80%] text-[700] mb-[30px] max-w-[550px] linux-libertine-slanted italic ">
-          {"'' "}Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara{' '}
-          {"'' "}
+          &quot;Memantik Baskara: Tersulut Tak Membara, Terbakar Tak
+          Bersuara&quot;
         </h1>
         <MotionButton
           as="button"
