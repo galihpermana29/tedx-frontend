@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
-import React, { SetStateAction, useRef } from 'react';
+import React, { SetStateAction, useEffect, useRef } from 'react';
 
 interface HomeDesktopProps {
   isClicked: boolean;
@@ -29,6 +29,9 @@ export default function HomeMobile({
     }
   };
   const MotionButton = motion(Button);
+  useEffect(() => {
+    localStorage.setItem('isClicked', 'false');
+  }, []);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
@@ -94,14 +97,15 @@ export default function HomeMobile({
           className="w-[200px] md:w-[300px] mb-[30px]"
         />
         <h1 className="text-white text-[20px] md:text-[24px] md:max-w-[80%] text-[700] mb-[30px] max-w-[550px] linux-libertine-slanted italic ">
-          {"'' "}Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara{' '}
-          {"'' "}
+          &quot;Memantik Baskara: Tersulut Tak Membara, Terbakar Tak
+          Bersuara&quot;
         </h1>
         <MotionButton
           as="button"
           onClick={() => {
             handlePlayVideo();
             setIsClicked(true);
+            localStorage.setItem('isClicked', 'true');
           }}
           type="primary">
           Pantikkan Baskaramu

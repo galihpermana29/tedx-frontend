@@ -9,12 +9,13 @@ import Photo from '@/images/home-photo.png';
 import X from '@/images/home-x.png';
 import Pattern1 from '@/images/memantik-bg.png';
 import Pattern2 from '@/images/pattern-2.png';
-import Speaker1 from '@/images/speaker-1.png';
-import Speaker2 from '@/images/speaker-2.png';
-import Speaker3 from '@/images/speaker-3.png';
 import Image from 'next/image';
 
-import { textBlurAnimationProps } from '@/utils/data/animation';
+import SpeakerCard from '@/components/shared/SpeakerCard';
+import {
+  textBlurAnimationProps,
+  textFadeUpAnimationProps,
+} from '@/utils/data/animation';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player/lazy';
 
@@ -78,7 +79,7 @@ function MemantikMobile() {
             className="text-7xl font-bold text-cream rosela mb-20 w-1/2">
             Gelora Djiwa
           </motion.h2>
-          <motion.p {...textBlurAnimationProps}>
+          <motion.p {...textFadeUpAnimationProps}>
             Reaksi fisiologis akan sukacita, keresahan, dan ragam lainnya muncul
             saat seseorang mampu memanifestasikan penerimaan diri. Dalam acara
             ini, masing-masing insan yang memiliki faktor luar biasa mampu
@@ -108,70 +109,34 @@ function MemantikMobile() {
               Segera Hadir: <br /> Panggung Swara Insan
             </motion.h2>
             <motion.p
-              {...textBlurAnimationProps}
+              {...textFadeUpAnimationProps}
               className="font-medium text-justify">
               Di panggung pre-event ini, kamu akan merasakan sensasi berbeda
               dalam eksplorasi ide-ide bersama para pembicara terkurasi.
             </motion.p>
           </div>
           <motion.p
-            {...textBlurAnimationProps}
+            {...textFadeUpAnimationProps}
             className="italic linux-libertine-slanted font-bold text-center text-xl">
-            “Mari berikan ide dan gagasan kamu dalam Panggung Swara Insan!”
+            Kolaborasikan ide dan gagasan yang luar biasa unik darimu!
           </motion.p>
           <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-2">
-              <div className="relative w-full aspect-square">
-                <Image
-                  src={Speaker1}
-                  alt="Speaker"
-                  fill
-                  sizes="100vh"
-                  placeholder="blur"
-                />
-              </div>
-              <p className="font-bold text-xl">?????</p>
-              <p className="font-medium text-lg">The Speaker</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="relative w-full aspect-square">
-                <Image
-                  src={Speaker2}
-                  alt="Speaker"
-                  fill
-                  sizes="100vh"
-                  placeholder="blur"
-                />
-              </div>
-              <p className="font-bold text-xl">?????</p>
-              <p className="font-medium text-lg">The Speaker</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="relative w-full aspect-square">
-                <Image
-                  src={Speaker3}
-                  alt="Speaker"
-                  fill
-                  sizes="100vh"
-                  placeholder="blur"
-                />
-              </div>
-              <p className="font-bold text-xl">?????</p>
-              <p className="font-medium text-lg">The Speaker</p>
-            </div>
+            <SpeakerCard variant={1} />
+            <SpeakerCard variant={2} />
+            <SpeakerCard variant={3} />
           </div>
           <div className="flex flex-col gap-3">
             <Button
               as="client-link"
               type="secondary"
-              href="/home"
+              href="/pre-event"
               className="w-full">
               Apa itu Pre-Event?
             </Button>
             <Button
-              as="client-link"
+              as="anchor"
               type="primary"
-              href="/home"
+              href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
               className="w-full">
               Jadilah Speaker!
             </Button>
@@ -196,9 +161,10 @@ function MemantikMobile() {
             Tickets Dropping Soon!
           </motion.h2>
           <Button
-            as="client-link"
+            as="button"
             type="primary"
-            href="/home"
+            onClick={() => {}}
+            disabled
             className="w-full">
             Grab Yours
           </Button>

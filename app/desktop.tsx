@@ -9,7 +9,7 @@ import el3 from '../public/assets/images/el3.png';
 import { motion } from 'framer-motion';
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
-import { SetStateAction, useRef } from 'react';
+import { SetStateAction, useEffect, useRef } from 'react';
 
 interface HomeDesktopProps {
   isClicked: boolean;
@@ -29,6 +29,10 @@ export default function HomeDesktop({
   const scope = useXAnimation(isClicked, 'desktop');
 
   const MotionButton = motion(Button);
+
+  useEffect(() => {
+    localStorage.setItem('isClicked', 'false');
+  }, []);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
@@ -92,14 +96,15 @@ export default function HomeDesktop({
       <div className="absolute top-[50%] right-[50%] translate-y-[-50%] translate-x-[100%] m-auto z-[5] text">
         <Image alt="images" src={logo} className="w-[320px] mb-[30px]" />
         <h1 className="text-white text-[24px] text-[700] mb-[30px] max-w-[550px] linux-libertine-slanted italic">
-          {"'' "}Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara{' '}
-          {"'' "}
+          &quot;Memantik Baskara: Tersulut Tak Membara, Terbakar Tak
+          Bersuara&quot;
         </h1>
         <MotionButton
           as="button"
           onClick={() => {
             handlePlayVideo();
             setIsClicked(true);
+            localStorage.setItem('isClicked', 'true');
           }}
           type="primary">
           Pantikkan Baskaramu

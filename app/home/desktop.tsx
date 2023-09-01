@@ -16,13 +16,16 @@ import awanKiri from '@/images/awan-kiri.png';
 import objekKanan from '@/images/objek-kanan.png';
 import objekKiri from '@/images/objek-kiri.png';
 import Pattern2 from '@/images/pattern_gelora.png';
-import { textBlurAnimationProps } from '@/utils/data/animation';
+import {
+  textBlurAnimationProps,
+  textFadeLeftAnimationProps,
+  textFadeRightAnimationProps,
+  textFadeUpAnimationProps,
+} from '@/utils/data/animation';
 
+import SpeakerCard from '@/components/shared/SpeakerCard';
 import Photo from '@/images/home-photo.png';
 import X from '@/images/home-x-2.png';
-import Speaker1 from '@/images/speaker-1.png';
-import Speaker2 from '@/images/speaker-2.png';
-import Speaker3 from '@/images/speaker-3.png';
 import ReactPlayer from 'react-player/lazy';
 
 export default function MemantikDesktop() {
@@ -185,12 +188,6 @@ export default function MemantikDesktop() {
                   controls={true}
                   url={require('../../public/assets/video/propa1.mp4')}
                 />
-                {/* <Image
-                  src={GIF}
-                  alt="gif"
-                  className="object-cover w-full"
-                  priority
-                /> */}
               </motion.div>
             </motion.div>
           </div>
@@ -207,10 +204,14 @@ export default function MemantikDesktop() {
           />
         </div>
         <div className="text-justify flex justify-between items-center gap-[100px] w-full relative z-[2] px-[5%]">
-          <h2 className="text-[128px] font-bold text-cream rosela mb-20 flex-1 max-w-min">
+          <motion.h2
+            {...textFadeRightAnimationProps}
+            className="text-[128px] font-bold text-cream rosela mb-20 flex-1 max-w-min">
             Gelora Djiwa
-          </h2>
-          <p className="text-white max-w-[700px] text-[20px] creato-display flex-1">
+          </motion.h2>
+          <motion.p
+            {...textFadeLeftAnimationProps}
+            className="text-white max-w-[700px] text-[20px] creato-display flex-1">
             Reaksi fisiologis akan sukacita, keresahan, dan ragam lainnya muncul
             saat seseorang mampu memanifestasikan penerimaan diri. Dalam acara
             ini, masing-masing insan yang memiliki faktor luar biasa mampu
@@ -218,7 +219,7 @@ export default function MemantikDesktop() {
             bertindak sebagai wujud proses untuk merayakan pengalaman kompleks
             yang secara alami dirasakan sebagai manusia hingga mampu mencapai
             penerimaan diri seutuhnya dan sisi eksternal secara apa adanya.
-          </p>
+          </motion.p>
         </div>
         <div ref={scrollCloudRef} className="relative top-[-60vh]">
           <div className="relative flex">
@@ -274,58 +275,35 @@ export default function MemantikDesktop() {
                 Segera Hadir: <br /> Panggung Swara Insan
               </motion.h2>
               <motion.p
-                {...textBlurAnimationProps}
-                className="italic linux-libertine-slanted font-bold text-[32px] w-full max-w-[652px]">
-                “Mari berikan ide dan gagasan kamu dalam Panggung Swara Insan!”
-              </motion.p>
-              <motion.p
-                {...textBlurAnimationProps}
-                className="font-medium text-justify text-[24px] w-full max-w-[512px] self-end mt-auto">
+                {...textFadeUpAnimationProps}
+                className="font-bold text-2xl w-full max-w-[652px]">
                 Di panggung pre-event ini, kamu akan merasakan sensasi berbeda
                 dalam eksplorasi ide-ide bersama para pembicara terkurasi.
+              </motion.p>
+              <motion.p
+                {...textFadeUpAnimationProps}
+                className="italic linux-libertine-slanted font-bold text-justify text-[32px] w-full max-w-[512px] self-end mt-auto">
+                Kolaborasikan ide dan gagasan yang luar biasa unik darimu!
               </motion.p>
             </div>
           </div>
           <div className="flex w-full gap-[50px] mt-[80px]">
-            <div className="flex flex-col gap-2 flex-1">
-              <div className="relative w-full aspect-square">
-                <Image src={Speaker1} alt="Speaker" fill />
-              </div>
-              <p className="font-bold text-xl ">?????</p>
-              <p className="font-medium text-lg">The Speaker</p>
-            </div>
-            <div className="flex flex-col gap-2 flex-1">
-              <div className="relative w-full aspect-square">
-                <Image
-                  src={Speaker2}
-                  alt="Speaker"
-                  fill
-                  sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
-                />
-              </div>
-              <p className="font-bold text-xl">?????</p>
-              <p className="font-medium text-lg">The Speaker</p>
-            </div>
-            <div className="flex flex-col gap-2 flex-1">
-              <div className="relative w-full aspect-square">
-                <Image src={Speaker3} alt="Speaker" fill />
-              </div>
-              <p className="font-bold text-xl">?????</p>
-              <p className="font-medium text-lg">The Speaker</p>
-            </div>
+            <SpeakerCard variant={1} className="w-full" />
+            <SpeakerCard variant={2} className="w-full" />
+            <SpeakerCard variant={3} className="w-full" />
           </div>
           <div className="flex gap-3 justify-center">
             <Button
               as="client-link"
               type="secondary"
-              href="/home"
+              href="/pre-event"
               className="w-max">
               Apa itu Pre-Event?
             </Button>
             <Button
-              as="client-link"
+              as="anchor"
               type="primary"
-              href="/home"
+              href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
               className="w-max">
               Jadilah Speaker!
             </Button>
@@ -344,9 +322,10 @@ export default function MemantikDesktop() {
               Tickets Dropping Soon!
             </motion.h2>
             <Button
-              as="client-link"
+              as="button"
               type="primary"
-              href="/home"
+              onClick={() => {}}
+              disabled
               className="w-full max-w-[300px] text-[20px]">
               Grab Yours
             </Button>

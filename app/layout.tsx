@@ -1,10 +1,7 @@
-import Footer from '@/components/shared/Footer';
-// import { usePathname } from 'next/navigation';
 import '../public/fonts/stylesheet.css';
 import './globals.scss';
-import Navigation from '@/components/shared/Navbar';
 import { Metadata } from 'next';
-// import { LoadingPage } from '@/components/shared/Loading';
+import { MetaLayout } from './meta';
 
 export const metadata: Metadata = {
   title: 'TEDx Universitas Brawijaya',
@@ -23,11 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
+        <MetaLayout>{children}</MetaLayout>
         {/* <LoadingPage /> */}
         {/* {!footerExcludedPaths.includes(pathName) && <Navigation />} */}
-        {children}
-        <Footer />
+
         {/* {!footerExcludedPaths.includes(pathName) && <Footer />} */}
       </body>
     </html>

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Logo from '@/images/logo.png';
 import LogoHitam from '@/images/logo-hitam.png';
@@ -8,14 +10,29 @@ import Link from 'next/link';
 import flower from '@/images/navbar-flower.png';
 import navbarFoto from '@/images/navbar-image.png';
 import xIcon from '@/images/x-icon.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const NavbarDesktop = () => {
   const [navbarHidden, setNavbarHidden] = useState(true);
+  const [changeNav, setChangeNav] = useState(false);
   const MotionButton = motion(Button);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 80) {
+        setChangeNav(true);
+      } else {
+        setChangeNav(false);
+      }
+    });
+  }, [changeNav]);
+
   return (
     <div>
-      <div className="fixed left-0 right-0  z-[99] h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer">
+      <div
+        className={`fixed left-0 right-0  z-50 h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer ${
+          changeNav ? 'bg-blue-primary' : 'bg-transparent'
+        }`}>
         <div className="flex-1 max-w-[170px]">
           <Link href={'/'}>
             <Image src={Logo} alt="logo" />
@@ -26,6 +43,7 @@ export const NavbarDesktop = () => {
             <MotionButton
               onClick={() => ({})}
               as="button"
+              disabled
               type="primary"
               className="py-[7px]">
               <div> Grab Ticket</div>
@@ -112,8 +130,8 @@ export const NavbarDesktop = () => {
                 animate={navbarHidden ? {} : { opacity: 1 }}
                 initial={{ opacity: 0 }}>
                 <Link
-                  href={'/'}
-                  className="creato-display text-[20px] font-[500] ml-[20px] ">
+                  href={'/our-team'}
+                  className="creato-display text-[20px] font-[500] ml-[20px] hover:underline">
                   Our Team
                 </Link>
               </motion.div>
@@ -156,8 +174,8 @@ export const NavbarDesktop = () => {
                 animate={navbarHidden ? {} : { opacity: 1 }}
                 initial={{ opacity: 0 }}>
                 <Link
-                  href={'/'}
-                  className="creato-display text-[20px] font-[500] ml-[20px]">
+                  href={'/main-event'}
+                  className="creato-display text-[20px] font-[500] ml-[20px] hover:underline">
                   Main Event
                 </Link>
               </motion.div>
@@ -172,8 +190,8 @@ export const NavbarDesktop = () => {
               animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
               initial={{ transform: 'translateX(-100vw)' }}>
               <Link
-                href={'/'}
-                className="creato-display text-[30px] font-[700]">
+                href={'/event-recap'}
+                className="creato-display text-[30px] font-[700] hover:underline">
                 Event Recap
               </Link>
             </motion.div>
@@ -185,8 +203,8 @@ export const NavbarDesktop = () => {
               animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
               initial={{ transform: 'translateX(-100vw)' }}>
               <Link
-                href={'/'}
-                className="creato-display text-[30px] font-[700]">
+                href={'/merch'}
+                className="creato-display text-[30px] font-[700] hover:underline">
                 Merch
               </Link>
             </motion.div>
