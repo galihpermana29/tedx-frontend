@@ -64,8 +64,8 @@ function PreEventMobile() {
     ['-180deg', '0deg']
   );
 
-  const right = useTransform(scrollHand, [0.1, 1], ['400px', '10px']);
-  const left = useTransform(scrollHand, [0.1, 1], ['-400px', '50px']);
+  const right = useTransform(scrollHand, [0, 0.6], ['250px', '10px']);
+  const left = useTransform(scrollHand, [0, 0.6], ['-250px', '50px']);
 
   return (
     <main className="bg-wall-texture py-20 overflow-hidden">
@@ -131,8 +131,9 @@ function PreEventMobile() {
           </h1>
           <ul className="flex flex-col gap-3">
             <li>Intimate Session</li>
-            <li>Student Speakers</li>
-            <li>Special Performers</li>
+            <li>Compelling Talks</li>
+            <li>Special Performance</li>
+            <li>Convenient Atmosphere</li>
           </ul>
         </div>
         <div className="relative w-[120vw] -translate-y-[20rem]">
@@ -173,43 +174,49 @@ function PreEventMobile() {
           </div>
         </Carousel>
       </section>
-      <div className="relative w-full" ref={handRefMobile}>
+      <div className="relative h-[50vh] w-full" ref={handRefMobile}>
         <motion.div
           style={{ x: left }}
-          className="absolute w-[50%] sm:w-[40%] -top-24 sm:-top-44 -left-14 aspect-[16/9]">
+          className="absolute w-[50%] sm:w-[40%] -top-24 sm:-top-36 -left-14 aspect-[16/9]">
           <Image src={LeftHand} alt="Left Hand" fill sizes="100vh" />
         </motion.div>
         <motion.div
           style={{ x: right }}
-          className="absolute w-[40%] sm:w-[35%] -top-3 sm:-top-14 right-0 aspect-[16/9]">
+          className="absolute w-[40%] sm:w-[35%] -top-3 sm:-top-9 right-0 aspect-[16/9]">
           <Image src={RightHand} alt="Right Hand" fill sizes="100vh" />
         </motion.div>
       </div>
-      <section className="text-white flex flex-col gap-14 items-center pt-32">
+      <section className="text-white flex flex-col -mt-[49vh] gap-14 items-center pt-32">
         <div className="flex flex-col items-center px-5 sm:px-20 md:px-44">
-          <h1 className="rosela text-cream text-2xl mb-8 w-2/3 text-center">
+          <h1 className="rosela text-cream text-4xl mb-8 text-center">
             Catat Tanggalnya Sekarang Juga
           </h1>
-          <table>
-            <tr>
-              <td className="whitespace-nowrap pr-4 text-lg font-bold flex items-start">
-                15/9 - 18/9
-              </td>
-              <td>Tiket Panggung Swara Insan dibuka</td>
-            </tr>
-            <tr>
-              <td className="pr-4 text-lg font-bold flex items-start">20/9</td>
-              <td>Pengumuman penerima undian tiket Panggung Swara Insan</td>
-            </tr>
-            <tr>
-              <td className="pr-4 text-lg font-bold flex items-start">23/9</td>
-              <td>Panggung Swara Insan</td>
-            </tr>
-          </table>
+          <div>
+            <table>
+              <tr>
+                <td className="whitespace-nowrap pr-4 text-lg font-bold flex items-start">
+                  15/9 - 18/9
+                </td>
+                <td>Tiket Panggung Swara Insan dibuka</td>
+              </tr>
+              <tr>
+                <td className="pr-4 text-lg font-bold flex items-start">
+                  20/9
+                </td>
+                <td>Pengumuman penerima undian tiket Panggung Swara Insan</td>
+              </tr>
+              <tr>
+                <td className="pr-4 text-lg font-bold flex items-start">
+                  23/9
+                </td>
+                <td>Panggung Swara Insan</td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <TimeCountdown className="pt-10 px-5 sm:px-20 md:px-44" />
-        <div className="flex-1 relative w-full">
-          <div className="min-h-[80vh]">
+        <TimeCountdown className="text-7xl pt-10 px-5 sm:px-20 md:px-44" />
+        <div className="flex-1 min-[900px]:mt-20 relative w-full">
+          <div className="min-h-[70vh] mt-0 sm:-translate-y-[5rem]">
             <div className="absolute z-[1] mt-44 translate-x-7 w-full right-0">
               <Image src={bgCatat} alt="bg" className="w-full" />
             </div>
@@ -259,8 +266,8 @@ function PreEventMobile() {
         </div>
         <div className="px-5 sm:px-20 md:px-44">
           <p className="font-bold text-center">
-            Jangan lewatkan tanggalnya! Pencarian student speaker dibuka sejak
-            tanggal 1 hingga 6 September 2023
+            Jangan lewatkan tanggalnya! <br /> Pencarian student speaker dibuka
+            sejak tanggal 1 hingga 6 September 2023
           </p>
         </div>
         <div className="flex w-full flex-col gap-14 px-5 sm:px-20 md:px-44">

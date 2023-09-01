@@ -1,3 +1,5 @@
+'use client';
+
 import { useCountdown } from '@/utils/useCountdown';
 
 function TimeCountdown({ className }: { className?: string }) {
@@ -6,7 +8,7 @@ function TimeCountdown({ className }: { className?: string }) {
 
   return (
     <div
-      className={`${className} text-7xl text-cream rosela`}>{`${days}.${hours}.${minutes}.${seconds}`}</div>
+      className={`${className} text-cream rosela`}>{`${days}.${hours}.${minutes}.${seconds}`}</div>
   );
 }
 

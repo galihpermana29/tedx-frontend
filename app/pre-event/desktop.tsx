@@ -142,11 +142,11 @@ function PreEventDesktop() {
               <h1 className="text-[48px] font-extrabold mb-6">
                 Apa yang Kamu Dapatkan?
               </h1>
-              <ul className="flex flex-col gap-3 text-[24px]">
-                <li>- Intimate Session</li>
-                <li>- Student Speakers</li>
-                <li>- Special Performers</li>
-                <li>- Convenient Atmosphere</li>
+              <ul className="flex flex-col list-disc list-inside gap-3 text-[24px]">
+                <li>Intimate Session</li>
+                <li>Compelling Talks</li>
+                <li>Special Performance</li>
+                <li>Convenient Atmosphere</li>
               </ul>
             </div>
           </div>
@@ -227,7 +227,7 @@ function PreEventDesktop() {
                   </tr>
                 </table>
               </div>
-              <TimeCountdown className="mt-[150px] text-[128px]" />
+              <TimeCountdown className="mt-[150px] text-8xl" />
             </div>
             <div className="flex-1 relative">
               <div className="min-h-[80vh]">
@@ -284,8 +284,8 @@ function PreEventDesktop() {
           </div>
           <div className="px-5 sm:px-20 md:px-44 pt-[200px]">
             <p className="creato-display text-[32px] font-bold text-center">
-              “<span>Jangan sampai lewatkan! </span> <br /> Pencarian Student
-              Speaker hanya dibuka di tanggal 1 - 6 September 2023”
+              Jangan sampai lewatkan! <br /> Pencarian Student Speaker hanya
+              dibuka di tanggal 1 - 6 September 2023”
             </p>
           </div>
           <div className="flex w-full gap-[40px] px-[100px]">
