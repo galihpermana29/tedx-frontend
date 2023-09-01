@@ -30,7 +30,7 @@ export default function HomeMobile({
   };
   const MotionButton = motion(Button);
   useEffect(() => {
-    localStorage.setItem('isClicked', 'true');
+    localStorage.setItem('isClicked', 'false');
   }, []);
 
   return (

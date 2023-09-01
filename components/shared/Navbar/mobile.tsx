@@ -10,7 +10,6 @@ import Link from 'next/link';
 
 import xIcon from '@/images/x-icon.png';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 
 export const NavbarMobile = () => {
   const [navbarHidden, setNavbarHidden] = useState(true);
