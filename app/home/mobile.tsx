@@ -36,17 +36,17 @@ function MemantikMobile() {
             “Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara”
           </h1>
         </div>
-        <div className="flex flex-col px-5 sm:px-20 md:px-44 items-center">
-          <div className="relative w-full aspect-[4/3] -rotate-6">
+        <div className="flex flex-col px-5 gap-5 sm:px-20 md:px-44 items-center">
+          <div className="relative w-full scale-[1.2] aspect-[4/3] -rotate-6">
             <Image src={Frame1} alt="Frame" fill sizes="100vh" />
           </div>
-          <div className="relative w-full aspect-[4/3] rotate-6">
+          <div className="relative w-full scale-[1.2] aspect-[4/3] rotate-6">
             <Image src={Frame2} alt="Frame" fill sizes="100vh" />
           </div>
-          <div className="relative w-full aspect-[4/3] -rotate-6">
+          <div className="relative w-full scale-[1.2] aspect-[4/3] -rotate-6">
             <Image src={Frame3} alt="Frame" fill sizes="100vh" />
           </div>
-          <div className="relative w-full aspect-[4/3] rotate-6">
+          <div className="relative w-full scale-[1.2] aspect-[4/3] rotate-6">
             <Image src={Frame4} alt="Frame" fill sizes="100vh" />
           </div>
         </div>
