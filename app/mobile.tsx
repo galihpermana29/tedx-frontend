@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
-import React, { SetStateAction, useRef } from 'react';
+import React, { SetStateAction, useEffect, useRef } from 'react';
 
 interface HomeDesktopProps {
   isClicked: boolean;
@@ -29,6 +29,9 @@ export default function HomeMobile({
     }
   };
   const MotionButton = motion(Button);
+  useEffect(() => {
+    localStorage.setItem('isClicked', 'true');
+  }, []);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
@@ -102,6 +105,7 @@ export default function HomeMobile({
           onClick={() => {
             handlePlayVideo();
             setIsClicked(true);
+            localStorage.setItem('isClicked', 'true');
           }}
           type="primary">
           Pantikkan Baskaramu

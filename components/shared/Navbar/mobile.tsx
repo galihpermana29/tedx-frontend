@@ -17,9 +17,6 @@ export const NavbarMobile = () => {
   const [changeNav, setChangeNav] = useState(false);
   const MotionButton = motion(Button);
 
-  const pathName = usePathname();
-  const includedPaths = ['/', '/home', '/about-us', '/pre-event'];
-
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 20) {
@@ -31,8 +28,7 @@ export const NavbarMobile = () => {
   }, [changeNav]);
 
   return (
-    <div
-      className={`${!includedPaths.includes(pathName) ? 'hidden' : 'visible'}`}>
+    <div>
       <div
         className={`fixed left-0 right-0 z-50 h-[80px] w-full justify-between items-center flex px-[20px] hover:bg-[#1E373E] duration-300 cursor-pointer hover:opacity-70 ${
           changeNav ? 'bg-blue-primary' : 'bg-transparent'

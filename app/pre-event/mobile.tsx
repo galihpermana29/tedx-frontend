@@ -22,6 +22,10 @@ import Modal from '@/components/shared/Modal';
 import backCatat from '@/images/Back.png';
 import frontCatat from '@/images/Fornt.png';
 import bgCatat from '@/images/bg-catat-mobile.png';
+import {
+  textBlurAnimationProps,
+  textFadeUpAnimationProps,
+} from '@/utils/data/animation';
 
 function PreEventMobile() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -72,7 +76,9 @@ function PreEventMobile() {
             Panggung Swara Insan
           </h1>
         </div>
-        <div className="flex flex-col gap-5 px-5 sm:px-20 md:px-44 mt-10 text-center">
+        <motion.div
+          {...textFadeUpAnimationProps}
+          className="flex flex-col gap-5 px-5 sm:px-20 md:px-44 mt-10 text-center">
           <p>
             Panggung Swara Insan adalah wadah yang mendorong pembicara berbakat
             dari kalangan mahasiswa untuk menemukan keberanian mereka dalam
@@ -91,14 +97,14 @@ function PreEventMobile() {
             gagasan-gagasan luar biasa dari para pembicara di Panggung Swara
             Insan.
           </p>
-        </div>
+        </motion.div>
         <div className="relative min-h-[93vh]">
           <motion.div
             style={{ height: scale, y }}
             className="mt-[30px] flex justify-center h-screen w-full absolute">
             <iframe
               className="aspect-video"
-              src="https://www.youtube.com/embed/aYsIYGatsWk?si=h0AtJIXLQ2Gs8fTd&amp;controls=0"
+              src="https://www.youtube.com/embed/aYsIYGatsWk?si=h0AtJIXLQ2Gs8fTd&amp;controls=1"
               title="YouTube video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </motion.div>
@@ -124,14 +130,24 @@ function PreEventMobile() {
           </div>
         </div>
         <div className="text-center">
-          <h1 className="text-2xl font-extrabold mb-6">
+          <motion.h1
+            {...textFadeUpAnimationProps}
+            className="text-2xl font-extrabold mb-6">
             Apa yang Kamu Dapatkan?
-          </h1>
+          </motion.h1>
           <ul className="flex flex-col gap-3">
-            <li>Intimate Session</li>
-            <li>Compelling Talks</li>
-            <li>Special Performance</li>
-            <li>Convenient Atmosphere</li>
+            <motion.li {...textFadeUpAnimationProps}>
+              Intimate Session
+            </motion.li>
+            <motion.li {...textFadeUpAnimationProps}>
+              Compelling Talks
+            </motion.li>
+            <motion.li {...textFadeUpAnimationProps}>
+              Special Performance
+            </motion.li>
+            <motion.li {...textFadeUpAnimationProps}>
+              Convenient Atmosphere
+            </motion.li>
           </ul>
         </div>
         <div className="relative w-[120vw] -translate-y-[20rem]">
@@ -186,9 +202,11 @@ function PreEventMobile() {
       </div>
       <section className="text-white flex flex-col -mt-[49vh] gap-14 items-center pt-32">
         <div className="flex flex-col items-center px-5 sm:px-20 md:px-44">
-          <h1 className="rosela text-cream text-4xl mb-8 text-center">
+          <motion.h1
+            {...textBlurAnimationProps}
+            className="rosela text-cream text-4xl mb-8 text-center">
             Catat Tanggalnya Sekarang Juga
-          </h1>
+          </motion.h1>
           <div>
             <table>
               <tr>
@@ -212,7 +230,7 @@ function PreEventMobile() {
             </table>
           </div>
         </div>
-        <TimeCountdown className="text-7xl pt-10 px-5 sm:px-20 md:px-44" />
+        <TimeCountdown className="text-6xl pt-10 px-5 sm:px-20 md:px-44" />
         <div className="flex-1 min-[900px]:mt-20 relative w-full">
           <div className="min-h-[70vh] mt-0 sm:-translate-y-[5rem]">
             <div className="absolute z-[1] mt-44 translate-x-7 w-full right-0">
@@ -263,10 +281,12 @@ function PreEventMobile() {
           </div>
         </div>
         <div className="px-5 sm:px-20 md:px-44">
-          <p className="font-bold text-center">
+          <motion.p
+            {...textFadeUpAnimationProps}
+            className="font-bold text-center">
             Jangan lewatkan tanggalnya! <br /> Pencarian student speaker dibuka
             sejak tanggal 1 hingga 6 September 2023
-          </p>
+          </motion.p>
         </div>
         <div className="flex w-full flex-col gap-14 px-5 sm:px-20 md:px-44">
           <SpeakerCard variant={1} />

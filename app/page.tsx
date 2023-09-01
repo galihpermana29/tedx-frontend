@@ -3,11 +3,11 @@ import MediaQuerySwitcher from '@/components/shared/Loader';
 import HomeDesktop from './desktop';
 import HomeMobile from './mobile';
 // import { Suspense, useState } from 'react';
-import Navigation from '@/components/shared/Navbar';
 import Image from 'next/image';
 import xIcon from '@/images/x-icon.png';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Navigation from '@/components/shared/Navbar';
 
 export default function Home() {
   const router = useRouter();

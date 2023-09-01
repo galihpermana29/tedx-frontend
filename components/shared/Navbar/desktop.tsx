@@ -11,15 +11,11 @@ import flower from '@/images/navbar-flower.png';
 import navbarFoto from '@/images/navbar-image.png';
 import xIcon from '@/images/x-icon.png';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 
 export const NavbarDesktop = () => {
   const [navbarHidden, setNavbarHidden] = useState(true);
   const [changeNav, setChangeNav] = useState(false);
   const MotionButton = motion(Button);
-
-  const pathName = usePathname();
-  const includedPaths = ['/', '/home', '/about-us', '/pre-event'];
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -32,8 +28,7 @@ export const NavbarDesktop = () => {
   }, [changeNav]);
 
   return (
-    <div
-      className={`${!includedPaths.includes(pathName) ? 'hidden' : 'visible'}`}>
+    <div>
       <div
         className={`fixed left-0 right-0  z-50 h-[80px] w-full justify-between items-center flex px-[60px] hover:bg-[#1E373E] duration-300 cursor-pointer ${
           changeNav ? 'bg-blue-primary' : 'bg-transparent'

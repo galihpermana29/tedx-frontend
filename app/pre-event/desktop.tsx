@@ -22,6 +22,10 @@ import Modal from '@/components/shared/Modal';
 import backCatat from '@/images/Back.png';
 import frontCatat from '@/images/Fornt.png';
 import bgCatat from '@/images/bg-catat.png';
+import {
+  textBlurAnimationProps,
+  textFadeUpAnimationProps,
+} from '@/utils/data/animation';
 
 function PreEventDesktop() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -77,7 +81,9 @@ function PreEventDesktop() {
               Panggung Swara Insan
             </h1>
           </div>
-          <div className="flex flex-col items-center gap-5 mt-10 text-center text-[20px] ">
+          <motion.div
+            {...textFadeUpAnimationProps}
+            className="flex flex-col items-center gap-5 mt-10 text-center text-[20px] ">
             <div className="max-w-[1000px]">
               <p>
                 Panggung Swara Insan adalah wadah yang mendorong pembicara
@@ -99,14 +105,14 @@ function PreEventDesktop() {
                 Panggung Swara Insan.
               </p>
             </div>
-          </div>
+          </motion.div>
           <div className="relative min-h-[100vh]">
             <motion.div
               style={{ height: scale, y }}
               className="mt-[30px] flex justify-center h-screen w-full absolute">
               <iframe
                 className="aspect-video"
-                src="https://www.youtube.com/embed/aYsIYGatsWk?si=h0AtJIXLQ2Gs8fTd&amp;controls=0"
+                src="https://www.youtube.com/embed/aYsIYGatsWk?si=h0AtJIXLQ2Gs8fTd&amp;controls=1"
                 title="YouTube video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </motion.div>
@@ -139,10 +145,18 @@ function PreEventDesktop() {
                 Apa yang Kamu Dapatkan?
               </h1>
               <ul className="flex flex-col list-disc list-inside gap-3 text-[24px]">
-                <li>Intimate Session</li>
-                <li>Compelling Talks</li>
-                <li>Special Performance</li>
-                <li>Convenient Atmosphere</li>
+                <motion.li {...textFadeUpAnimationProps}>
+                  Intimate Session
+                </motion.li>
+                <motion.li {...textFadeUpAnimationProps}>
+                  Compelling Talks
+                </motion.li>
+                <motion.li {...textFadeUpAnimationProps}>
+                  Special Performance
+                </motion.li>
+                <motion.li {...textFadeUpAnimationProps}>
+                  Convenient Atmosphere
+                </motion.li>
               </ul>
             </div>
           </div>
@@ -195,9 +209,11 @@ function PreEventDesktop() {
           <div className="flex w-full items-center justify-between pl-[100px] gap-[40px]">
             <div className="flex-1">
               <div className="flex flex-col max-w-[800px]">
-                <h1 className="rosela text-cream text-[64px] mb-8 ">
+                <motion.h1
+                  {...textBlurAnimationProps}
+                  className="rosela text-cream text-[64px] mb-8 ">
                   Catat Tanggalnya Sekarang Juga
-                </h1>
+                </motion.h1>
                 <table>
                   <tr>
                     <td className="whitespace-nowrap pr-4 text-[32px] font-bold flex items-start">
@@ -276,10 +292,12 @@ function PreEventDesktop() {
             </div>
           </div>
           <div className="px-5 sm:px-20 md:px-44 pt-[200px]">
-            <p className="creato-display text-[32px] font-bold text-center">
+            <motion.p
+              {...textFadeUpAnimationProps}
+              className="creato-display text-[32px] font-bold text-center">
               Jangan sampai lewatkan! <br /> Pencarian Student Speaker hanya
               dibuka di tanggal 1 - 6 September 2023”
-            </p>
+            </motion.p>
           </div>
           <div className="flex w-full gap-[40px] px-[100px]">
             <div className="flex-1">

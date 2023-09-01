@@ -9,7 +9,7 @@ import el3 from '../public/assets/images/el3.png';
 import { motion } from 'framer-motion';
 import { useXAnimation } from '@/utils/useXAnimation';
 import Button from '@/components/shared/Button';
-import { SetStateAction, useRef } from 'react';
+import { SetStateAction, useEffect, useRef } from 'react';
 
 interface HomeDesktopProps {
   isClicked: boolean;
@@ -29,6 +29,10 @@ export default function HomeDesktop({
   const scope = useXAnimation(isClicked, 'desktop');
 
   const MotionButton = motion(Button);
+
+  useEffect(() => {
+    localStorage.setItem('isClicked', 'false');
+  }, []);
 
   return (
     <main className="relative z-[2] h-screen overflow-hidden" ref={scope}>
@@ -100,6 +104,7 @@ export default function HomeDesktop({
           onClick={() => {
             handlePlayVideo();
             setIsClicked(true);
+            localStorage.setItem('isClicked', 'true');
           }}
           type="primary">
           Pantikkan Baskaramu
