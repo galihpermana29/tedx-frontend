@@ -174,7 +174,7 @@ function PreEventMobile() {
             </div>
             <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
               <div className="grow h-[1px] bg-black-primary"></div>
-              <span>Venue</span>
+              <span>Speakers</span>
             </div>
           </div>
           <div className="shrink-0 w-full flex flex-col gap-2">
@@ -183,7 +183,7 @@ function PreEventMobile() {
             </div>
             <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
               <div className="grow h-[1px] bg-black-primary"></div>
-              <span>Venue</span>
+              <span>Performances</span>
             </div>
           </div>
         </Carousel>

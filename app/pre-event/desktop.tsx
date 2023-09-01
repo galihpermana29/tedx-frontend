@@ -179,7 +179,7 @@ function PreEventDesktop() {
               </div>
               <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted text-[32px]">
                 <div className="grow h-[1px] bg-black-primary"></div>
-                <span>Venue</span>
+                <span>Speakers</span>
               </div>
             </div>
             <div className="shrink-0 w-full flex flex-col gap-2">
@@ -188,7 +188,7 @@ function PreEventDesktop() {
               </div>
               <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted text-[32px]">
                 <div className="grow h-[1px] bg-black-primary"></div>
-                <span>Venue</span>
+                <span>Performances</span>
               </div>
             </div>
           </Carousel>
@@ -296,7 +296,7 @@ function PreEventDesktop() {
               {...textFadeUpAnimationProps}
               className="creato-display text-[32px] font-bold text-center">
               Jangan sampai lewatkan! <br /> Pencarian Student Speaker hanya
-              dibuka di tanggal 1 - 6 September 2023”
+              dibuka di tanggal 1 - 6 September 2023
             </motion.p>
           </div>
           <div className="flex w-full gap-[40px] px-[100px]">
