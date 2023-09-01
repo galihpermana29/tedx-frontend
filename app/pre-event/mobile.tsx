@@ -142,9 +142,9 @@ function PreEventMobile() {
             <motion.li {...textFadeUpAnimationProps}>
               Compelling Talks
             </motion.li>
-            <motion.li {...textFadeUpAnimationProps}>
+            {/* <motion.li {...textFadeUpAnimationProps}>
               Special Performance
-            </motion.li>
+            </motion.li> */}
             <motion.li {...textFadeUpAnimationProps}>
               Convenient Atmosphere
             </motion.li>
@@ -177,7 +177,7 @@ function PreEventMobile() {
               <span>Speakers</span>
             </div>
           </div>
-          <div className="shrink-0 w-full flex flex-col gap-2">
+          {/* <div className="shrink-0 w-full flex flex-col gap-2">
             <div className="relative w-full aspect-video">
               <Image src={Venue} alt="Venue" fill sizes="100vh" />
             </div>
@@ -185,7 +185,7 @@ function PreEventMobile() {
               <div className="grow h-[1px] bg-black-primary"></div>
               <span>Performances</span>
             </div>
-          </div>
+          </div> */}
         </Carousel>
       </section>
       <div className="relative h-[50vh] w-full" ref={handRefMobile}>
