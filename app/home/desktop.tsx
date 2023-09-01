@@ -86,9 +86,8 @@ export default function MemantikDesktop() {
       const isEndReached =
         containerRef.current.scrollLeft ===
         containerRef.current.scrollWidth - containerRef.current.clientWidth;
-
-      if (e.deltaY < 0 && window.scrollY !== 0) return;
-      if (e.deltaY < 0 && window.scrollY === 0) {
+      if (e.deltaY <= 0 && window.scrollY !== 0) return;
+      if (e.deltaY <= 0 && window.scrollY === 0) {
         document.body.style.overflow = 'hidden';
         setHorizontalScrollEnd(false);
       }
@@ -110,7 +109,8 @@ export default function MemantikDesktop() {
   };
 
   useEffect(() => {
-    document.body.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: -1, behavior: 'smooth' });
+    document.body.style.overflow = 'hidden';
   }, []);
 
   return (
