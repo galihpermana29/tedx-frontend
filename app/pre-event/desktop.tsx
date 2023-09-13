@@ -294,20 +294,19 @@ function PreEventDesktop() {
           <div className="px-5 sm:px-20 md:px-44 pt-[200px]">
             <motion.p
               {...textFadeUpAnimationProps}
-              className="creato-display text-[32px] font-bold text-center">
-              Jangan sampai lewatkan! <br /> Pencarian Student Speaker hanya
-              dibuka di tanggal 1 - 6 September 2023
+              className="rosela text-cream text-[64px] text-center">
+              Student Speakers
             </motion.p>
           </div>
           <div className="flex w-full gap-[40px] px-[100px]">
             <div className="flex-1">
-              <SpeakerCard variant={1} />
+              <SpeakerCard delay={1} variant={1} />
             </div>
             <div className="flex-1">
-              <SpeakerCard variant={2} />
+              <SpeakerCard delay={1} variant={2} />
             </div>
             <div className="flex-1">
-              <SpeakerCard variant={3} />
+              <SpeakerCard delay={1} variant={3} />
             </div>
           </div>
           <div className="z-10 flex gap-3 w-full mt-14 px-5 sm:px-20 md:px-44 justify-center">
