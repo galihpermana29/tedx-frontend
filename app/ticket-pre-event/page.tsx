@@ -1,18 +1,8 @@
 'use client';
 
-type DataFieldForm = {
-  label: string;
-  value: string;
-};
-
-interface FormFieldI {
-  name: string;
-  label: string;
-  type: string;
-  placeholder: string;
-  data: DataFieldForm[];
-}
-type PayloadRecords = Record<string, string>;
+import WebsiteAPI from '@/api/website';
+import { FormFieldI, TicketPayloadI } from '@/utils/interface';
+import { useEffect } from 'react';
 
 const formData: FormFieldI[] = [
   {
@@ -92,16 +82,29 @@ const formData: FormFieldI[] = [
 export default function TicketPreEvent() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const payload: PayloadRecords = {} as PayloadRecords;
+    const payload: TicketPayloadI = {} as TicketPayloadI;
     formData.forEach((d) => {
       if (e.target instanceof HTMLFormElement) {
         const keys = d.name as keyof FormFieldI;
         const targetEl = e.target.elements.namedItem(keys);
-        payload[d.name] = (targetEl as HTMLInputElement)?.value || '';
+        payload[d.name as keyof TicketPayloadI] =
+          (targetEl as HTMLInputElement)?.value || '';
       }
     });
     console.log(payload);
   };
+
+  useEffect(() => {
+    const getOurTeams = async () => {
+      try {
+        const data = await WebsiteAPI.getAllTeam();
+        console.log(data);
+      } catch (error) {
+        console.log(error, 'err');
+      }
+    };
+    getOurTeams();
+  }, []);
   return (
     <div className="">
       <main className="bg-wall-texture overflow-hidden lg:p-[100px] xs:p-[20px]">
