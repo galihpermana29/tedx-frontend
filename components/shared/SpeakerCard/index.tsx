@@ -1,46 +1,167 @@
-import Speaker1 from '@/images/speaker-1.png';
-import Speaker2 from '@/images/speaker-2.png';
-import Speaker3 from '@/images/speaker-3.png';
+// import speakerblank from '@/images/speaker-1.png';
+// import Speaker2 from '@/images/speaker-2.png';
+// import Speaker3 from '@/images/speaker-3.png';
 import Image, { StaticImageData } from 'next/image';
+
+import speakerblank from '@/images/speaker-dummy-1.png';
+import wave from '@/images/bg-speaker-wave.png';
+import api from '@/images/bg-speaker-api.png';
+import flower from '@/images/bg-speaker-flowe.png';
+import flower2 from '@/images/bg-speaker-flower-1.png';
+
+import { motion } from 'framer-motion';
 
 type SpeakerCardProps = {
   className?: string;
   variant: 1 | 2 | 3;
+  delay: number;
 };
 
 type CardContent = {
   image: StaticImageData;
   desc: string;
+  nama: string;
 };
 
 const content: Array<CardContent> = [
   {
-    image: Speaker1,
-    desc: 'The Speaker',
+    image: speakerblank,
+    desc: 'z',
+    nama: 'z',
   },
   {
-    image: Speaker2,
-    desc: 'A Different Speaker',
+    image: speakerblank,
+    desc: 'z',
+    nama: 'z',
   },
   {
-    image: Speaker3,
-    desc: 'Another Speaker',
+    image: speakerblank,
+    desc: 'z',
+    nama: 'z',
   },
 ];
 
-function SpeakerCard({ className, variant }: SpeakerCardProps) {
+function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
-      <div className="relative w-full aspect-square">
-        <Image
-          src={content[variant - 1].image}
-          alt="Speaker"
-          fill
-          sizes="100vh"
-          placeholder="blur"
-        />
+      <div className="  relative">
+        <motion.div className="w-full aspect-square bg-speaker-bg bg-cover bg-no-repeat relative overflow-hidden">
+          <motion.div
+            animate={{
+              position: 'absolute',
+              width: '100%',
+              opacity: [0.8, 0, 0.8],
+            }}
+            transition={{
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: delay,
+            }}
+            className="h-full w-full  bg-black-primary z-[2] absolute opacity-80 text-black-primary">
+            .
+          </motion.div>
+
+          <motion.div
+            animate={{
+              position: 'absolute',
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: delay,
+            }}
+            className="absolute top-0 z-[1] left-[-10%]">
+            <Image src={wave} alt="wave" className=" max-w-[300px] w-full" />
+          </motion.div>
+          <motion.div
+            animate={{
+              position: 'absolute',
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: delay,
+            }}
+            className="absolute bottom-0 left-[-30%]">
+            <Image
+              src={api}
+              alt="wave"
+              className="z-[1] max-w-[400px] w-full "
+            />
+          </motion.div>
+          <motion.div
+            animate={{
+              position: 'absolute',
+              scale: [1, 1.3, 1],
+              zIndex: [1, 2, 1],
+            }}
+            transition={{
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: delay,
+            }}
+            className="absolute right-0 bottom-[-50px] ">
+            <Image
+              src={flower}
+              alt="wave"
+              className="z-[1] max-w-[400px] w-full "
+            />
+          </motion.div>
+          <motion.div
+            animate={{
+              position: 'absolute',
+              scale: [1, 1.3, 1],
+              zIndex: [1, 2, 1],
+            }}
+            transition={{
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: delay,
+            }}
+            className="absolute right-0 top-[0px]">
+            <Image
+              src={flower2}
+              alt="wave"
+              className="z-[1] max-w-[500px] w-full "
+            />
+          </motion.div>
+          <motion.div
+            animate={{
+              position: 'relative',
+              width: '100%',
+              zIndex: [4, 5, 4],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Infinity,
+              repeatDelay: delay,
+            }}
+            className="w-full  h-full flex justify-center items-end z-[4] relative">
+            <Image
+              src={content[variant - 1].image}
+              alt="Speaker"
+              className="max-w-[70%] w-full"
+            />
+          </motion.div>
+        </motion.div>
       </div>
-      <p className="font-bold text-xl">?????</p>
+
+      <p className="font-bold text-xl">{content[variant - 1].nama}</p>
       <p className="text-lg">{content[variant - 1].desc}</p>
     </div>
   );

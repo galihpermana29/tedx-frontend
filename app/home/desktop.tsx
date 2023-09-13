@@ -288,9 +288,9 @@ export default function MemantikDesktop() {
             </div>
           </div>
           <div className="flex w-full gap-[50px] mt-[80px]">
-            <SpeakerCard variant={1} className="w-full" />
-            <SpeakerCard variant={2} className="w-full" />
-            <SpeakerCard variant={3} className="w-full" />
+            <SpeakerCard variant={1} delay={1} className="w-full" />
+            <SpeakerCard variant={2} delay={1} className="w-full" />
+            <SpeakerCard variant={3} delay={1} className="w-full" />
           </div>
           <div className="flex gap-3 justify-center">
             <Button

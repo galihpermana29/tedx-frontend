@@ -20,6 +20,7 @@ const config: Config = {
         'paper-mobile': "url('/assets/images/bg-paper-mobile.png')",
         'paper-flat': "url('/assets/images/bg-paper-flat.png')",
         'paper-pre-desktop': "url('/assets/images/bg-paper-pre-desktop.png')",
+        'speaker-bg': "url('/assets/images/bg-1-speaker.png')",
         flower: "url('/assets/images/modal-bg.png')",
       },
       colors: {

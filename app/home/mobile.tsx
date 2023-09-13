@@ -121,9 +121,9 @@ function MemantikMobile() {
             Kolaborasikan ide dan gagasan yang luar biasa unik darimu!
           </motion.p>
           <div className="flex flex-col gap-5">
-            <SpeakerCard variant={1} />
-            <SpeakerCard variant={2} />
-            <SpeakerCard variant={3} />
+            <SpeakerCard variant={1} delay={1} />
+            <SpeakerCard variant={2} delay={1} />
+            <SpeakerCard variant={3} delay={1} />
           </div>
           <div className="flex flex-col gap-3">
             <Button

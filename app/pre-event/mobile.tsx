@@ -283,15 +283,14 @@ function PreEventMobile() {
         <div className="px-5 sm:px-20 md:px-44">
           <motion.p
             {...textFadeUpAnimationProps}
-            className="font-bold text-center">
-            Jangan lewatkan tanggalnya! <br /> Pencarian student speaker dibuka
-            sejak tanggal 1 hingga 6 September 2023
+            className="rosela text-cream text-4xl text-center">
+            Student Speakers
           </motion.p>
         </div>
         <div className="flex w-full flex-col gap-14 px-5 sm:px-20 md:px-44">
-          <SpeakerCard variant={1} />
-          <SpeakerCard variant={2} />
-          <SpeakerCard variant={3} />
+          <SpeakerCard variant={1} delay={1} />
+          <SpeakerCard variant={2} delay={1} />
+          <SpeakerCard variant={3} delay={1} />
         </div>
         <div className="z-10 flex flex-col gap-3 w-full mt-14 px-5 sm:px-20 md:px-44">
           <Modal />
