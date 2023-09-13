@@ -12,8 +12,7 @@ interface FormFieldI {
   placeholder: string;
   data: DataFieldForm[];
 }
-type PayloadKeys = 'nama' | 'nomor_identitas' | string;
-type PayloadRecords = Record<PayloadKeys, string>;
+type PayloadRecords = Record<string, string>;
 
 const formData: FormFieldI[] = [
   {
@@ -91,13 +90,14 @@ const formData: FormFieldI[] = [
 ];
 
 export default function TicketPreEvent() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const payload: PayloadRecords = {};
+    const payload: PayloadRecords = {} as PayloadRecords;
     formData.forEach((d) => {
       if (e.target instanceof HTMLFormElement) {
-        payload[d.name] =
-          e.target.elements[d.name as keyof FormFieldI]?.value || '';
+        const keys = d.name as keyof FormFieldI;
+        const targetEl = e.target.elements.namedItem(keys);
+        payload[d.name] = (targetEl as HTMLInputElement)?.value || '';
       }
     });
     console.log(payload);
