@@ -13,6 +13,7 @@ import LeftSplash from '@/images/pre-event-splash-left.png';
 import RightSplash from '@/images/pre-event-splash-right.png';
 import TEDx from '@/images/pre-event-tedx-chars.png';
 import Venue from '@/images/pre-event-venue.png';
+import Performance from '@/images/pre-event-performance.png';
 import RightHand from '@/images/righthanded.png';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
@@ -164,29 +165,20 @@ function PreEventMobile() {
             <div className="relative w-full aspect-video">
               <Image src={Venue} alt="Venue" fill sizes="100vh" />
             </div>
-            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
+            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted text-[32px]">
               <div className="grow h-[1px] bg-black-primary"></div>
               <span>Venue</span>
             </div>
           </div>
           <div className="shrink-0 w-full flex flex-col gap-2">
             <div className="relative w-full aspect-video">
-              <Image src={Venue} alt="Venue" fill sizes="100vh" />
+              <Image src={Performance} alt="Venue" fill sizes="100vh" />
             </div>
-            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
+            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted text-[32px]">
               <div className="grow h-[1px] bg-black-primary"></div>
-              <span>Speakers</span>
+              <span>Performance</span>
             </div>
           </div>
-          {/* <div className="shrink-0 w-full flex flex-col gap-2">
-            <div className="relative w-full aspect-video">
-              <Image src={Venue} alt="Venue" fill sizes="100vh" />
-            </div>
-            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
-              <div className="grow h-[1px] bg-black-primary"></div>
-              <span>Performances</span>
-            </div>
-          </div> */}
         </Carousel>
       </section>
       <div className="relative h-[50vh] w-full" ref={handRefMobile}>

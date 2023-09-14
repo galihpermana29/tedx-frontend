@@ -42,7 +42,7 @@ const content: Array<CardContent> = [
 
 function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
   return (
-    <div className={`flex flex-col gap-2 ${className}`}>
+    <div key={variant} className={`flex flex-col gap-2 ${className}`}>
       <div className="  relative">
         <motion.div className="w-full aspect-square bg-speaker-bg bg-cover bg-no-repeat relative overflow-hidden">
           <motion.div
@@ -58,14 +58,12 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="h-full w-full  bg-black-primary z-[2] absolute opacity-80 text-black-primary">
-            .
-          </motion.div>
+            className="h-full w-full  bg-black-primary z-[2] absolute opacity-80 text-black-primary"></motion.div>
 
           <motion.div
             animate={{
               position: 'absolute',
-              scale: [1, 1.2, 1],
+              scale: [2, 3, 2],
             }}
             transition={{
               duration: 3,
@@ -74,13 +72,13 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="absolute top-0 z-[1] left-[-10%]">
+            className="absolute top-0 z-[1] left-0">
             <Image src={wave} alt="wave" className=" max-w-[300px] w-full" />
           </motion.div>
           <motion.div
             animate={{
               position: 'absolute',
-              scale: [1, 1.2, 1],
+              scale: [2, 3, 2],
             }}
             transition={{
               duration: 3,
@@ -89,7 +87,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="absolute bottom-0 left-[-30%]">
+            className="absolute bottom-0 -left-5">
             <Image
               src={api}
               alt="wave"
@@ -99,7 +97,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
           <motion.div
             animate={{
               position: 'absolute',
-              scale: [1, 1.3, 1],
+              scale: [2, 3, 2],
               zIndex: [1, 2, 1],
             }}
             transition={{
@@ -109,7 +107,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="absolute right-0 bottom-[-50px] ">
+            className="absolute right-0 -bottom-7">
             <Image
               src={flower}
               alt="wave"
@@ -119,7 +117,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
           <motion.div
             animate={{
               position: 'absolute',
-              scale: [1, 1.3, 1],
+              scale: [2, 3, 2],
               zIndex: [1, 2, 1],
             }}
             transition={{
@@ -129,7 +127,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="absolute right-0 top-[0px]">
+            className="absolute right-5 top-0">
             <Image
               src={flower2}
               alt="wave"
@@ -139,7 +137,6 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
           <motion.div
             animate={{
               position: 'relative',
-              width: '100%',
               zIndex: [4, 5, 4],
               scale: [1, 1.2, 1],
             }}
@@ -150,7 +147,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="w-full  h-full flex justify-center items-center z-[4] relative">
+            className="w-full h-full flex justify-center items-end z-[4] relative">
             <Image
               src={content[variant - 1].image}
               alt="Speaker"
