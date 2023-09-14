@@ -30,6 +30,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/tedxbrawijaya/tedx-frontend
+            npm install
             npm run build
             pm2 restart frontend
 
