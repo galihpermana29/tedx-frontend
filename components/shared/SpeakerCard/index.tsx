@@ -1,13 +1,12 @@
-// import speakerblank from '@/images/speaker-1.png';
-// import Speaker2 from '@/images/speaker-2.png';
-// import Speaker3 from '@/images/speaker-3.png';
+import Speaker1 from '@/images/speaker-1.png';
+import Speaker2 from '@/images/speaker-2.png';
+import Speaker3 from '@/images/speaker-3.png';
 import Image, { StaticImageData } from 'next/image';
 
-import speakerblank from '@/images/speaker-dummy-1.png';
-import wave from '@/images/bg-speaker-wave.png';
 import api from '@/images/bg-speaker-api.png';
 import flower from '@/images/bg-speaker-flowe.png';
 import flower2 from '@/images/bg-speaker-flower-1.png';
+import wave from '@/images/bg-speaker-wave.png';
 
 import { motion } from 'framer-motion';
 
@@ -25,19 +24,19 @@ type CardContent = {
 
 const content: Array<CardContent> = [
   {
-    image: speakerblank,
-    desc: 'z',
-    nama: 'z',
+    image: Speaker1,
+    desc: 'The Speaker',
+    nama: 'Nurkholis Fahroni',
   },
   {
-    image: speakerblank,
-    desc: 'z',
-    nama: 'z',
+    image: Speaker2,
+    desc: 'Another Speaker',
+    nama: 'Diva Suukyi Larasati',
   },
   {
-    image: speakerblank,
-    desc: 'z',
-    nama: 'z',
+    image: Speaker3,
+    desc: 'A Different Speaker',
+    nama: 'Alvian Wardhana',
   },
 ];
 
@@ -151,7 +150,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
               repeat: Infinity,
               repeatDelay: delay,
             }}
-            className="w-full  h-full flex justify-center items-end z-[4] relative">
+            className="w-full  h-full flex justify-center items-center z-[4] relative">
             <Image
               src={content[variant - 1].image}
               alt="Speaker"

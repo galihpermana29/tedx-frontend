@@ -26,6 +26,7 @@ import {
   textBlurAnimationProps,
   textFadeUpAnimationProps,
 } from '@/utils/data/animation';
+import FAQCard from '@/components/shared/FAQCard';
 
 function PreEventMobile() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -320,95 +321,49 @@ function PreEventMobile() {
           <div className="relative shrink-0 w-full aspect-square">
             <Image src={FAQCover} alt="FAQ" fill sizes="100vh" />
           </div>
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white h-full overflow-y-scroll rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Apa itu &quot;Student Speaker&quot; dalam
-                TEDxUniversitasBrawijaya?
-              </h1>
-              <p>
-                Student Speaker adalah mahasiswa atau pelajar yang memberikan
-                speech mengenai ide atau gagasan kreatif yang menginspirasi.
-                Pemilihan student speaker ini melalui tahap penyaringan ide-ide
-                dalam bentuk esai yang diajukan calon student speaker kepada
-                pihak TEDxUniversitasBrawijaya selaku penyelenggara
-              </p>
-            </div>
-          </div>
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Apa perbedaan student speaker dan attendees?
-              </h1>
-              <p>
-                Perbedaannya adalah student speaker dalam acara
-                TEDxUniversitasBrawijaya berperan untuk menyampaikan ide dan
-                gagasan melalui speech yang inspiratif, sedangkan attendees
-                adalah peserta dalam acara TEDxUniversitasBrawijaya
-              </p>
-            </div>
-          </div>
-
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Apa saja persyaratan pendaftaran untuk menjadi seorang student
-                speaker?
-              </h1>
-              <ul className="list-disc list-inside">
-                <li>
-                  Pendaftar merupakan mahasiswa aktif Universitas Brawijaya,
-                  tanpa memandang gender, disabilitas, ras, etnis, atau
-                  karakteristik lainnya
-                </li>
-                <li>
-                  Pendaftar bebas untuk bereksplorasi dengan ketentuan format
-                  penulisan esai yang akan diunggah pada saat registrasi student
-                  speaker dibuka melalui website{' '}
-                  <a
-                    target="_blank"
-                    href="https://tedxuniversitasbrawijaya.org/"
-                    className="underline">
-                    www.tedxuniversitasbrawijaya.org
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya,
-                jika saya memiliki pertanyaan lebih lanjut tentang kegiatan yang
-                berhubungan dengan Pre-Event TEDx Universitas Brawijaya:
-                Panggung Swara Insan?
-              </h1>
-              <p>
-                Segala bentuk pertanyaan mengenai kegiatan yang berhubungan
-                dengan TEDxUniversitasBrawijaya dapat disampaikan melalui :{' '}
-              </p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Instagram{' '}
-                  <a
-                    href="https://www.instagram.com/tedxuniversitasbrawijaya"
-                    className="font-bold underline">
-                    @tedxuniversitasbrawijaya
-                  </a>
-                </li>
-                <li>
-                  Contact Person{' '}
-                  <span className="font-bold">
-                    Maria Desvita - 081234847606
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <FAQCard title="Bagaimana saya akan diberitahu jika saya menjadi pemenang tiket Panggung Swara Insan?">
+            Peserta yang terpilih sebagai pemenang tiket Panggung Swara Insan
+            akan diumumkan melalui e-mail yang tercantum saat pengisian
+            formulir. (pastikan e-mail yang dicantumkan benar dan jangan lupa
+            untuk memeriksa folder spam)
+          </FAQCard>
+          <FAQCard title="Jika saya terpilih sebagai pemenang tiket, apa syarat dan ketentuan sebagai pemenang tiket Panggung Swara Insan?">
+            Peserta yang terpilih wajib mengunggah beberapa konten yang telah
+            disediakan oleh TEDxUniversitasBrawijaya melalui Story di akun
+            Instagram. Syarat dan ketentuan pemenang secara detail akan
+            dikirimkan melalui e-mail dari masing-masing pemenang
+          </FAQCard>
+          <FAQCard title="Apakah ada kegiatan atau sesi khusus yang melibatkan partisipasi dari para peserta?">
+            Dalam Panggung Swara Insan, terdapat sesi yang diberikan kepada
+            peserta untuk dapat berinteraksi dengan student speaker yang
+            menyampaikan speech. Diharapkan juga, setiap peserta yang hadir
+            dapat memperhatikan ide dan gagasan yang disampaikan oleh student
+            speaker.
+          </FAQCard>
+          <FAQCard title="Apakah tiket yang diperoleh melalui raffle dapat dipindahtangankan?">
+            Diperbolehkan. Teknis perpindahtanganan tiket dapat menghubungi CP
+            berikut ini:
+            <br />
+            <span className="font-bold">Maria Desvita - 081234847606</span>
+          </FAQCard>
+          <FAQCard title="Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya, jika saya memiliki pertanyaan lebih lanjut tentang kegiatan yang berhubungan dengan Panggung Swara Insan?">
+            Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan
+            TEDxUniversitasBrawijaya dapat disampaikan melalui :{' '}
+            <ul className="list-disc ml-4">
+              <li>
+                Instagram{' '}
+                <a
+                  href="https://www.instagram.com/tedxuniversitasbrawijaya"
+                  className="font-bold underline">
+                  @tedxuniversitasbrawijaya
+                </a>
+              </li>
+              <li>
+                Contact Person{' '}
+                <span className="font-bold">Maria Desvita - 081234847606</span>
+              </li>
+            </ul>
+          </FAQCard>
         </Carousel>
       </section>
     </main>

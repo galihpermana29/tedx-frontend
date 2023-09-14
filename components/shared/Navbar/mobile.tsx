@@ -119,7 +119,7 @@ export const NavbarMobile = () => {
                 animate={navbarHidden ? {} : { opacity: 1 }}
                 initial={{ opacity: 0 }}>
                 <Link
-                  href={'/our-team'}
+                  href={'/our-teams'}
                   className="creato-display text-[15px] font-[500] ml-[20px] hover:underline">
                   Our Team
                 </Link>

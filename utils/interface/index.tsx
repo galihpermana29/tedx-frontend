@@ -27,7 +27,7 @@ export type CoreTeam = {
   fakultas: string;
   image_url: string;
   instagram: string;
-  linkedin: string;
+  linkedIn: string;
 };
 
 export type DataOurTeam = {
