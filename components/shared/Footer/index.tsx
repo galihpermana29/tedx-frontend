@@ -10,8 +10,12 @@ import { usePathname } from 'next/navigation';
 
 function Footer() {
   const pathName = usePathname();
-
-  const includedPaths = ['/home', '/about-us', '/pre-event', '/our-team'];
+  const includedPaths = [
+    '/home',
+    '/about-us',
+    '/pre-event',
+    '/ticket-pre-event',
+  ];
 
   return (
     <footer

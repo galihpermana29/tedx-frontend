@@ -198,13 +198,25 @@ export const NavbarMobile = () => {
               </Link>
             </motion.div>
           </div>
-          <MotionButton
-            as="client-link"
-            href="/ticket-pre-event"
-            type="primary"
-            className="py-[7px]">
-            <div> Grab Ticket</div>
-          </MotionButton>
+          <motion.div
+            onClick={() => setNavbarHidden(true)}
+            transition={
+              navbarHidden ? {} : { duration: 1, ease: 'easeInOut', delay: 1 }
+            }
+            animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
+            initial={{ transform: 'translateX(-100vw)' }}>
+            <Link href={'/ticket-pre-event'}>
+              <div className="button">
+                <MotionButton
+                  onClick={() => ({})}
+                  as="button"
+                  type="primary"
+                  className="py-[7px] w-full">
+                  <div>Grab Ticket</div>
+                </MotionButton>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </motion.div>
     </div>
