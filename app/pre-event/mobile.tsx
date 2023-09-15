@@ -8,18 +8,18 @@ import WidthFlower from '@/images/flowergroup.png';
 import LeftHand from '@/images/lefthanded.png';
 import BigFlower from '@/images/pre-event-big-flower.png';
 import FAQCover from '@/images/pre-event-faq-cover.png';
+import Performance from '@/images/pre-event-performance.png';
 import SmallFlower from '@/images/pre-event-small-flower.png';
 import LeftSplash from '@/images/pre-event-splash-left.png';
 import RightSplash from '@/images/pre-event-splash-right.png';
 import TEDx from '@/images/pre-event-tedx-chars.png';
 import Venue from '@/images/pre-event-venue.png';
-import Performance from '@/images/pre-event-performance.png';
 import RightHand from '@/images/righthanded.png';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-import Modal from '@/components/shared/Modal';
+import FAQCard from '@/components/shared/FAQCard';
 import backCatat from '@/images/Back.png';
 import frontCatat from '@/images/Fornt.png';
 import bgCatat from '@/images/bg-catat-mobile.png';
@@ -27,7 +27,7 @@ import {
   textBlurAnimationProps,
   textFadeUpAnimationProps,
 } from '@/utils/data/animation';
-import FAQCard from '@/components/shared/FAQCard';
+import { faqContent } from '@/utils/data/faq';
 
 function PreEventMobile() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -286,13 +286,12 @@ function PreEventMobile() {
           <SpeakerCard variant={3} delay={1} />
         </div>
         <div className="z-10 flex flex-col gap-3 w-full mt-14 px-5 sm:px-20 md:px-44">
-          <Modal />
           <Button
-            as="anchor"
+            as="client-link"
             type="primary"
-            href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
+            href="/ticket-pre-event"
             className="w-full">
-            Jadilah Speaker!
+            Grab Ticket
           </Button>
         </div>
         <div className="relative w-full flex justify-center mt-10">
@@ -313,49 +312,9 @@ function PreEventMobile() {
           <div className="relative shrink-0 w-full aspect-square">
             <Image src={FAQCover} alt="FAQ" fill sizes="100vh" />
           </div>
-          <FAQCard title="Bagaimana saya akan diberitahu jika saya menjadi pemenang tiket Panggung Swara Insan?">
-            Peserta yang terpilih sebagai pemenang tiket Panggung Swara Insan
-            akan diumumkan melalui e-mail yang tercantum saat pengisian
-            formulir. (pastikan e-mail yang dicantumkan benar dan jangan lupa
-            untuk memeriksa folder spam)
-          </FAQCard>
-          <FAQCard title="Jika saya terpilih sebagai pemenang tiket, apa syarat dan ketentuan sebagai pemenang tiket Panggung Swara Insan?">
-            Peserta yang terpilih wajib mengunggah beberapa konten yang telah
-            disediakan oleh TEDxUniversitasBrawijaya melalui Story di akun
-            Instagram. Syarat dan ketentuan pemenang secara detail akan
-            dikirimkan melalui e-mail dari masing-masing pemenang
-          </FAQCard>
-          <FAQCard title="Apakah ada kegiatan atau sesi khusus yang melibatkan partisipasi dari para peserta?">
-            Dalam Panggung Swara Insan, terdapat sesi yang diberikan kepada
-            peserta untuk dapat berinteraksi dengan student speaker yang
-            menyampaikan speech. Diharapkan juga, setiap peserta yang hadir
-            dapat memperhatikan ide dan gagasan yang disampaikan oleh student
-            speaker.
-          </FAQCard>
-          <FAQCard title="Apakah tiket yang diperoleh melalui raffle dapat dipindahtangankan?">
-            Diperbolehkan. Teknis perpindahtanganan tiket dapat menghubungi CP
-            berikut ini:
-            <br />
-            <span className="font-bold">Maria Desvita - 081234847606</span>
-          </FAQCard>
-          <FAQCard title="Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya, jika saya memiliki pertanyaan lebih lanjut tentang kegiatan yang berhubungan dengan Panggung Swara Insan?">
-            Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan
-            TEDxUniversitasBrawijaya dapat disampaikan melalui :{' '}
-            <ul className="list-disc ml-4">
-              <li>
-                Instagram{' '}
-                <a
-                  href="https://www.instagram.com/tedxuniversitasbrawijaya"
-                  className="font-bold underline">
-                  @tedxuniversitasbrawijaya
-                </a>
-              </li>
-              <li>
-                Contact Person{' '}
-                <span className="font-bold">Maria Desvita - 081234847606</span>
-              </li>
-            </ul>
-          </FAQCard>
+          {faqContent.map(({ question, answer }, index) => {
+            return <FAQCard key={index} question={question} answer={answer} />;
+          })}
         </Carousel>
       </section>
     </main>

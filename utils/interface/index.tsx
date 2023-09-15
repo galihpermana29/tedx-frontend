@@ -40,3 +40,8 @@ export type DataOurTeam = {
 export interface OurTeamI {
   data: DataOurTeam[];
 }
+
+export type FAQContent = {
+  question: string;
+  answer: string;
+};

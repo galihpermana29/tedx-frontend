@@ -198,16 +198,13 @@ export const NavbarMobile = () => {
               </Link>
             </motion.div>
           </div>
-          <div className="button">
-            <MotionButton
-              onClick={() => ({})}
-              as="button"
-              type="primary"
-              disabled
-              className="py-[7px] w-full">
-              <div> Grab Ticket</div>
-            </MotionButton>
-          </div>
+          <MotionButton
+            as="client-link"
+            href="/ticket-pre-event"
+            type="primary"
+            className="py-[7px]">
+            <div> Grab Ticket</div>
+          </MotionButton>
         </div>
       </motion.div>
     </div>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 function CoreTeamCard({
-  data: { fakultas, instagram, linkedIn, nama, image_url },
+  data,
   division,
   imageWidthClassName,
 }: {
@@ -15,6 +15,8 @@ function CoreTeamCard({
   imageWidthClassName?: string;
 }) {
   const [showDetail, setShowDetail] = useState(false);
+
+  const { fakultas, instagram, linkedIn, nama, image_url } = data;
 
   return (
     <div className="flex flex-col items-center">

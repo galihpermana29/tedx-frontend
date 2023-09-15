@@ -2,6 +2,7 @@
 
 import WebsiteAPI from '@/api/website';
 import CoreTeamCard from '@/components/shared/CoreTeamCard';
+import { LoadingPage } from '@/components/shared/Loading';
 import Cloud1 from '@/images/our-team-cloud-1.png';
 import Cloud2 from '@/images/our-team-cloud-2.png';
 import Flower from '@/images/our-team-flower.png';
@@ -12,7 +13,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Marquee from 'react-fast-marquee';
-import Loading from '../loading';
 
 export default function OurTeam() {
   const [teamData, setTeamData] = useState<OurTeamI>();
@@ -32,7 +32,7 @@ export default function OurTeam() {
 
   return (
     <>
-      {!teamData && <Loading />}
+      {!teamData && <LoadingPage />}
       {teamData && (
         <main>
           <section className="w-full min-h-screen select-none overflow-hidden flex flex-col gap-2 justify-between relative pt-32">
@@ -87,7 +87,7 @@ export default function OurTeam() {
               return (
                 <div
                   key={id}
-                  className="text-white flex flex-col items-center gap-10">
+                  className="text-white w-full flex flex-col items-center gap-10">
                   <h2 className="font-bold text-3xl">{divisi}</h2>
                   <div className="grid w-full sm:grid-cols-2 lg:flex lg:flex-wrap lg:justify-center gap-x-5 gap-y-10">
                     {coreteam.map((coreTeamData, index) => {

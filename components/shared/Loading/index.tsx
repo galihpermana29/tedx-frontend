@@ -16,7 +16,7 @@ export const LoadingPage = () => {
   }, [pathName]);
   return (
     <motion.div
-      className={`justify-center items-center h-screen bg-white flex-col ${
+      className={`justify-center fixed w-full z-[60] items-center h-screen bg-white flex-col ${
         loading ? 'flex' : 'hidden'
       }`}>
       <div>
