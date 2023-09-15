@@ -29,6 +29,6 @@ export const faqContent: Array<FAQContent> = [
     question:
       'Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya, jika saya memiliki pertanyaan lebih lanjut tentang kegiatan yang berhubungan dengan Panggung Swara Insan?',
     answer:
-      '<p>Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan TEDxUniversitasBrawijaya dapat disampaikan melalui : </p> <ul className="list-disc ml-4"> <li> Instagram <a href="https://www.instagram.com/tedxuniversitasbrawijaya" className="font-bold underline"> @tedxuniversitasbrawijaya </a> </li> <li> Contact Person  <span className="font-bold"> Maria Desvita - 081234847606 </span> </li> </ul>',
+      '<p>Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan TEDxUniversitasBrawijaya dapat disampaikan melalui : </p> <ul className="list-disc ml-5"> <li> Instagram <a href="https://www.instagram.com/tedxuniversitasbrawijaya" className="font-bold underline"> @tedxuniversitasbrawijaya </a> </li> <li> Contact Person  <span className="font-bold"> Maria Desvita - 081234847606 </span> </li> </ul>',
   },
 ];

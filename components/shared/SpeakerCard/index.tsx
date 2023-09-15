@@ -1,4 +1,3 @@
-import SpeakerBg from '@/images/bg-speaker.png';
 import Speaker1 from '@/images/speaker-1.png';
 import Speaker2 from '@/images/speaker-2.png';
 import Speaker3 from '@/images/speaker-3.png';
@@ -40,10 +39,7 @@ function SpeakerCard({ className, variant, delay = 1 }: SpeakerCardProps) {
   return (
     <div key={variant} className={`flex flex-col gap-2 ${className}`}>
       <div className="  relative">
-        <motion.div className="w-full aspect-square bg-speaker-bg bg-cover bg-no-repeat relative overflow-hidden">
-          <div className="w-full aspect-square absolute">
-            <Image src={SpeakerBg} alt="Speaker Background" />
-          </div>
+        <motion.div className="w-full aspect-square bg-speaker-card bg-cover bg-no-repeat relative overflow-hidden">
           <motion.div
             animate={{
               position: 'absolute',
