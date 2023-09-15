@@ -134,11 +134,11 @@ function MemantikMobile() {
               Apa itu Pre-Event?
             </Button>
             <Button
-              as="anchor"
+              as="client-link"
               type="primary"
-              href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
+              href="/ticket-pre-event"
               className="w-full">
-              Jadilah Speaker!
+              Grab Ticket
             </Button>
           </div>
         </div>
@@ -161,9 +161,9 @@ function MemantikMobile() {
             Tickets Dropping Soon!
           </motion.h2>
           <Button
-            as="button"
+            as="client-link"
             type="primary"
-            onClick={() => {}}
+            href="/ticket-pre-event"
             disabled
             className="w-full">
             Grab Yours

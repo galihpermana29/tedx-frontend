@@ -10,7 +10,6 @@ import { usePathname } from 'next/navigation';
 
 function Footer() {
   const pathName = usePathname();
-
   const includedPaths = [
     '/home',
     '/about-us',
@@ -29,6 +28,7 @@ function Footer() {
             src={FooterLine}
             alt="Line Art"
             fill
+            sizes="100vh"
             className="object-cover -mt-16 lg:-mt-[10%] "
           />
         </div>
@@ -70,6 +70,7 @@ function Footer() {
                 src={TwitterLogo}
                 alt="Twitter"
                 fill
+                sizes="100vh"
                 className=" text-red-500"
               />
             </a>

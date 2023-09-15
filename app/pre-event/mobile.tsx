@@ -8,6 +8,7 @@ import WidthFlower from '@/images/flowergroup.png';
 import LeftHand from '@/images/lefthanded.png';
 import BigFlower from '@/images/pre-event-big-flower.png';
 import FAQCover from '@/images/pre-event-faq-cover.png';
+import Performance from '@/images/pre-event-performance.png';
 import SmallFlower from '@/images/pre-event-small-flower.png';
 import LeftSplash from '@/images/pre-event-splash-left.png';
 import RightSplash from '@/images/pre-event-splash-right.png';
@@ -18,7 +19,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-import Modal from '@/components/shared/Modal';
+import FAQCard from '@/components/shared/FAQCard';
 import backCatat from '@/images/Back.png';
 import frontCatat from '@/images/Fornt.png';
 import bgCatat from '@/images/bg-catat-mobile.png';
@@ -26,6 +27,7 @@ import {
   textBlurAnimationProps,
   textFadeUpAnimationProps,
 } from '@/utils/data/animation';
+import { faqContent } from '@/utils/data/faq';
 
 function PreEventMobile() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -163,29 +165,20 @@ function PreEventMobile() {
             <div className="relative w-full aspect-video">
               <Image src={Venue} alt="Venue" fill sizes="100vh" />
             </div>
-            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
+            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted text-[32px]">
               <div className="grow h-[1px] bg-black-primary"></div>
               <span>Venue</span>
             </div>
           </div>
           <div className="shrink-0 w-full flex flex-col gap-2">
             <div className="relative w-full aspect-video">
-              <Image src={Venue} alt="Venue" fill sizes="100vh" />
+              <Image src={Performance} alt="Venue" fill sizes="100vh" />
             </div>
-            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
+            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted text-[32px]">
               <div className="grow h-[1px] bg-black-primary"></div>
-              <span>Speakers</span>
+              <span>Performance</span>
             </div>
           </div>
-          {/* <div className="shrink-0 w-full flex flex-col gap-2">
-            <div className="relative w-full aspect-video">
-              <Image src={Venue} alt="Venue" fill sizes="100vh" />
-            </div>
-            <div className="flex justify-between items-center gap-2 text-black-primary linux-libertine-slanted">
-              <div className="grow h-[1px] bg-black-primary"></div>
-              <span>Performances</span>
-            </div>
-          </div> */}
         </Carousel>
       </section>
       <div className="relative h-[50vh] w-full" ref={handRefMobile}>
@@ -293,13 +286,12 @@ function PreEventMobile() {
           <SpeakerCard variant={3} delay={1} />
         </div>
         <div className="z-10 flex flex-col gap-3 w-full mt-14 px-5 sm:px-20 md:px-44">
-          <Modal />
           <Button
-            as="anchor"
+            as="client-link"
             type="primary"
-            href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
+            href="/ticket-pre-event"
             className="w-full">
-            Jadilah Speaker!
+            Grab Ticket
           </Button>
         </div>
         <div className="relative w-full flex justify-center mt-10">
@@ -320,95 +312,9 @@ function PreEventMobile() {
           <div className="relative shrink-0 w-full aspect-square">
             <Image src={FAQCover} alt="FAQ" fill sizes="100vh" />
           </div>
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white h-full overflow-y-scroll rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Apa itu &quot;Student Speaker&quot; dalam
-                TEDxUniversitasBrawijaya?
-              </h1>
-              <p>
-                Student Speaker adalah mahasiswa atau pelajar yang memberikan
-                speech mengenai ide atau gagasan kreatif yang menginspirasi.
-                Pemilihan student speaker ini melalui tahap penyaringan ide-ide
-                dalam bentuk esai yang diajukan calon student speaker kepada
-                pihak TEDxUniversitasBrawijaya selaku penyelenggara
-              </p>
-            </div>
-          </div>
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Apa perbedaan student speaker dan attendees?
-              </h1>
-              <p>
-                Perbedaannya adalah student speaker dalam acara
-                TEDxUniversitasBrawijaya berperan untuk menyampaikan ide dan
-                gagasan melalui speech yang inspiratif, sedangkan attendees
-                adalah peserta dalam acara TEDxUniversitasBrawijaya
-              </p>
-            </div>
-          </div>
-
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Apa saja persyaratan pendaftaran untuk menjadi seorang student
-                speaker?
-              </h1>
-              <ul className="list-disc list-inside">
-                <li>
-                  Pendaftar merupakan mahasiswa aktif Universitas Brawijaya,
-                  tanpa memandang gender, disabilitas, ras, etnis, atau
-                  karakteristik lainnya
-                </li>
-                <li>
-                  Pendaftar bebas untuk bereksplorasi dengan ketentuan format
-                  penulisan esai yang akan diunggah pada saat registrasi student
-                  speaker dibuka melalui website{' '}
-                  <a
-                    target="_blank"
-                    href="https://tedxuniversitasbrawijaya.org/"
-                    className="underline">
-                    www.tedxuniversitasbrawijaya.org
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          {/* card */}
-          <div className="relative p-5 rounded-xl shrink-0 w-full bg-flower aspect-square">
-            <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
-              <h1 className="font-bold text-lg mb-5">
-                Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya,
-                jika saya memiliki pertanyaan lebih lanjut tentang kegiatan yang
-                berhubungan dengan Pre-Event TEDx Universitas Brawijaya:
-                Panggung Swara Insan?
-              </h1>
-              <p>
-                Segala bentuk pertanyaan mengenai kegiatan yang berhubungan
-                dengan TEDxUniversitasBrawijaya dapat disampaikan melalui :{' '}
-              </p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Instagram{' '}
-                  <a
-                    href="https://www.instagram.com/tedxuniversitasbrawijaya"
-                    className="font-bold underline">
-                    @tedxuniversitasbrawijaya
-                  </a>
-                </li>
-                <li>
-                  Contact Person{' '}
-                  <span className="font-bold">
-                    Maria Desvita - 081234847606
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {faqContent.map(({ question, answer }, index) => {
+            return <FAQCard key={index} question={question} answer={answer} />;
+          })}
         </Carousel>
       </section>
     </main>

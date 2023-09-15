@@ -302,11 +302,11 @@ export default function MemantikDesktop() {
               Apa itu Pre-Event?
             </Button>
             <Button
-              as="anchor"
+              as="client-link"
               type="primary"
-              href="https://docs.google.com/forms/d/1R40gZlYkpwmsMUX-8lPOAu7wNxsXrHiBQhipi3JebJo/edit"
+              href="/ticket-pre-event"
               className="w-max">
-              Jadilah Speaker!
+              Grab Ticket
             </Button>
           </div>
         </div>

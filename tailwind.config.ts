@@ -20,8 +20,12 @@ const config: Config = {
         'paper-mobile': "url('/assets/images/bg-paper-mobile.png')",
         'paper-flat': "url('/assets/images/bg-paper-flat.png')",
         'paper-pre-desktop': "url('/assets/images/bg-paper-pre-desktop.png')",
-        'speaker-bg': "url('/assets/images/bg-1-speaker.png')",
-        flower: "url('/assets/images/modal-bg.png')",
+        'speaker-card': "url('/assets/images/bg-speaker.png')",
+        flower: "url('/assets/images/bg-art.png')",
+        'flower-square': "url('/assets/images/bg-art-square.png')",
+        'flower-small': "url('/assets/images/bg-art-small.png')",
+        tedx: "url('/assets/images/bg-tedx.png')",
+        'team-card': "url('/assets/images/bg-team-card.png')",
       },
       colors: {
         orange: {

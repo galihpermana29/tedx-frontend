@@ -60,3 +60,8 @@ export const textFadeRightAnimationProps: MotionProps = {
   },
   variants: textFadeRightVariant,
 };
+
+export const speakerImageScaleVariant: Variants = {
+  initial: { scale: 1 },
+  animate: { position: 'absolute', scale: [1, 1.2, 1] },
+};
