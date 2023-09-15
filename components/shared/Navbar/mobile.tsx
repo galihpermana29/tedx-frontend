@@ -212,7 +212,7 @@ export const NavbarMobile = () => {
                   as="button"
                   type="primary"
                   className="py-[7px] w-full">
-                  <div> Grab Ticket</div>
+                  <div>Grab Ticket</div>
                 </MotionButton>
               </div>
             </Link>
