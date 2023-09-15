@@ -27,6 +27,7 @@ import SpeakerCard from '@/components/shared/SpeakerCard';
 import Photo from '@/images/home-photo.png';
 import X from '@/images/home-x-2.png';
 import ReactPlayer from 'react-player/lazy';
+import Link from 'next/link';
 
 export default function MemantikDesktop() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -321,14 +322,15 @@ export default function MemantikDesktop() {
               className="font-[800] text-[90px] max-w-[20vw] creato-display">
               Tickets Dropping Soon!
             </motion.h2>
-            <Button
-              as="button"
-              type="primary"
-              onClick={() => {}}
-              disabled
-              className="w-full max-w-[300px] text-[20px]">
-              Grab Yours
-            </Button>
+            <Link href={'/ticket-pre-event'}>
+              <Button
+                as="button"
+                type="primary"
+                onClick={() => {}}
+                className="w-full max-w-[300px] text-[20px]">
+                Grab Yours
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

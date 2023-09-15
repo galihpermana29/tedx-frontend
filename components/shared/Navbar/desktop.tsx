@@ -39,16 +39,17 @@ export const NavbarDesktop = () => {
           </Link>
         </div>
         <div className="flex items-center flex-1 max-w-max gap-[30px]">
-          <div className="button">
-            <MotionButton
-              onClick={() => ({})}
-              as="button"
-              disabled
-              type="primary"
-              className="py-[7px]">
-              <div> Grab Ticket</div>
-            </MotionButton>
-          </div>
+          <Link href={'/ticket-pre-event'}>
+            <div className="button">
+              <MotionButton
+                onClick={() => ({})}
+                as="button"
+                type="primary"
+                className="py-[7px]">
+                Grab Ticket
+              </MotionButton>
+            </div>
+          </Link>
           <div
             className="flex items-center ml-auto"
             onClick={() => setNavbarHidden(false)}>

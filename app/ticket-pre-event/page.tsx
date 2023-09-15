@@ -144,7 +144,7 @@ export default function TicketPreEvent() {
   return (
     <div className="">
       <ToastContainer />
-      <main className="bg-wall-texture overflow-hidden lg:p-[100px] xs:p-[20px]">
+      <main className="bg-wall-texture overflow-hidden lg:px-[100px] lg:py-[200px] xs:p-[20px]">
         <div className="relative p-5 rounded-xl w-full bg-flower max-h-max xs:my-[80px] lg:my-0">
           <div className="bg-white rounded-md p-5 border-2 max-h-max">
             {loading ? (
