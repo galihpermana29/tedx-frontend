@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
-
+import { MouseEvent, ReactNode } from 'react';
+type SetStateFunction<T> = React.Dispatch<React.SetStateAction<T>>;
 type ButtonProps = {
   children: ReactNode;
   className?: string;
@@ -9,7 +9,11 @@ type ButtonProps = {
 } & (
   | {
       as: 'button';
-      onClick: () => void;
+      onClick:
+        | SetStateFunction<boolean>
+        | (() => void)
+        | ((event: MouseEvent<HTMLButtonElement>) => void)
+        | any;
     }
   | {
       as: 'client-link';
@@ -28,9 +32,9 @@ type ButtonStyle = {
 
 const baseButtonStyle: ButtonStyle = {
   primary:
-    'border text-center bg-orange-primary border-orange-primary text-white px-5 py-4 rounded-lg font-bold text-lg hover:bg-orange-darker duration-300 disabled:cursor-not-allowed disabled:hover:bg-orange-primary',
+    'border text-center bg-orange-primary border-orange-primary text-white lg:px-5 lg:py-4 px-2 py-3 rounded-lg font-bold lg:text-lg hover:bg-orange-darker duration-300 disabled:cursor-not-allowed disabled:hover:bg-orange-primary',
   secondary:
-    'border text-center border-orange-primary text-orange-primary px-5 py-4 rounded-lg font-bold text-lg hover:bg-grey-light duration-300 disabled:hover:bg-transparent',
+    'border text-center border-orange-primary text-orange-primary lg:px-5 lg:py-4 px-2 py-3  rounded-lg font-bold lg:text-lg hover:bg-grey-light duration-300 disabled:hover:bg-transparent',
 };
 
 function Button({

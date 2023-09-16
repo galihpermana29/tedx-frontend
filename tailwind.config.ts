@@ -26,6 +26,9 @@ const config: Config = {
         'flower-small': "url('/assets/images/bg-art-small.png')",
         tedx: "url('/assets/images/bg-tedx.png')",
         'team-card': "url('/assets/images/bg-team-card.png')",
+        merch: "url('/assets/images/bg-merch.png')",
+        'paper-merch': "url('/assets/images/paper-merch.png')",
+        'yellow-merch': "url('/assets/images/bg-yellow-merch.png')",
       },
       colors: {
         orange: {
