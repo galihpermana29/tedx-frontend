@@ -32,58 +32,58 @@ export default function OurTeam() {
 
   return (
     <>
-      {!teamData && <LoadingPage />}
-      {teamData && (
-        <main>
-          <section className="w-full min-h-screen select-none overflow-hidden flex flex-col gap-2 justify-between relative pt-32">
-            <Image
-              src={HeroImage}
-              alt="Hero Image"
-              fill
-              sizes="100vh"
-              className="object-cover"
-            />
-            <Marquee direction="right" speed={130} className="overflow-hidden">
-              <div className="relative h-32 md:h-52 aspect-video">
-                <Image src={Cloud1} alt="Cloud" fill sizes="100vh" />
-              </div>
-            </Marquee>
-            <Marquee speed={130} className="overflow-hidden mt-20">
-              <div className="relative h-32 md:h-52 aspect-video">
-                <Image src={Cloud2} alt="Cloud" fill sizes="100vh" />
-              </div>
-            </Marquee>
-
-            <div className="relative">
-              <motion.div
-                animate={{ rotate: [-180, 10, -180] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 20,
-                  ease: 'linear',
-                }}
-                className="h-32 md:h-52 aspect-square absolute z-10 right-2 md:right-10 -top-14 md:-top-28">
-                <Image src={Flower} alt="Flower" fill sizes="100vh" />
-              </motion.div>
-              <Marquee
-                autoFill
-                speed={170}
-                className={`bebas-neue overflow-hidden text-white -mb-10`}>
-                <p className="text-[20rem] leading-none">MEET.THE.TEAM.</p>
-              </Marquee>
+      <main>
+        <section className="w-full min-h-screen select-none overflow-hidden flex flex-col gap-2 justify-between relative pt-32">
+          <Image
+            src={HeroImage}
+            alt="Hero Image"
+            fill
+            sizes="100vh"
+            className="object-cover"
+          />
+          <Marquee direction="right" speed={130} className="overflow-hidden">
+            <div className="relative h-32 md:h-52 aspect-video">
+              <Image src={Cloud1} alt="Cloud" fill sizes="100vh" />
             </div>
-          </section>
-          <section className="w-full h-[20vh] relative">
-            <Image
-              src={Divider}
-              alt="Art"
-              fill
-              sizes="100vh"
-              className="object-cover"
-            />
-          </section>
-          <section className="bg-tedx text-center flex px-5 md:px-20 flex-col gap-52 items-center pt-32 pb-52">
-            {teamData.data.map(({ id, coreteam, volunteer, divisi }) => {
+          </Marquee>
+          <Marquee speed={130} className="overflow-hidden mt-20">
+            <div className="relative h-32 md:h-52 aspect-video">
+              <Image src={Cloud2} alt="Cloud" fill sizes="100vh" />
+            </div>
+          </Marquee>
+
+          <div className="relative">
+            <motion.div
+              animate={{ rotate: [-180, 10, -180] }}
+              transition={{
+                repeat: Infinity,
+                duration: 20,
+                ease: 'linear',
+              }}
+              className="h-32 md:h-52 aspect-square absolute z-10 right-2 md:right-10 -top-14 md:-top-28">
+              <Image src={Flower} alt="Flower" fill sizes="100vh" />
+            </motion.div>
+            <Marquee
+              autoFill
+              speed={170}
+              className={`bebas-neue overflow-hidden text-white -mb-10`}>
+              <p className="text-[20rem] leading-none">MEET.THE.TEAM.</p>
+            </Marquee>
+          </div>
+        </section>
+        <section className="w-full h-[20vh] relative">
+          <Image
+            src={Divider}
+            alt="Art"
+            fill
+            sizes="100vh"
+            className="object-cover"
+          />
+        </section>
+        <section className="bg-tedx text-center flex px-5 md:px-20 flex-col gap-52 items-center pt-32 pb-52">
+          {!teamData && <LoadingPage />}
+          {teamData &&
+            teamData.data.map(({ id, coreteam, volunteer, divisi }) => {
               return (
                 <div
                   key={id}
@@ -122,9 +122,8 @@ export default function OurTeam() {
                 </div>
               );
             })}
-          </section>
-        </main>
-      )}
+        </section>
+      </main>
     </>
   );
 }

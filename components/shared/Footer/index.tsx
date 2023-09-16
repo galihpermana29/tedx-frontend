@@ -15,6 +15,8 @@ function Footer() {
     '/about-us',
     '/pre-event',
     '/ticket-pre-event',
+    '/our-team',
+    '/merch',
   ];
 
   return (

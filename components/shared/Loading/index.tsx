@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export const LoadingPage = () => {
   return (
     <motion.div
-      className={`justify-center items-center h-screen bg-white flex-col ${'flex'}`}>
+      className={`justify-center items-center h-screen flex-col ${'flex'} px-[30px]`}>
       <div>
         <Image src={LogoHitam} alt="logohitam" />
       </div>

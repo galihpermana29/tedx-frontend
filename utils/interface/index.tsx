@@ -37,8 +37,20 @@ export type DataOurTeam = {
   volunteer: string[];
 };
 
+export type DataMerchItem = {
+  id: number;
+  nama: string;
+  harga: string;
+  deskripsi: string;
+  thumbnail: string;
+  link: string;
+};
 export interface OurTeamI {
   data: DataOurTeam[];
+}
+
+export interface MerchItemI {
+  data: DataMerchItem[];
 }
 
 export type FAQContent = {
