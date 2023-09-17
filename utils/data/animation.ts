@@ -65,3 +65,31 @@ export const speakerImageScaleVariant: Variants = {
   initial: { scale: 1 },
   animate: { position: 'absolute', scale: [1, 1.2, 1] },
 };
+
+export const goodsFadeUpVariant: Variants = {
+  visible: {
+    y: '0px',
+    opacity: 1,
+    transition: { type: 'tween', duration: 0.5 },
+  },
+  hidden: { y: '50px', opacity: 0 },
+};
+
+export const goodsContainerFadeUpVariant: Variants = {
+  visible: {
+    y: '0px',
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+  hidden: { y: '50px', opacity: 0 },
+};
+
+export const goodsContainerFadeUpAnimationProps: MotionProps = {
+  initial: 'hidden',
+  whileInView: 'visible',
+  viewport: {
+    once: true,
+    margin: '0px 0px -27% 0px',
+  },
+  variants: goodsContainerFadeUpVariant,
+};
