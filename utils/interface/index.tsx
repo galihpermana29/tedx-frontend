@@ -44,6 +44,7 @@ export type DataMerchItem = {
   deskripsi: string;
   thumbnail: string;
   link: string;
+  detail: string[];
 };
 export interface OurTeamI {
   data: DataOurTeam[];

@@ -47,14 +47,14 @@ export default function MerchModal({
               leave="ease-in duration-200"
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95">
-              <Dialog.Panel className="lg:w-[70%] w-[90%] transform overflow-hidden rounded-2xl bg-flower h-full p-6 text-left align-middle shadow-xl transition-all">
-                <div className="bg-white flex flex-col-reverse lg:flex-row h-screen max-h-[700px] w-full justify-between items-center p-[20px] lg:p-[40px] gap-[30px]">
-                  <div className="flex flex-col justify-between h-full flex-1 lg:py-[20px]">
+              <Dialog.Panel className="lg:w-[80%] w-[90%] xl:w-[70%] 2xl:w-[60%] transform overflow-hidden rounded-2xl bg-flower h-full p-6 text-left align-middle shadow-xl transition-all">
+                <div className="bg-white flex flex-col-reverse md:flex-row xs:h-[90%] h-screen lg:max-h-[500px] md:max-h-[400px] w-full justify-between items-center lg:gap-[30px]">
+                  <div className="flex flex-col justify-between md:h-[400px] lg:h-[500px] flex-1 md:p-[36px] p-[10px]">
                     <div>
-                      <h1 className="creato text-[26px] lg:text-[36px] font-[700] mb-[10px]">
+                      <h1 className="creato text-[24px] md:text-[30px] lg:text-[36px] font-[700] mb-[10px]">
                         {name}
                       </h1>
-                      <p className="creato text-[15px] lg:text-[20px] mb-[10px]">
+                      <p className="creato md:text-[18px] lg:text-[20px] mb-[10px]">
                         {desc}
                       </p>
                     </div>
@@ -62,32 +62,32 @@ export default function MerchModal({
                       <p className="creato text-[24px] lg:text-[32px] font-[700] mb-[10px]">
                         {price}
                       </p>
-                      <div className="flex lg:gap-[20px] gap-[10px] flex-col-reverse lg:flex-row">
+                      <div className="flex lg:gap-[20px] gap-[10px] flex-col-reverse md:flex-row">
                         <MotionButton
                           onClick={setIsClose}
                           as="button"
                           type="secondary"
-                          className="w-full flex-1">
+                          className="w-max-w flex-1 !text-[15px]">
                           Batal
                         </MotionButton>
                         <MotionButton
                           href="/"
                           as="client-link"
                           type="primary"
-                          className="w-full flex-1">
+                          className="w-full flex-2 !text-[15px]">
                           Dapatkan Sekarang
                         </MotionButton>
                       </div>
                     </div>
                   </div>
-                  <div className="flex-1 w-full aspect-square">
+                  <div className="aspect-square md:flex-1 lg:h-[500px] w-full max-w-[500px] md:p-[36px] p-[10px]">
                     <Image
                       loader={() => image}
                       src={image}
                       alt={`${name} Image`}
-                      width={360}
-                      height={200}
-                      className="w-full"
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-fit"
                     />
                   </div>
                 </div>

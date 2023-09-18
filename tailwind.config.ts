@@ -48,6 +48,9 @@ const config: Config = {
         grey: {
           light: '#1111111A',
         },
+        red: {
+          primary: '#A00101',
+        },
       },
     },
     screens: {
