@@ -95,10 +95,10 @@ export default function Merch() {
         {loading && <LoadingPage />}
         {!loading && (
           <>
-            <div className="mx-auto max-w-screen-2xl px-[60px] pt-32 md:pt-52 lg:pt-96">
+            <div className="mx-auto max-w-screen-2xl w-full px-5 md:px-[60px] pt-32 md:pt-52 lg:pt-96">
               <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[50px] gap-y-[100px] justify-center">
                 {data?.map((data, index) => (
-                  <div key={index} className=" flex justify-center">
+                  <div key={index} className="flex justify-center">
                     <MerchCard item={data} key={index} onClick={setActive} />
                   </div>
                 ))}

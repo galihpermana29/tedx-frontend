@@ -18,7 +18,7 @@ export default function MerchCard({ item, key, onClick }: MerchPropsI) {
         .
       </div>
       <div
-        className="bg-paper-merch w-full max-w-[360px] h-full max-h-[450px] p-[20px] flex flex-col gap-[10px] aspect-square"
+        className="bg-paper-merch w-full border-2 border-red-500 max-w-[360px] h-full max-h-[450px] p-[20px] flex flex-col gap-[10px] aspect-square"
         key={key}>
         <div>
           <h1 className="creato lg:text-[24px] font-[700] xs:text-[18px] ">
