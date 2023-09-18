@@ -22,7 +22,6 @@ export default function MerchModal({
     harga: price,
     deskripsi: desc,
   } = item ?? {};
-  console.log(item, 'item');
   const MotionButton = motion(Button);
   return (
     <Transition appear show={isClose} as={Fragment}>
