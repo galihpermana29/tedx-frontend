@@ -47,7 +47,7 @@ export default function MerchModal({
               leave="ease-in duration-200"
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95">
-              <Dialog.Panel className="lg:w-[80%] w-[90%] transform overflow-hidden rounded-2xl bg-flower h-full p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="lg:w-[80%] w-[90%] xl:w-[70%] 2xl:w-[60%] transform overflow-hidden rounded-2xl bg-flower h-full p-6 text-left align-middle shadow-xl transition-all">
                 <div className="bg-white flex flex-col-reverse md:flex-row xs:h-[90%] h-screen lg:max-h-[500px] md:max-h-[400px] w-full justify-between items-center lg:gap-[30px]">
                   <div className="flex flex-col justify-between md:h-[400px] lg:h-[500px] flex-1 md:p-[36px] p-[10px]">
                     <div>
