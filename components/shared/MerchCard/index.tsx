@@ -15,7 +15,7 @@ export default function MerchCard({ item, key, onClick }: MerchPropsI) {
       className="relative w-full"
       onClick={() => onClick({ modal: true, data: item })}>
       <div
-        className="bg-paper-merch w-full h-full min-h-[400px] aspect-square p-[20px] flex flex-col gap-[10px] hover:brightness-75 transition-all duration-500 ease-in-out"
+        className="bg-paper-merch w-full h-full min-h-[400px] aspect-[3/4] p-[20px] flex flex-col gap-[10px] hover:brightness-75 transition-all duration-500 ease-in-out"
         key={key}>
         <div>
           <h1 className="creato lg:text-[24px] font-bold xs:text-[18px] ">
