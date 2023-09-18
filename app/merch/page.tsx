@@ -82,7 +82,7 @@ export default function Merch() {
       />
       <MerchHero />
       <div className="relative h-[10vh] w-full">
-        <div className="absolute w-full aspect-[16/8] md:-top-16">
+        <div className="absolute w-full aspect-[16/8] md:-top-16 lg:top-[-100%] 2xl:top-[-200%]">
           <Image
             alt="Divider"
             src={MerchDivider}
