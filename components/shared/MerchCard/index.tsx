@@ -15,14 +15,14 @@ export default function MerchCard({ item, key, onClick }: MerchPropsI) {
       className="relative w-full"
       onClick={() => onClick({ modal: true, data: item })}>
       <div
-        className="bg-paper-merch w-full h-full aspect-square p-[20px] flex flex-col gap-[10px] hover:brightness-75 transition-all duration-500 ease-in-out"
+        className="bg-paper-merch w-full h-screen p-[20px] flex flex-col gap-[10px] hover:brightness-75 transition-all duration-500 ease-in-out"
         key={key}>
         <div>
           <h1 className="creato lg:text-[24px] font-bold xs:text-[18px] ">
             {name}
           </h1>
         </div>
-        <div className="relative aspect-square w-full">
+        <div className="relative aspect-square w-[200px]">
           <Image
             loader={() => image}
             src={image}
