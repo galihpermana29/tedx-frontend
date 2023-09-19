@@ -2,85 +2,85 @@
 
 // import WebsiteAPI from '@/api/website';
 // import { LoadingPage } from '@/components/shared/Loading';
-import { FormFieldI } from '@/utils/interface';
+// import { FormFieldI } from '@/utils/interface';
 // import { AxiosError } from 'axios';
 // import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const formData: FormFieldI[] = [
-  {
-    name: 'nama',
-    label: 'Nama Lengkap',
-    type: 'text',
-    placeholder: 'Ex : Galih Permana',
-    data: [],
-  },
-  {
-    name: 'nomor_identitas',
-    label: 'No. Identitas (NIM/NIK/SIM)',
-    type: 'text',
-    placeholder: 'Ex: 115150607111011',
-    data: [],
-  },
-  {
-    name: 'asal_institusi',
-    label: 'Asal Institusi',
-    type: 'text',
-    placeholder: 'Ex: Universitas Brawijaya',
-    data: [],
-  },
-  {
-    name: 'domisili',
-    label: 'Domisili',
-    type: 'text',
-    placeholder: 'Ex: Batam',
-    data: [],
-  },
-  {
-    name: 'email',
-    label: 'Email',
-    type: 'email',
-    placeholder: 'Ex: galih@tedx.com',
-    data: [],
-  },
-  {
-    name: 'jenis_kelamin',
-    label: 'Jenis Kelamin',
-    type: 'radio',
-    placeholder: 'Ex: galih@tedx.com',
-    data: [
-      {
-        label: 'Pria',
-        value: 'Pria',
-      },
-      {
-        label: 'Wanita',
-        value: 'Wanita',
-      },
-    ],
-  },
-  {
-    name: 'nomor_telepon',
-    label: 'Nomor Telepon (08)',
-    type: 'string',
-    placeholder: 'Ex: 08',
-    data: [],
-  },
-  {
-    name: 'line_id',
-    label: 'ID Line',
-    type: 'string',
-    placeholder: 'Ex: lineid',
-    data: [],
-  },
-  {
-    name: 'instagram',
-    label: 'Instagram',
-    type: 'string',
-    placeholder: 'Ex: instagramid',
-    data: [],
-  },
-];
+// const formData: FormFieldI[] = [
+//   {
+//     name: 'nama',
+//     label: 'Nama Lengkap',
+//     type: 'text',
+//     placeholder: 'Ex : Galih Permana',
+//     data: [],
+//   },
+//   {
+//     name: 'nomor_identitas',
+//     label: 'No. Identitas (NIM/NIK/SIM)',
+//     type: 'text',
+//     placeholder: 'Ex: 115150607111011',
+//     data: [],
+//   },
+//   {
+//     name: 'asal_institusi',
+//     label: 'Asal Institusi',
+//     type: 'text',
+//     placeholder: 'Ex: Universitas Brawijaya',
+//     data: [],
+//   },
+//   {
+//     name: 'domisili',
+//     label: 'Domisili',
+//     type: 'text',
+//     placeholder: 'Ex: Batam',
+//     data: [],
+//   },
+//   {
+//     name: 'email',
+//     label: 'Email',
+//     type: 'email',
+//     placeholder: 'Ex: galih@tedx.com',
+//     data: [],
+//   },
+//   {
+//     name: 'jenis_kelamin',
+//     label: 'Jenis Kelamin',
+//     type: 'radio',
+//     placeholder: 'Ex: galih@tedx.com',
+//     data: [
+//       {
+//         label: 'Pria',
+//         value: 'Pria',
+//       },
+//       {
+//         label: 'Wanita',
+//         value: 'Wanita',
+//       },
+//     ],
+//   },
+//   {
+//     name: 'nomor_telepon',
+//     label: 'Nomor Telepon (08)',
+//     type: 'string',
+//     placeholder: 'Ex: 08',
+//     data: [],
+//   },
+//   {
+//     name: 'line_id',
+//     label: 'ID Line',
+//     type: 'string',
+//     placeholder: 'Ex: lineid',
+//     data: [],
+//   },
+//   {
+//     name: 'instagram',
+//     label: 'Instagram',
+//     type: 'string',
+//     placeholder: 'Ex: instagramid',
+//     data: [],
+//   },
+// ];
 
 export default function TicketPreEvent() {
   // const [loading, setLoading] = useState<boolean>(false);
