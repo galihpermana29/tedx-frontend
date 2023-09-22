@@ -21,6 +21,7 @@ export default function MerchModal({
     thumbnail: image,
     harga: price,
     deskripsi: desc,
+    link,
   } = item ?? {};
   const MotionButton = motion(Button);
   return (
@@ -71,7 +72,7 @@ export default function MerchModal({
                           Batal
                         </MotionButton>
                         <MotionButton
-                          href="/"
+                          href={link}
                           as="client-link"
                           type="primary"
                           className="w-full flex-2 !text-[15px]">
