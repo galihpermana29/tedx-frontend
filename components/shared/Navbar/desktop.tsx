@@ -204,7 +204,7 @@ export const NavbarDesktop = () => {
               animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
               initial={{ transform: 'translateX(-100vw)' }}>
               <Link
-                href={'/merchs'}
+                href={'/merch'}
                 className="creato-display text-[30px] font-[700] hover:underline">
                 Merch
               </Link>

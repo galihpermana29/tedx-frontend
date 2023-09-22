@@ -192,7 +192,7 @@ export const NavbarMobile = () => {
               animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
               initial={{ transform: 'translateX(-100vw)' }}>
               <Link
-                href={'/merchs'}
+                href={'/merch'}
                 className="creato-display text-[25px] font-[700] hover:underline">
                 Merch
               </Link>
