@@ -73,7 +73,7 @@ export default function MerchModal({
                         </MotionButton>
                         <MotionButton
                           href={link}
-                          as="client-link"
+                          as="anchor"
                           type="primary"
                           className="w-full flex-2 !text-[15px]">
                           Dapatkan Sekarang
