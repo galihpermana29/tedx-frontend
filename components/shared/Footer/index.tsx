@@ -17,6 +17,7 @@ function Footer() {
     '/ticket-pre-event',
     '/our-team',
     '/merch',
+    '/semayam-asa',
   ];
 
   return (
