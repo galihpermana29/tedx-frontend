@@ -13,8 +13,19 @@ async function createTicket(payload: TicketPayloadI): Promise<TicketPayloadI> {
 
 async function createTransaction(
   payload: TicketPayloadI
-): Promise<TicketPayloadI> {
-  const { data } = await api.post<TicketPayloadI>(`/transactions`, payload);
+): Promise<{ data: number }> {
+  const { data } = await api.post<{ data: number }>(`/transactions`, payload);
+  return data;
+}
+
+async function updateTransaction(
+  payload: object,
+  idTrans: string
+): Promise<{ data: number }> {
+  const { data } = await api.patch<{ data: number }>(
+    `/transactions/${idTrans}`,
+    payload
+  );
   return data;
 }
 
@@ -38,6 +49,7 @@ const WebsiteAPI = {
   getMerch,
   createTransaction,
   getDetailTransaction,
+  updateTransaction,
 };
 
 export default WebsiteAPI;

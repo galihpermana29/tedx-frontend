@@ -6,16 +6,57 @@ import { useParams } from 'next/navigation';
 import logoQris from '@/images/qris-logo.png';
 import qrisSample from '@/images/qris-sample.png';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import WebsiteAPI from '@/api/website';
+import { AxiosError } from 'axios';
 
 export default function DetailSemayamAsa() {
   const params = useParams();
   const id = Array.isArray(params.id) ? params.id[0] : params.id;
 
-  const idDecrypted = decryptNumber(id, 12);
-  console.log(idDecrypted);
+  const idDecrypted = decryptNumber(id, 144);
+
+  useEffect(() => {
+    const updateTransactionById = async () => {
+      try {
+        const data = await WebsiteAPI.updateTransaction(
+          {},
+          idDecrypted.toString()
+        );
+        console.log(data, 'data');
+      } catch (error) {
+        if (error) {
+          const axiosError = error as AxiosError; // Cast error to AxiosError
+          const responseData = axiosError.response?.data as
+            | { errors: string[] }
+            | undefined;
+          const err = responseData
+            ? responseData?.errors[0]
+            : 'Ouch, an error happen!';
+          toast.error(err, {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+          });
+        } else {
+          console.error(error, 'err');
+        }
+      }
+    };
+
+    updateTransactionById();
+  }, []);
 
   return (
     <div>
+      <ToastContainer />
       <main className="bg-wall-texture overflow-hidden lg:px-[100px] lg:py-[200px] xs:p-[20px]">
         <div className="relative p-5 rounded-xl w-full bg-flower max-h-max xs:my-[80px] lg:my-0">
           <div className="bg-white rounded-md p-5 border-2 max-h-max">
