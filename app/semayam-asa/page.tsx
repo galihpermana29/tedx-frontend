@@ -219,9 +219,9 @@ function SemayamAsa() {
           </Marquee>
         </div>
         <div className=" px-5 md:px-10 lg:px-20 pb-20 pt-32 flex flex-col-reverse lg:flex-row gap-20 lg:gap-10">
-          <div className="basis-2/3 flex flex-col gap-10">
-            <h2 className="rosela text-red-primary text-6xl">
-              Catat Tanggalnya Sekarang Juga!
+          <div className="basis-2/3 flex flex-col justify-between gap-10">
+            <h2 className="rosela text-red-primary text-4xl sm:text-5xl md:text-6xl">
+              Catat Tanggalnya <br /> Sekarang Juga!
             </h2>
             <div className="grid grid-cols-10 grid-rows-3 gap-2 items-center w-full sm:w-2/3 md:w-1/2">
               <h3 className="col-span-4 font-bold text-xl">Tempat</h3>
@@ -231,12 +231,16 @@ function SemayamAsa() {
               <h3 className="col-span-4 font-bold text-xl">Waktu</h3>
               <p className="col-span-6">19:00 - Selesai</p>
             </div>
-            <Button as="anchor" type="primary" href="/" className="lg:w-fit">
+            <Button
+              as="anchor"
+              type="primary"
+              href="/ticket-semayam-asa"
+              className="lg:w-fit">
               Daftar Sekarang!
             </Button>
           </div>
           <div className="md:basis-1/3 flex justify-center">
-            <div className="w-2/3 sm:w-1/2 lg:w-full relative bg-slate-400 aspect-[3/4]">
+            <div className="w-2/3 sm:w-1/2 lg:w-full relative bg-slate-400 aspect-[4/5] max-w-[400px]">
               <Image
                 src={`/assets/images/semayam-asa-vertical-img.png`}
                 alt="Event Photo"
