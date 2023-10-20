@@ -32,3 +32,30 @@ export const faqContent: Array<FAQContent> = [
       '<p>Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan TEDxUniversitasBrawijaya dapat disampaikan melalui : </p> <ul className="list-disc ml-5"> <li> Instagram <a href="https://www.instagram.com/tedxuniversitasbrawijaya" className="font-bold underline"> @tedxuniversitasbrawijaya </a> </li> <li> Contact Person  <span className="font-bold"> Maria Desvita - 081234847606 </span> </li> </ul>',
   },
 ];
+
+export const semayamAsaFAQContent: Array<FAQContent> = [
+  {
+    question:
+      'Bagaimana jika saya tidak mendapatkan notifikasi atau konfirmasi pembayaran setelah berhasil melakukan pembayaran?',
+    answer:
+      'Kami akan segera mengonfirmasi dan mengirimkan invoice melalui email maupun whatsapp dari data yang dilampirkan audiens.',
+  },
+  {
+    question:
+      'Apakah ada kegiatan atau sesi khusus yang melibatkan partisipasi dari para audiens?',
+    answer:
+      'Semua audiens akan mendapatkan experience dengan terlibat dalam semua aktivitas pada Semayam Asa',
+  },
+  {
+    question:
+      'Apakah ada syarat dan ketentuan tertentu saat menghadiri Semayam Asa?',
+    answer:
+      'Syarat dan ketentuan akan kami sampaikan melalui email dari masing-masing audiens.',
+  },
+  {
+    question:
+      'Bagaimana saya dapat menghubungi TEDx Universitas Brawijaya, jika saya memiliki pertanyaan lebih lanjut tentang kegiatan yang berhubungan dengan Semayam Asa?',
+    answer:
+      '<p>Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan TEDxUniversitasBrawijaya dapat disampaikan melalui : </p> <ul className="list-disc ml-5"> <li> Instagram <a href="https://www.instagram.com/tedxuniversitasbrawijaya" className="font-bold underline"> @tedxuniversitasbrawijaya </a> </li> <li> Contact Person  <span className="font-bold"> Maria Desvita - 081234847606 </span> </li> </ul>',
+  },
+];

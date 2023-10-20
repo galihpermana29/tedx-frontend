@@ -19,18 +19,22 @@ export const useCountdown = (targetDate: Date) => {
 };
 
 const getReturnValues = (countDown: number) => {
-  const days = Math.floor(countDown / (1000 * 60 * 60 * 24))
+  const days = Math.max(Math.floor(countDown / (1000 * 60 * 60 * 24)), 0)
     .toString()
     .padStart(2, '0');
-  const hours = Math.floor(
-    (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  const hours = Math.max(
+    Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    0
   )
     .toString()
     .padStart(2, '0');
-  const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60))
+  const minutes = Math.max(
+    Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60)),
+    0
+  )
     .toString()
     .padStart(2, '0');
-  const seconds = Math.floor((countDown % (1000 * 60)) / 1000)
+  const seconds = Math.max(Math.floor((countDown % (1000 * 60)) / 1000), 0)
     .toString()
     .padStart(2, '0');
 

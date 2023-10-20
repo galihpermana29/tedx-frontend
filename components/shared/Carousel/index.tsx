@@ -68,14 +68,14 @@ const Carousel = ({
         }`}>
         <button
           onClick={handlePrev}
-          className="rounded-full flex justify-center items-center w-14 h-14 text-white bg-orange-primary disabled:bg-zinc-400"
+          className="rounded-full flex justify-center items-center w-14 h-14 text-white bg-orange-primary disabled:blur-[3px]"
           aria-label="Previous Button"
           disabled={!prevBtnEnabled}>
           <LeftArrow className="w-7 h-7 mr-1" />
         </button>
         <button
           onClick={handleNext}
-          className="rounded-full flex justify-center items-center w-14 h-14 text-white bg-orange-primary disabled:bg-zinc-400"
+          className="rounded-full flex justify-center items-center w-14 h-14 text-white bg-orange-primary disabled:blur-[3px]"
           aria-label="Next Button"
           disabled={!nextBtnEnabled}>
           <RightArrow className="w-7 h-7 ml-1" />
