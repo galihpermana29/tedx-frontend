@@ -6,11 +6,26 @@ import YoutubeLogo from '@/icons/youtube.png';
 import FooterLine from '@/images/footer-line.png';
 import Logo from '@/images/logo.png';
 import Image from 'next/image';
-// import { usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 function Footer() {
+  const pathName = usePathname();
+  const includedPaths = [
+    '/home',
+    '/about-us',
+    '/pre-event',
+    '/ticket-pre-event',
+    '/our-team',
+    '/merch',
+    '/semayam-asa',
+    '/ticket-semayam-asa',
+  ];
+
   return (
-    <footer className={`bg-green-fade text-white `}>
+    <footer
+      className={`bg-green-fade text-white ${
+        !includedPaths.includes(pathName) ? 'hidden' : 'visible'
+      }`}>
       <div className="relative w-full aspect-[16/6] sm:aspect-[16/4] lg:aspect-[16/3]">
         <div className="relative w-full h-full z-10">
           <Image
