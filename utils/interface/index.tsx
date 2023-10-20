@@ -20,6 +20,8 @@ export interface TicketPayloadI {
   nomor_telepon: string;
   line_id: string;
   instagram: string;
+  jumlah_tiket?: number | string;
+  tanggal?: string;
 }
 
 export type CoreTeam = {
