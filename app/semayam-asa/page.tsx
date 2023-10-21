@@ -74,10 +74,15 @@ function SemayamAsa() {
           className="flex text-base flex-col items-center gap-5 mt-10 text-center text-[20px] ">
           <div className="max-w-[1000px]">
             <p>
-              TEDxUniversitasBrawijaya kembali hadir dalam proses Memantik
-              Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara. dalam
-              Semayam Asa dengan, Kreativitas, Kolaborasi, dan Keterbukaan yang
-              menjadi kunci dari tema besar TEDxUniversitasBrawijaya 2023.
+              TEDxUniversitasBrawijaya kembali hadir dalam proses{' '}
+              <span className="font-bold">
+                Memantik Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara
+              </span>{' '}
+              dalam Semayam Asa dengan{' '}
+              <span className="font-bold">
+                Kreativitas, Kolaborasi, dan Keterbukaan
+              </span>{' '}
+              yang menjadi kunci dari tema besar TEDxUniversitasBrawijaya 2023.
             </p>
             <p className="my-[30px]">
               Kreativitas sebagai pertimbangan berbagai ide dan gagasan tanpa
@@ -248,7 +253,7 @@ function SemayamAsa() {
                 sizes="100vh"
                 className="object-cover"
               />
-              <div className="absolute w-[150%] -top-[20%] -left-[24%] aspect-[16/5] z-20">
+              <div className="absolute w-[120%] -top-[10%] -left-[24%] aspect-[16/5] z-20">
                 <Image
                   src={`/assets/images/semayam-asa-cloud.png`}
                   alt="Cloud"
@@ -257,7 +262,7 @@ function SemayamAsa() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute w-[200%] -bottom-16 -left-[70%] aspect-[16/7] z-20">
+              <div className="absolute w-[50%] -bottom-8 -right-[10%] aspect-[3/4] z-20">
                 <Image
                   src={`/assets/images/semayam-asa-fire.png`}
                   alt="Fire"
