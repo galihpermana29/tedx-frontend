@@ -230,11 +230,11 @@ function SemayamAsa() {
             </h2>
             <div className="grid grid-cols-10 grid-rows-3 gap-2 items-center w-full sm:w-2/3 md:w-1/2">
               <h3 className="col-span-4 font-bold text-xl">Tempat</h3>
-              <p className="col-span-6">To be announced</p>
+              <p className="col-span-6">Nyore Cafe</p>
               <h3 className="col-span-4 font-bold text-xl">Tanggal</h3>
               <p className="col-span-6">27 - 29 Oktober 2023</p>
               <h3 className="col-span-4 font-bold text-xl">Waktu</h3>
-              <p className="col-span-6">19:00 - Selesai</p>
+              <p className="col-span-6">10:00 - 22:00</p>
             </div>
             <Button
               as="anchor"
