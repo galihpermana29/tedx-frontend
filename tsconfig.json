@@ -16,6 +16,7 @@
     "incremental": true,
     "strictNullChecks": false,
     "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
     "plugins": [
       {
         "name": "next"

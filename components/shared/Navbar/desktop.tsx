@@ -39,7 +39,7 @@ export const NavbarDesktop = () => {
           </Link>
         </div>
         <div className="flex items-center flex-1 max-w-max gap-[30px]">
-          <Link href={'/ticket-pre-event'}>
+          <Link href={'/ticket-semayam-asa'}>
             <div className="button">
               <MotionButton
                 onClick={() => ({})}
@@ -163,6 +163,21 @@ export const NavbarDesktop = () => {
                   href={'/pre-event'}
                   className="creato-display text-[20px] font-[500] ml-[20px] hover:underline">
                   Pre Event
+                </Link>
+              </motion.div>
+              <motion.div
+                onClick={() => setNavbarHidden(true)}
+                transition={
+                  navbarHidden
+                    ? {}
+                    : { duration: 1, ease: 'easeInOut', delay: 2.5 }
+                }
+                animate={navbarHidden ? {} : { opacity: 1 }}
+                initial={{ opacity: 0 }}>
+                <Link
+                  href={'/semayam-asa'}
+                  className="creato-display text-[20px] font-[500] ml-[20px] hover:underline">
+                  Propaganda 2
                 </Link>
               </motion.div>
               <motion.div

@@ -158,6 +158,21 @@ export const NavbarMobile = () => {
                 transition={
                   navbarHidden
                     ? {}
+                    : { duration: 1, ease: 'easeInOut', delay: 2.5 }
+                }
+                animate={navbarHidden ? {} : { opacity: 1 }}
+                initial={{ opacity: 0 }}>
+                <Link
+                  href={'/semayam-asa'}
+                  className="creato-display text-[15px] font-[500] ml-[20px] hover:underline">
+                  Propaganda 2
+                </Link>
+              </motion.div>
+              <motion.div
+                onClick={() => setNavbarHidden(true)}
+                transition={
+                  navbarHidden
+                    ? {}
                     : { duration: 1, ease: 'easeInOut', delay: 2.7 }
                 }
                 animate={navbarHidden ? {} : { opacity: 1 }}
@@ -205,7 +220,7 @@ export const NavbarMobile = () => {
             }
             animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
             initial={{ transform: 'translateX(-100vw)' }}>
-            <Link href={'/ticket-pre-event'}>
+            <Link href={'/ticket-semayam-asa'}>
               <div className="button">
                 <MotionButton
                   onClick={() => ({})}

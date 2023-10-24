@@ -304,7 +304,7 @@ export default function MemantikDesktop() {
             <Button
               as="client-link"
               type="primary"
-              href="/ticket-pre-event"
+              href="/ticket-semayam-asa"
               className="w-max">
               Grab Ticket
             </Button>
