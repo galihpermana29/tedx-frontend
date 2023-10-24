@@ -60,3 +60,33 @@ export type FAQContent = {
   question: string;
   answer: string;
 };
+
+export interface TransactionI {
+  data: Data;
+}
+
+export interface AllTransactionI {
+  data: Data[];
+}
+
+export interface Data {
+  id: number;
+  nama: string;
+  jenis_kelamin: string;
+  nomor_identitas: string;
+  asal_institusi: string;
+  domisili: string;
+  email: string;
+  nomor_telepon: string;
+  line_id: string;
+  instagram: string;
+  jumlah_tiket: number;
+  total_harga: number;
+  tanggal: string;
+  order_id: string;
+  status_payment: string;
+  image_uri: string;
+  nomor_tiket: any;
+  checkin_status: boolean;
+  checkin_nomor_tiket: any;
+}

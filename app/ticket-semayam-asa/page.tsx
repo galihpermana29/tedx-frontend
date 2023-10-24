@@ -1,9 +1,11 @@
 'use client';
 
 import WebsiteAPI from '@/api/website';
+import { encryptNumber } from '@/utils/encryption';
 // import { LoadingPage } from '@/components/shared/Loading';
 import { FormFieldI, TicketPayloadI } from '@/utils/interface';
 import { AxiosError } from 'axios';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -112,6 +114,7 @@ const formData: FormFieldI[] = [
 export default function TicketPreEvent() {
   const [loading, setLoading] = useState<boolean>(false);
   const [counter, setCounter] = useState<number>(1);
+  const router = useRouter();
   console.log(loading);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -126,11 +129,12 @@ export default function TicketPreEvent() {
           (targetEl as HTMLInputElement)?.value || '';
       }
     });
-    payload.line_id = '';
+    payload.line_id = 'tes';
     payload.jumlah_tiket = counter;
 
     try {
-      await WebsiteAPI.createTransaction(payload);
+      const { data } = await WebsiteAPI.createTransaction(payload);
+      console.log(data);
       toast.success(
         'Terima kasih sudah melakukan registrasi, periksa email kamu untuk informasi lebih lanjut!',
         {
@@ -144,6 +148,12 @@ export default function TicketPreEvent() {
           theme: 'light',
         }
       );
+
+      setTimeout(() => {
+        router.push(
+          `/ticket-semayam-asa/${encryptNumber(data.toString(), 144)}`
+        );
+      }, 1000);
     } catch (error) {
       if (error) {
         const axiosError = error as AxiosError; // Cast error to AxiosError
@@ -182,12 +192,6 @@ export default function TicketPreEvent() {
               <h1 className="text-[48px] mb-5 rosela text-blue-primary text-center">
                 Registrasi Di Sini
               </h1>
-              <div className="my-[30px] text-center lg:text-[20px]">
-                Tiket Panggung Swara Insan ini menawarkan hal yang unik karena
-                setiap pendaftar akan melalui proses pemilihan secara otomatis
-                melalui sistem website kami, sehingga kamu memiliki kesempatan
-                yang sama untuk mendapatkan tiket tersebut!
-              </div>
               <form className="lg:p-[20px] xs:p-0" onSubmit={handleSubmit}>
                 <div className="grid lg:grid-cols-2 gap-x-[30px] gap-y-[10px] xs:grid-cols-1">
                   {formData.map((d) => {

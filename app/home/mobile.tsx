@@ -136,7 +136,7 @@ function MemantikMobile() {
             <Button
               as="client-link"
               type="primary"
-              href="/ticket-pre-event"
+              href="/ticket-semayam-asa"
               className="w-full">
               Grab Ticket
             </Button>
