@@ -34,22 +34,23 @@ export default function Checkin() {
                 <div className="creato font-[600] text-[15px] xs:text-[15px] text-center mt-[10px]">
                   Scan Your Ticket Here
                 </div>
-                <QrReader
-                  facingMode="rear"
-                  delay={500}
-                  style={{
-                    height: '500px',
-                  }}
-                  // style={previewStyle}
-                  // onError={this.handleError}
-                  onScan={(e: { text: string | null } | null) => {
-                    if (e) {
-                      router.push(e.text);
-                    } else {
-                      return;
-                    }
-                  }}
-                />
+                <div className="flex justify-center mt-[10px]">
+                  <QrReader
+                    legacyMode={true}
+                    facingMode="rear"
+                    delay={500}
+                    style={{
+                      height: '500px',
+                    }}
+                    onScan={(e: { text: string | null } | null) => {
+                      if (e) {
+                        router.push(e.text);
+                      } else {
+                        return;
+                      }
+                    }}
+                  />
+                </div>
               </div>
             )}
             {!isAdmin && (
@@ -60,7 +61,7 @@ export default function Checkin() {
                 <br />
                 <input
                   onChange={handleChange}
-                  className={`h-[50px] text-center rounded-[6px] border-2 border-blue-primary w-full p-[12px] text-[16px] bg-white `}
+                  className={`h-[50px] max-w-[300px] text-center rounded-[6px] border-2 border-blue-primary w-full p-[12px] text-[16px] bg-white `}
                   type={'number'}
                   name={'pin'}
                   id={'pin'}
