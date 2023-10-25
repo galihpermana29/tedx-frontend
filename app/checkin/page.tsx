@@ -35,6 +35,7 @@ export default function Checkin() {
                   Scan Your Ticket Here
                 </div>
                 <QrReader
+                  facingMode="rear"
                   delay={500}
                   style={{
                     height: '500px',
