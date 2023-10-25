@@ -133,7 +133,7 @@ export default function CheckInDetail() {
                     Checkin Status
                   </p>
                   <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
-                    {data.checkin_nomor_tiket === null && 'Belum Check In'}
+                    {/* {data.checkin_nomor_tiket === null && 'Belum Check In'} */}
                     {data.checkin_nomor_tiket &&
                     data.checkin_nomor_tiket.includes(search)
                       ? 'Telah Check In'
