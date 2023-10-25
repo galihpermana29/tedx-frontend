@@ -114,7 +114,7 @@ export default function DetailSemayamAsa() {
             toast.success('Image has uploaded successfully!');
           })
           .catch((error) => {
-            toast.success('Failed when upload the image!');
+            toast.success('Image size is greater than 1.5mb');
             console.error(error);
           });
       }
@@ -255,7 +255,7 @@ export default function DetailSemayamAsa() {
                     <div>
                       <div>
                         <div className="creato text-[18px] font-[700]">
-                          Bukti Pembayaran
+                          Bukti Pembayaran (max: 1.5mb)
                         </div>
                         {loading && <Spin />}
                         {imageUrl && !loading && (
