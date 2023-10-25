@@ -48,6 +48,11 @@ export const semayamAsaFAQContent: Array<FAQContent> = [
   },
   {
     question:
+      'Apakah satu tiket berlaku untuk semua hari dalam acara tersebut?',
+    answer: 'Tiket hanya bisa digunakan untuk mengikuti satu kali acara',
+  },
+  {
+    question:
       'Apakah ada syarat dan ketentuan tertentu saat menghadiri Semayam Asa?',
     answer:
       'Syarat dan ketentuan akan kami sampaikan melalui email dari masing-masing audiens.',
