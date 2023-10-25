@@ -3,8 +3,7 @@
 import { decryptNumber } from '@/utils/encryption';
 import { useParams, useRouter } from 'next/navigation';
 
-// import logoQris from '@/images/qris-logo.png';
-// import qrisSample from '@/images/qris-sample.png';
+import { Button, Spin } from 'antd';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -30,7 +29,7 @@ export default function DetailSemayamAsa() {
 
   const [data, setData] = useState<DataI | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-
+  const [loading, setLoading] = useState<boolean>(false);
   const idDecrypted = decryptNumber(id, 144);
   const router = useRouter();
 
@@ -65,8 +64,10 @@ export default function DetailSemayamAsa() {
 
   const handleEditTransaction = async () => {
     try {
+      setLoading(true);
       await WebsiteAPI.editTransactionById(idDecrypted, {
         image_uri: imageUrl,
+        status_payment: 'pending',
       });
       toast.success('Form has sent successfully!');
       setTimeout(() => {
@@ -94,21 +95,23 @@ export default function DetailSemayamAsa() {
       } else {
         console.error(error, 'err');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleUploadBukti = async (file: Blob) => {
     try {
+      setLoading(true);
       if (file) {
         const formData = new FormData();
         formData.append('file', file as Blob);
-
+        toast.warning('Waiting for image to be uploaded..');
         axios
           .post('https://betedx.adityaariizkyy.my.id/api/v1/upload', formData)
           .then((response) => {
             setImageUrl(response.data.data);
             toast.success('Image has uploaded successfully!');
-            console.log(response);
           })
           .catch((error) => {
             toast.success('Failed when upload the image!');
@@ -137,6 +140,8 @@ export default function DetailSemayamAsa() {
       } else {
         console.error(error, 'err');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -149,7 +154,7 @@ export default function DetailSemayamAsa() {
       <ToastContainer />
       <main className="bg-wall-texture overflow-hidden lg:px-[100px] lg:py-[200px] xs:p-[20px]">
         <div className="relative p-5 rounded-xl w-full bg-flower max-h-max xs:my-[80px] lg:my-0">
-          <div className="bg-white rounded-md p-5  max-h-max  min-h-screen">
+          <div className="bg-white rounded-md p-5 ">
             <div className="xs:p-[6px] lg:p-[30px]">
               {!data && <LoadingPage />}
               {data && (
@@ -214,17 +219,18 @@ export default function DetailSemayamAsa() {
                         Instruksi Pembayaran:
                       </div>
                       <div className="creato text-[18px] font-[400]">
-                        1. Lakukan transfer sejumlah total harga tiket yang
-                        harus kamu bayar
+                        1. Silahkan lakukan pembayaran dengan nominal yang
+                        tertera pada rangkuman pemesanan
                       </div>
                       <div className="creato text-[18px] font-[400]">
-                        2. Setelah transfer, lakukan screenshot bukti pembayaran
+                        2. Pembayaran dapat dilakukan melalui beberapa metode
+                        yang ada
                       </div>
                       <div className="creato text-[18px] font-[400]">
-                        3. Upload bukti pembayaran
+                        3. Screenshot bukti pembayaran
                       </div>
                       <div className="creato text-[18px] font-[400]">
-                        4. Selesai
+                        4. Upload bukti pembayaran
                       </div>
                     </div>
                     <div className="w-full">
@@ -251,7 +257,8 @@ export default function DetailSemayamAsa() {
                         <div className="creato text-[18px] font-[700]">
                           Bukti Pembayaran
                         </div>
-                        {imageUrl ? (
+                        {loading && <Spin />}
+                        {imageUrl && !loading && (
                           <div className="mt-[10px] max-w-[200px]">
                             <Image
                               className="w-full"
@@ -262,32 +269,29 @@ export default function DetailSemayamAsa() {
                               loader={() => imageUrl}
                             />
                           </div>
-                        ) : (
-                          <input
-                            accept="image/*"
-                            type="file"
-                            id="myFile"
-                            name="filename"
-                            className="mt-[10px]"
-                            onChange={(e) =>
-                              handleUploadBukti(e.target.files[0])
-                            }
-                          />
                         )}
+                        <input
+                          accept="image/*"
+                          type="file"
+                          id="myFile"
+                          name="filename"
+                          className="mt-[10px]"
+                          onChange={(e) => handleUploadBukti(e.target.files[0])}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               )}
 
-              {imageUrl && (
-                <button
-                  onClick={handleEditTransaction}
-                  type="button"
-                  className="bg-orange-primary text-white text-center text-[20px] w-full rounded-[6px] p-[12px] mt-[50px]">
-                  Simpan
-                </button>
-              )}
+              <Button
+                loading={loading}
+                disabled={!imageUrl}
+                onClick={handleEditTransaction}
+                htmlType="button"
+                className="bg-orange-primary h-max text-white text-center text-[20px] w-full rounded-[6px] p-[12px] mt-[50px]">
+                Simpan
+              </Button>
             </div>
           </div>
         </div>

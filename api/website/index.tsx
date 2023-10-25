@@ -37,6 +37,16 @@ async function getDetailTransaction(
   return data;
 }
 
+async function checkInTiket(
+  id_trans: number,
+  filter: string
+): Promise<{ data: string }> {
+  const { data } = await api.patch<{ data: string }>(
+    `/checkin/${id_trans}${filter !== '' ? filter : ''}`
+  );
+  return data;
+}
+
 async function getAllTransaction(): Promise<AllTransactionI> {
   const { data } = await api.get<AllTransactionI>(`/transactions`);
   return data;
@@ -66,6 +76,7 @@ const WebsiteAPI = {
   getDetailTransaction,
   editTransactionById,
   getAllTransaction,
+  checkInTiket,
 };
 
 export default WebsiteAPI;

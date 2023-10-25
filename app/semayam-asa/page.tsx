@@ -96,9 +96,9 @@ function SemayamAsa() {
               Setiap audiens akan memperoleh experience melalui aktivitas dan
               Instalasi interaktif yang TEDxUniversitasBrawijaya 2023 suguhkan.
               Harapannya Semayam Asa ini mampu menjadi jembatan dalam
-              mengelaborasi tema yang dibawakan TEDxUniversitasBrawijaya tahun
-              ini yang akan dijelaskan secara komprehensif dalam acara utama
-              nantinya.
+              mengelaborasikan tema yang dibawakan TEDxUniversitasBrawijaya
+              tahun ini yang akan dijelaskan secara komprehensif dalam acara
+              utama nantinya.
             </p>
           </div>
         </motion.div>

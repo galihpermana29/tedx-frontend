@@ -75,7 +75,6 @@ export default function CMS() {
       setLoading(true);
       const data = await WebsiteAPI.getAllTransaction();
       setDatas(data.data);
-      console.log(data, 'data');
     } catch (error) {
       console.log(error, 'error');
     } finally {
@@ -129,10 +128,11 @@ export default function CMS() {
               All Ticket Transactions
             </h1>
           </div>
+          <div></div>
         </div>
         <div>
           <Table
-            pagination={{ pageSize: 5, total: datas?.length }}
+            pagination={{ pageSize: 10, total: datas?.length }}
             loading={loading}
             dataSource={datas}
             columns={columns}
