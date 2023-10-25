@@ -30,6 +30,9 @@ export default function CheckInDetail() {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<DataI | null>(null);
 
+  const isAdmin =
+    typeof window !== 'undefined' && localStorage.getItem('admin');
+
   const handleCheckIn = async () => {
     try {
       setLoading(true);
@@ -176,10 +179,12 @@ export default function CheckInDetail() {
               </div>
             )}
 
-            {data && (
+            {isAdmin && data && (
               <Button
                 disabled={
-                  data ? data.checkin_nomor_tiket.includes(search) : false
+                  data.checkin_nomor_tiket
+                    ? data.checkin_nomor_tiket.includes(search)
+                    : false
                 }
                 loading={loading}
                 onClick={handleCheckIn}
