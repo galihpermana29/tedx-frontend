@@ -234,7 +234,7 @@ function SemayamAsa() {
               <h3 className="col-span-4 font-bold text-xl">Tanggal</h3>
               <p className="col-span-6">27 - 29 Oktober 2023</p>
               <h3 className="col-span-4 font-bold text-xl">Waktu</h3>
-              <p className="col-span-6">10:00 - 22:00</p>
+              <p className="col-span-6">13:00 - 22:00</p>
             </div>
             <Button
               as="anchor"
