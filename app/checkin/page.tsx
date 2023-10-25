@@ -9,7 +9,8 @@ import QrReader from 'react-qr-scanner';
 
 export default function Checkin() {
   const router = useRouter();
-  const isAdmin = localStorage.getItem('admin');
+  const isAdmin =
+    typeof window !== 'undefined' && localStorage.getItem('admin');
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e?.target.value === '290102') {
       message.success('Login succees');
