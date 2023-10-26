@@ -108,8 +108,8 @@ function SemayamAsa() {
             className="mt-[30px] flex justify-center h-screen w-full absolute">
             <iframe
               className="aspect-video"
-              src="https://www.youtube.com/embed/aYsIYGatsWk?si=h0AtJIXLQ2Gs8fTd&amp;controls=1"
-              title="YouTube video"
+              src="https://www.youtube.com/embed/EpnSSyRlXvo?si=nEeJrW1TEKYTKQiS&amp;controls=0"
+              title="Semayam Asa Teaser YouTube video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </motion.div>
         </div>
