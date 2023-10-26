@@ -218,7 +218,7 @@ function SemayamAsa() {
             })}
           </Marquee>
           <Marquee autoFill speed={120}>
-            <p className="font-bold text-4xl mx-20 rosela text-transparent text-outline">
+            <p className="font-bold text-4xl py-2 mx-20 rosela text-transparent text-outline">
               Semayam Asa!
             </p>
           </Marquee>
