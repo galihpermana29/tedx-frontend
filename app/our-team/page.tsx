@@ -14,6 +14,8 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 
+import Lenis from '@studio-freight/lenis';
+
 export default function OurTeam() {
   const [teamData, setTeamData] = useState<OurTeamI>();
 
@@ -28,6 +30,16 @@ export default function OurTeam() {
     };
 
     getData();
+  }, []);
+
+  useEffect(() => {
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    const lenis = new Lenis();
+
+    requestAnimationFrame(raf);
   }, []);
 
   return (

@@ -9,6 +9,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Marquee from 'react-fast-marquee';
+import Lenis from '@studio-freight/lenis';
 
 function SemayamAsa() {
   const [visibleCloudIndex, setVisibleCLoudIndex] = useState<number>(0);
@@ -35,6 +36,16 @@ function SemayamAsa() {
     [0, 0.7, 1],
     ['10vh', '30vh', '120vh']
   );
+
+  useEffect(() => {
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    const lenis = new Lenis();
+
+    requestAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     const cloudInterval = setInterval(() => {

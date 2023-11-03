@@ -29,6 +29,8 @@ import X from '@/images/home-x-2.png';
 import ReactPlayer from 'react-player/lazy';
 import Link from 'next/link';
 
+// import Lenis from '@studio-freight/lenis';
+
 export default function MemantikDesktop() {
   const containerRef = useRef<HTMLDivElement>(null);
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -108,6 +110,23 @@ export default function MemantikDesktop() {
       });
     }
   };
+
+  // useEffect(() => {
+  //   console.log(horizontalScrollEnd, 'STATE');
+
+  //   const lenis = new Lenis();
+
+  //   function raf(time: any) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+
+  //   if (horizontalScrollEnd) {
+  //     requestAnimationFrame(raf);
+  //   } else {
+  //     lenis.stop();
+  //   }
+  // }, [horizontalScrollEnd]);
 
   useEffect(() => {
     window.scrollTo({ top: -1, behavior: 'smooth' });

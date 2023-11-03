@@ -10,7 +10,7 @@ import Performance from '@/images/pre-event-performance.png';
 import Venue from '@/images/pre-event-venue.png';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import LeftHand from '@/images/lefthanded.png';
 import FAQCover from '@/images/pre-event-faq-cover.png';
@@ -28,6 +28,8 @@ import {
   textFadeUpAnimationProps,
 } from '@/utils/data/animation';
 import { faqContent } from '@/utils/data/faq';
+
+import Lenis from '@studio-freight/lenis';
 
 function PreEventDesktop() {
   const extendedRef = useRef<HTMLDivElement | null>(null);
@@ -71,6 +73,16 @@ function PreEventDesktop() {
   const right = useTransform(scrollHand, [0.1, 1], ['400px', '100px']);
 
   const left = useTransform(scrollHand, [0.1, 1], ['-400px', '-100px']);
+
+  useEffect(() => {
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    const lenis = new Lenis();
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <div>
