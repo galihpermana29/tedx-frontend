@@ -1,21 +1,18 @@
 import { DataMerchItem } from '@/utils/interface';
 import Image from 'next/image';
-import { Dispatch, SetStateAction } from 'react';
+import { HTMLAttributes } from 'react';
 
-interface MerchPropsI {
+interface MerchPropsI extends HTMLAttributes<HTMLDivElement> {
   item: DataMerchItem;
   key: number;
-  onClick: Dispatch<SetStateAction<{ data: DataMerchItem; modal: boolean }>>;
 }
 
-export default function MerchCard({ item, key, onClick }: MerchPropsI) {
+export default function MerchCard({ item, key, ...props }: MerchPropsI) {
   const { nama: name, thumbnail: image, harga: price } = item;
   return (
-    <div
-      className="relative w-full"
-      onClick={() => onClick({ modal: true, data: item })}>
+    <div className="relative w-full" {...props}>
       <div
-        className="bg-paper-merch w-full h-full min-h-[400px] aspect-[3/4] p-[20px] flex flex-col gap-[10px] hover:brightness-75 transition-all duration-500 ease-in-out"
+        className="bg-paper-merch w-full h-full min-h-[400px] aspect-[3/4] p-[20px] flex flex-col gap-[10px] brightness-75 transition-all duration-500 ease-in-out"
         key={key}>
         <div>
           <h1 className="creato lg:text-[24px] font-bold xs:text-[18px] ">
