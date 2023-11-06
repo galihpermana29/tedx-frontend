@@ -99,7 +99,11 @@ export default function Merch() {
               <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[50px] gap-y-16 md:gap-y-[100px] justify-center">
                 {data?.map((data, index) => (
                   <div key={index} className="flex justify-center">
-                    <MerchCard item={data} key={index} onClick={setActive} />
+                    <MerchCard
+                      item={data}
+                      key={index}
+                      className="cursor-not-allowed"
+                    />
                   </div>
                 ))}
               </div>
