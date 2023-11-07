@@ -12,7 +12,7 @@ export default function MerchCard({ item, key, ...props }: MerchPropsI) {
   return (
     <div className="relative w-full" {...props}>
       <div
-        className="bg-paper-merch w-full h-full min-h-[400px] aspect-[3/4] p-[20px] flex flex-col gap-[10px] brightness-75 transition-all duration-500 ease-in-out"
+        className="bg-paper-merch w-full h-full min-h-[400px] aspect-[3/4] p-[20px] flex flex-col gap-[10px]"
         key={key}>
         <div>
           <h1 className="creato lg:text-[24px] font-bold xs:text-[18px] ">
