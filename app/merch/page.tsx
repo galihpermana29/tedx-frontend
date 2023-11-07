@@ -97,15 +97,27 @@ export default function Merch() {
           <>
             <div className="mx-auto max-w-screen-2xl w-full px-5 md:px-[60px] pt-32 md:pt-52 lg:pt-96">
               <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[50px] gap-y-16 md:gap-y-[100px] justify-center">
-                {data?.map((data, index) => (
-                  <div key={index} className="flex justify-center">
-                    <MerchCard
-                      item={data}
-                      key={index}
-                      className="cursor-not-allowed"
-                    />
-                  </div>
-                ))}
+                {data?.map((data, index) => {
+                  const soldOutItems = [6, 7, 8, 9, 10];
+                  const isAvailable = !soldOutItems.includes(data.id);
+
+                  return (
+                    <div key={index} className="flex justify-center">
+                      <MerchCard
+                        item={data}
+                        key={index}
+                        className={`${
+                          isAvailable
+                            ? 'cursor-pointer hover:brightness-75 transition-all duration-500 ease-in-out'
+                            : 'cursor-not-allowed'
+                        }`}
+                        onClick={() =>
+                          isAvailable && setActive({ data: data, modal: true })
+                        }
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="flex px-5 justify-center">
