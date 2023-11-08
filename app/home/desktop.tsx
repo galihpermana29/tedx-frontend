@@ -23,13 +23,12 @@ import {
   textFadeUpAnimationProps,
 } from '@/utils/data/animation';
 
+import MainEventSpeakers from '@/components/home/MainEventSpeakers';
 import SpeakerCard from '@/components/shared/SpeakerCard';
 import Photo from '@/images/home-photo.png';
 import X from '@/images/home-x-2.png';
-import ReactPlayer from 'react-player/lazy';
 import Link from 'next/link';
-
-// import Lenis from '@studio-freight/lenis';
+import ReactPlayer from 'react-player/lazy';
 
 export default function MemantikDesktop() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -110,23 +109,6 @@ export default function MemantikDesktop() {
       });
     }
   };
-
-  // useEffect(() => {
-  //   console.log(horizontalScrollEnd, 'STATE');
-
-  //   const lenis = new Lenis();
-
-  //   function raf(time: any) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   if (horizontalScrollEnd) {
-  //     requestAnimationFrame(raf);
-  //   } else {
-  //     lenis.stop();
-  //   }
-  // }, [horizontalScrollEnd]);
 
   useEffect(() => {
     window.scrollTo({ top: -1, behavior: 'smooth' });
@@ -282,8 +264,8 @@ export default function MemantikDesktop() {
           </div>
         </div>
       </div>
-      <section className="flex flex-col gap-10 bg-paper w-full pb-32 pt-[20vh] bg-no-repeat bg-cover mt-[-5%] relative z-[7]">
-        <div className="flex flex-col gap-10 px-[60px]">
+      <div className="flex flex-col gap-10 bg-paper w-full pb-32 pt-[20vh] bg-no-repeat bg-cover mt-[-5%] relative z-[7]">
+        <section className="flex flex-col gap-10 px-[60px]">
           <div className="flex gap-10 w-full">
             <div className="relative w-full max-w-[480px] ml-3 md:ml-4 aspect-square flex-1">
               <Image src={X} alt="X image" fill className="object-center" />
@@ -292,7 +274,7 @@ export default function MemantikDesktop() {
               <motion.h2
                 {...textBlurAnimationProps}
                 className="font-bold text-[48px] mb-3 w-full max-w-[512px]">
-                Segera Hadir: <br /> Panggung Swara Insan
+                Panggung Swara Insan
               </motion.h2>
               <motion.p
                 {...textFadeUpAnimationProps}
@@ -312,47 +294,98 @@ export default function MemantikDesktop() {
             <SpeakerCard variant={2} delay={1} className="w-full" />
             <SpeakerCard variant={3} delay={1} className="w-full" />
           </div>
-          <div className="flex gap-3 justify-center">
+          <div className="flex gap-3 bg-black w-full justify-center">
             <Button
               as="client-link"
-              type="secondary"
+              type="primary"
               href="/pre-event"
               className="w-max">
               Apa itu Pre-Event?
             </Button>
+          </div>
+        </section>
+        <section className="flex relative flex-col -z-10 -mt-44 items-center">
+          <div className="relative select-none translate-y-20 w-full aspect-[16/5]">
+            <Image src={'/assets/images/home-notes.png'} alt="notes" fill />
+          </div>
+          <h2 className="rosela text-center text-6xl">
+            <span>Memantik Baskara</span>
+            <br />
+            <span className="text-4xl">Tak Membara, Terbakar Tak Bersuara</span>
+          </h2>
+          <p className="text-center w-2/3 text-lg mt-14">
+            Penantian akan segera berakhir. Di puncak acara
+            TEDxUniversitasBrawijaya 2023, kami menghadirkan “Memantik Baskara:
+            Tersulut Tak Membara, Terbakar Tak Bersuara”. Beberapa insan yang
+            berjuang di tengah ambiguitas atas jati dirinya hingga akhirnya
+            memantik sebuah pencerahan maupun melahirkan gagasan baru yang
+            berkembang dari serangkaian variabel yang saling terhubung. Era
+            dunia saat ini menuju era inovasi dan kolaborasi, di mana ide dan
+            sumber daya dapat dibagikan secara global untuk mencapai tujuan yang
+            lebih besar. Dengan potensi yang ada, pelibatan alam, sesama, dan
+            entitas manusia bersama berusaha untuk membaca, memahami, meneliti,
+            dan menghayati fenomena-fenomena dalam upaya penerimaan diri
+            seutuhnya. Dalam pencarian kali ini, audiens akan dibawa ke dalam
+            perjalanan menarik melalui instalasi interaktif yang dipadukan
+            dengan panggung inspiratif yaitu talks, oleh para speaker
+            TEDxUniversitasBrawijaya 2023 yang akan menjadikan sebuah pengalaman
+            tak terlupakan, merajut satu cerita, dan berjalan bersama.
+          </p>
+        </section>
+        <section>
+          <div className="w-full h-48 relative">
+            <div className="absolute -bottom-[26rem] w-full -z-10 aspect-[16/9]">
+              <Image src={'/assets/images/home-root.png'} alt="roots" fill />
+            </div>
+          </div>
+          <h2 className="text-6xl text-outline-yellow text-center rosela">
+            List Speakers
+          </h2>
+          <div className="mt-20">
+            <MainEventSpeakers />
+          </div>
+          <div className="flex gap-3 mt-10 justify-center">
             <Button
               as="client-link"
               type="primary"
-              href="/ticket-semayam-asa"
+              href="/main-event"
               className="w-max">
-              Grab Ticket
+              Apa itu Main Event?
             </Button>
           </div>
+        </section>
+        <div className="relative w-full aspect-[16/4] flex justify-end items-center">
+          <Image
+            src={'/assets/images/home-cloud-separator.png'}
+            alt="Cloud"
+            fill
+            className="object-cover"
+          />
         </div>
-        <div className="flex flex-row-reverse justify-between items-center gap-[50px] mt-10 bg-cover bg-no-repeat">
-          <div className="z-0 relative flex-1">
-            <div className="relative w-full  flex justify-end items-center">
+        <section className="flex flex-row-reverse justify-between items-center gap-[50px] mt-10 bg-cover bg-no-repeat">
+          <div className="z-0 relative flex-1 basis-2/3">
+            <div className="relative w-full flex justify-end items-center">
               <Image src={Photo} alt="Event photo" />
             </div>
           </div>
-          <div className="flex flex-col gap-10 ml-[60px]">
+          <div className="flex flex-col basis-1/3 gap-10 ml-[60px]">
             <motion.h2
               {...textBlurAnimationProps}
-              className="font-[800] text-[90px] max-w-[20vw] creato-display">
-              Tickets Dropping Soon!
+              className="font-[800] text-6xl italic w-full creato-display">
+              Secure Your Spot. Grab Your Tickets Here!
             </motion.h2>
-            <Link href={'/ticket-pre-event'}>
+            <Link href={'/ticket-main-event'}>
               <Button
                 as="button"
                 type="primary"
                 onClick={() => {}}
-                className="w-full max-w-[300px] text-[20px]">
+                className="max-w-[300px] text-[20px]">
                 Grab Yours
               </Button>
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }

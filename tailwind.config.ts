@@ -51,11 +51,14 @@ const config: Config = {
         red: {
           primary: '#A00101',
         },
+        yellow: {
+          primary: '#ffb03a',
+        },
       },
     },
     screens: {
       // min-width
-      xs: '0px',
+      xs: '449px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
