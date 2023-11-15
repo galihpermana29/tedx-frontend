@@ -1,0 +1,42 @@
+export const data = [
+  {
+    name: 'Main Event - Pre Sale 2',
+    price: 'Rp. 50.000-',
+    dateOrder: '17 November - 26 November 2023',
+    venue: 'Jokopi',
+    dateEvent: '02 Desember 2023',
+    theme: 'Swara Insan',
+  },
+  {
+    name: 'Main Event - Pre Sale',
+    price: 'Rp. 50.000-',
+    dateOrder: '10 November - 17 November 2023',
+    venue: 'Jokopi',
+    dateEvent: '02 Desember 2023',
+    theme: 'Swara Insan',
+  },
+  {
+    name: 'Main Event - Early Bird',
+    price: 'Rp. 50.000-',
+    dateOrder: '17 November - 26 November 2023',
+    venue: 'Jokopi',
+    dateEvent: '02 Desember 2023',
+    theme: 'Swara Insan',
+  },
+  {
+    name: 'Propaganda 2',
+    price: 'Rp. 50.000-',
+    dateOrder: '20 Oktober - 29 Oktober 2023',
+    venue: 'Nyore',
+    dateEvent: '02 Desember 2023',
+    theme: 'Semayam Asa',
+  },
+  {
+    name: 'Pre Event',
+    price: 'Rp. 50.000-',
+    dateOrder: '16 September - 19 September 2023',
+    venue: 'Suaco',
+    dateEvent: '23 September 2023',
+    theme: 'Swara Insan',
+  },
+];

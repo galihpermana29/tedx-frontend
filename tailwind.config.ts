@@ -29,6 +29,9 @@ const config: Config = {
         merch: "url('/assets/images/bg-merch.png')",
         'paper-merch': "url('/assets/images/paper-merch.png')",
         'yellow-merch': "url('/assets/images/bg-yellow-merch.png')",
+        ticket: "url('/assets/images/bg-ticket.png')",
+        'main-event': "url('/assets/images/bg-main-event.jpg')",
+        'green-main': "url('/assets/images/green-main.png')",
       },
       colors: {
         orange: {

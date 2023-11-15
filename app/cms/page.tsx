@@ -1,5 +1,7 @@
 'use client';
 import WebsiteAPI from '@/api/website';
+// import InvoicePDF from '@/components/PdfTiket';
+// import { PDFViewer } from '@react-pdf/renderer';
 import { Data } from '@/utils/interface';
 import { Button, Modal, Table, message } from 'antd';
 import Image from 'next/image';
@@ -28,6 +30,11 @@ export default function CMS() {
       key: 'nama',
     },
     {
+      title: 'Status',
+      dataIndex: 'status_payment',
+      key: 'status_payment',
+    },
+    {
       title: 'No Telp',
       dataIndex: 'nomor_telepon',
       key: 'nomor_telepon',
@@ -37,29 +44,18 @@ export default function CMS() {
       dataIndex: 'total_harga',
       key: 'total_harga',
     },
-
-    {
-      title: 'Tanggal Event',
-      dataIndex: 'tanggal',
-      key: 'tanggal',
-    },
     {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
     },
-    {
-      title: 'Status',
-      dataIndex: 'status_payment',
-      key: 'status_payment',
-    },
+
     {
       title: 'Detail',
       dataIndex: '',
       key: 'id',
       render: (data: Data) => (
         <Button
-          disabled={data.status_payment === 'settlement'}
           onClick={() => {
             setActive({ id: data.id, image_uri: data.image_uri });
             setIsModalOpen(true);
@@ -101,6 +97,9 @@ export default function CMS() {
 
   return (
     <div className="p-[50px] bg-wall-texture overflow-hidden lg:px-[100px] lg:pb-[200px] xs:p-[20px] min-h-screen">
+      {/* <PDFViewer width={'90%'} height={'1024px'}>
+        <InvoicePDF />
+      </PDFViewer> */}
       <Modal
         title="Payment Approval"
         okText={'Approve'}
@@ -132,6 +131,9 @@ export default function CMS() {
         </div>
         <div>
           <Table
+            scroll={{
+              x: 1500,
+            }}
             pagination={{ pageSize: 10, total: datas?.length }}
             loading={loading}
             dataSource={datas}
