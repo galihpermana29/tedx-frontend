@@ -19,6 +19,7 @@ const config: Config = {
         'memantik-2': "url('/assets/images/memantik-bg-2.png')",
         'paper-mobile': "url('/assets/images/bg-paper-mobile.png')",
         'paper-flat': "url('/assets/images/bg-paper-flat.png')",
+        'paper-main': "url('/assets/images/bg-paper-main.png')",
         'paper-pre-desktop': "url('/assets/images/bg-paper-pre-desktop.png')",
         'speaker-card': "url('/assets/images/bg-speaker.png')",
         flower: "url('/assets/images/bg-art.png')",
@@ -29,6 +30,9 @@ const config: Config = {
         merch: "url('/assets/images/bg-merch.png')",
         'paper-merch': "url('/assets/images/paper-merch.png')",
         'yellow-merch': "url('/assets/images/bg-yellow-merch.png')",
+        ticket: "url('/assets/images/bg-ticket.png')",
+        'main-event': "url('/assets/images/bg-main-event.jpg')",
+        'green-main': "url('/assets/images/green-main.png')",
       },
       colors: {
         orange: {
@@ -55,7 +59,7 @@ const config: Config = {
     },
     screens: {
       // min-width
-      xs: '0px',
+      xs: '300px',
       sm: '640px',
       md: '768px',
       lg: '1024px',

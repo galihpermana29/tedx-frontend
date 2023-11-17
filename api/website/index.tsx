@@ -26,6 +26,15 @@ async function createTransaction(
   );
   return data;
 }
+async function createTransactionMainEvent(
+  payload: TicketPayloadI
+): Promise<{ data: { data: number; status: string } }> {
+  const { data } = await api.post<{ data: { data: number; status: string } }>(
+    `/mainevents`,
+    payload
+  );
+  return data;
+}
 
 async function getDetailTransaction(
   id_trans: number,
@@ -33,6 +42,16 @@ async function getDetailTransaction(
 ): Promise<TransactionI> {
   const { data } = await api.get<TransactionI>(
     `/transactions/${id_trans}${filter !== '' ? filter : ''}`
+  );
+  return data;
+}
+
+async function getDetailTransactionMainEvent(
+  id_trans: number,
+  filter: string
+): Promise<TransactionI> {
+  const { data } = await api.get<TransactionI>(
+    `/mainevents/${id_trans}${filter !== '' ? filter : ''}`
   );
   return data;
 }
@@ -51,6 +70,10 @@ async function getAllTransaction(): Promise<AllTransactionI> {
   const { data } = await api.get<AllTransactionI>(`/transactions`);
   return data;
 }
+async function getAllTransactionMainEvent(): Promise<AllTransactionI> {
+  const { data } = await api.get<AllTransactionI>(`/mainevents`);
+  return data;
+}
 
 async function editTransactionById(
   id_trans: number,
@@ -63,8 +86,24 @@ async function editTransactionById(
   return data;
 }
 
+async function editTransactionByIdMainEvent(
+  id_trans: number,
+  payload: { image_uri?: string; status?: string }
+): Promise<TransactionI> {
+  const { data } = await api.patch<TransactionI>(
+    `/mainevents/${id_trans}`,
+    payload
+  );
+  return data;
+}
+
 async function getMerch(): Promise<MerchItemI> {
   const { data } = await api.get<MerchItemI>(`/merch`);
+  return data;
+}
+
+async function getCounter(type: string): Promise<{ data: number }> {
+  const { data } = await api.get<{ data: number }>(`/counter?type=${type}`);
   return data;
 }
 
@@ -77,6 +116,11 @@ const WebsiteAPI = {
   editTransactionById,
   getAllTransaction,
   checkInTiket,
+  createTransactionMainEvent,
+  getDetailTransactionMainEvent,
+  editTransactionByIdMainEvent,
+  getAllTransactionMainEvent,
+  getCounter,
 };
 
 export default WebsiteAPI;

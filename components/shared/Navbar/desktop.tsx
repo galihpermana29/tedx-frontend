@@ -39,7 +39,7 @@ export const NavbarDesktop = () => {
           </Link>
         </div>
         <div className="flex items-center flex-1 max-w-max gap-[30px]">
-          <Link href={'/ticket-semayam-asa'}>
+          <Link href={'/ticket'}>
             <div className="button">
               <MotionButton
                 onClick={() => ({})}

@@ -1,7 +1,7 @@
 'use client';
 import WebsiteAPI from '@/api/website';
 import { Data } from '@/utils/interface';
-import { Button, Modal, Table, message } from 'antd';
+import { Button, Modal, Spin, Table, message } from 'antd';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -15,17 +15,18 @@ export default function CMS() {
   } | null>(null);
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [loadingApprove, setLoadingApprove] = useState<boolean>(false);
 
   const columns = [
-    {
-      title: 'id',
-      dataIndex: 'id',
-      key: 'id',
-    },
     {
       title: 'Nama',
       dataIndex: 'nama',
       key: 'nama',
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
     },
     {
       title: 'No Telp',
@@ -37,21 +38,15 @@ export default function CMS() {
       dataIndex: 'total_harga',
       key: 'total_harga',
     },
-
-    {
-      title: 'Tanggal Event',
-      dataIndex: 'tanggal',
-      key: 'tanggal',
-    },
     {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
     },
     {
-      title: 'Status',
-      dataIndex: 'status_payment',
-      key: 'status_payment',
+      title: 'Disabilitas',
+      dataIndex: 'disabilitas',
+      key: 'disabilitas',
     },
     {
       title: 'Detail',
@@ -59,7 +54,6 @@ export default function CMS() {
       key: 'id',
       render: (data: Data) => (
         <Button
-          disabled={data.status_payment === 'settlement'}
           onClick={() => {
             setActive({ id: data.id, image_uri: data.image_uri });
             setIsModalOpen(true);
@@ -73,7 +67,7 @@ export default function CMS() {
   const getAllTrans = async () => {
     try {
       setLoading(true);
-      const data = await WebsiteAPI.getAllTransaction();
+      const data = await WebsiteAPI.getAllTransactionMainEvent();
       setDatas(data.data);
     } catch (error) {
       console.log(error, 'error');
@@ -84,14 +78,17 @@ export default function CMS() {
 
   const handleOk = async () => {
     try {
-      await WebsiteAPI.editTransactionById(active.id, {
-        status_payment: 'settlement',
+      setLoadingApprove(true);
+      await WebsiteAPI.editTransactionByIdMainEvent(active.id, {
+        status: 'settlement',
       });
       getAllTrans();
       setIsModalOpen(false);
       message.success('Data updated!');
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoadingApprove(false);
     }
   };
 
@@ -111,14 +108,17 @@ export default function CMS() {
         onCancel={() => setIsModalOpen(false)}
         onOk={handleOk}>
         <div className="mt-[10px]">
-          <Image
-            className="w-full"
-            alt="bukti"
-            src={active?.image_uri}
-            width={100}
-            height={100}
-            loader={() => active?.image_uri}
-          />
+          {loadingApprove && <Spin />}
+          {!loadingApprove && (
+            <Image
+              className="w-full"
+              alt="bukti"
+              src={active?.image_uri}
+              width={100}
+              height={100}
+              loader={() => active?.image_uri}
+            />
+          )}
         </div>
       </Modal>
       <div className="bg-white rounded-md mt-[100px] p-10 min-h-[80vh]">
@@ -132,6 +132,9 @@ export default function CMS() {
         </div>
         <div>
           <Table
+            scroll={{
+              x: 1500,
+            }}
             pagination={{ pageSize: 10, total: datas?.length }}
             loading={loading}
             dataSource={datas}

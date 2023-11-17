@@ -19,6 +19,7 @@ interface DataI {
   nama: string;
   checkin_nomor_tiket: null | string[];
   nomor_tiket: string[];
+  disabilitas?: string;
 }
 
 export default function CheckInDetail() {
@@ -68,7 +69,7 @@ export default function CheckInDetail() {
 
   const getDetailTransaction = async () => {
     try {
-      const { data } = await WebsiteAPI.getDetailTransaction(
+      const { data } = await WebsiteAPI.getDetailTransactionMainEvent(
         Number(id),
         `?nomor_tiket=${search}`
       );
@@ -116,11 +117,9 @@ export default function CheckInDetail() {
               <div className="flex flex-col gap-[20px] ">
                 <div>
                   <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
-                    Semayam Asa TEDxUniversitas Brawijaya 2023
+                    Memantik Baskara | TEDxUniversitas Brawijaya 2023
                   </h1>
-                  <p className="creato text-[18px] font-[400]">
-                    {data.tanggal} | Nyore Cafe
-                  </p>
+                  <p className="creato text-[18px] font-[400]">Venue | TBA</p>
                 </div>
                 <div>
                   <p className="creato text-[18px] font-[400]">Nomor Tiket</p>
@@ -144,6 +143,12 @@ export default function CheckInDetail() {
                   <p className="creato text-[18px] font-[400]">Nama</p>
                   <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
                     {data.nama}
+                  </h1>
+                </div>
+                <div>
+                  <p className="creato text-[18px] font-[400]">Disabilitas</p>
+                  <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
+                    {data.disabilitas}
                   </h1>
                 </div>
                 <div>
