@@ -39,7 +39,6 @@ export default function DetailTicketMainEvent() {
         idDecrypted,
         ''
       );
-      console.log(data, 'data');
       setData(data);
     } catch (error) {
       if (error) {
