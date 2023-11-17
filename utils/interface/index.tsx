@@ -11,17 +11,18 @@ export interface FormFieldI {
   data: DataFieldForm[];
 }
 export interface TicketPayloadI {
-  nama: string;
-  jenis_kelamin: string;
-  nomor_identitas: string;
-  asal_institusi: string;
-  domisili: string;
-  email: string;
-  nomor_telepon: string;
-  line_id: string;
-  instagram: string;
+  nama?: string;
+  jenis_kelamin?: string;
+  nomor_identitas?: string;
+  asal_institusi?: string;
+  domisili?: string;
+  email?: string;
+  nomor_telepon?: string;
+  line_id?: string;
+  instagram?: string;
   jumlah_tiket?: number | string;
   tanggal?: string;
+  disabilitias?: string;
 }
 
 export type CoreTeam = {
@@ -89,4 +90,5 @@ export interface Data {
   nomor_tiket: any;
   checkin_status: boolean;
   checkin_nomor_tiket: any;
+  type?: string;
 }

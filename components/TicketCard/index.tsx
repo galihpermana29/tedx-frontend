@@ -1,4 +1,7 @@
+'use client';
+
 import { Button } from 'antd';
+import { useRouter } from 'next/navigation';
 
 type DataT = {
   name: string;
@@ -7,6 +10,10 @@ type DataT = {
   venue: string;
   dateEvent: string;
   theme: string;
+  capacity: string;
+  statusActive: boolean;
+  statusSold: boolean;
+  route: string;
 };
 
 interface TicketCardI {
@@ -14,6 +21,7 @@ interface TicketCardI {
 }
 
 export default function TicketCard({ data }: TicketCardI) {
+  const router = useRouter();
   return (
     <div className="relative p-3 rounded-xl w-full lg:w-[60%] bg-flower">
       <div className="bg-white overflow-y-scroll h-full rounded-md p-5">
@@ -26,6 +34,12 @@ export default function TicketCard({ data }: TicketCardI) {
           </h1>
         </div>
         <div className="text-start mt-[20px] ">
+          <div className="flex gap-[10px] md:text-[20px] xs:text-[17px]">
+            <div className="xs:min-w-[110px] md:min-w-[200px] ">
+              Kuota Tiket:
+            </div>
+            <div className="">: {data.capacity}</div>
+          </div>
           <div className="flex gap-[10px] md:text-[20px] xs:text-[17px]">
             <div className="xs:min-w-[110px] md:min-w-[200px] ">
               Tanggal Pemesanan
@@ -49,11 +63,20 @@ export default function TicketCard({ data }: TicketCardI) {
         </div>
         <div className="flex gap-[30px] mt-[20px] xs:flex-col md:flex-row xs:gap-[10px]">
           <Button
+            onClick={() => {
+              if (!data.statusActive && data.statusSold)
+                router.push(data.route);
+            }}
             htmlType="button"
             className="bg-transparent border-2 border-orange-primary h-max text-orange-primary text-center text-[20px] xs:text-[17px] w-full rounded-[6px] p-[10px] ">
             Lihat Detail Event
           </Button>
           <Button
+            disabled={data.statusSold || !data.statusActive}
+            onClick={() => {
+              if (data.statusSold) return;
+              router.push('/ticket-main-event');
+            }}
             htmlType="button"
             className="bg-orange-primary h-max text-white text-center text-[20px] xs:text-[17px] w-full rounded-[6px] p-[10px] ">
             Pilih Tiket

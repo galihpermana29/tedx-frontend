@@ -220,7 +220,7 @@ export const NavbarMobile = () => {
             }
             animate={navbarHidden ? {} : { transform: 'translateX(0vw)' }}
             initial={{ transform: 'translateX(-100vw)' }}>
-            <Link href={'/ticket-semayam-asa'}>
+            <Link href={'/ticket'}>
               <div className="button">
                 <MotionButton
                   onClick={() => ({})}
