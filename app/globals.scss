@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --red: #a00101;
+  --dark-red: #290b13;
+  --secondary-dark-orange: #b63605;
+  --secondary-yellow: #ffb03a;
+}
+
 body {
   font-family: 'Creato Display';
 
@@ -28,10 +35,28 @@ body {
       color: white;
       background-color: white;
       text-shadow:
-        -1px -1px 0 #a00101,
-        1px -1px 0 #a00101,
-        -1px 1px 0 #a00101,
-        1px 1px 0 #a00101;
+        -1px -1px 0 var(--red),
+        1px -1px 0 var(--red),
+        -1px 1px 0 var(--red),
+        1px 1px 0 var(--red);
+    }
+
+    .text-outline-yellow {
+      color: var(--secondary-dark-orange);
+      text-shadow:
+        -1px -1px 0 var(--secondary-yellow),
+        1px -1px 0 var(--secondary-yellow),
+        -1px 1px 0 var(--secondary-yellow),
+        1px 1px 0 var(--secondary-yellow);
+    }
+
+    .text-outline-white {
+      color: var(--dark-red);
+      text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
     }
   }
 }

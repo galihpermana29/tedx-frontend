@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function MainEvent() {
   return (
     <div className="bg-main-event bg-cover py-20 overflow-hidden min-h-[1000vh] relative">
-      <div className="absolute bg-green-main min-h-[150vh] left-0 right-0 bg-center bg-auto top-[-4%]" />
+      <div className="absolute bg-green-main bg-no-repeat min-h-[150vh] left-0 right-0 bg-center bg-auto top-[-4%]" />
       <div className="relative z-10">
         <div>
           <Image

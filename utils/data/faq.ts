@@ -64,3 +64,46 @@ export const semayamAsaFAQContent: Array<FAQContent> = [
       '<p>Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan TEDxUniversitasBrawijaya dapat disampaikan melalui : </p> <ul className="list-disc ml-5"> <li> Instagram <a href="https://www.instagram.com/tedxuniversitasbrawijaya" className="font-bold underline"> @tedxuniversitasbrawijaya </a> </li> <li> Contact Person  <span className="font-bold"> Maria Desvita - 081234847606 </span> </li> </ul>',
   },
 ];
+
+export const mainEventFAQContent: Array<FAQContent> = [
+  {
+    question:
+      'Apa yang akan saya dapatkan saat menghadiri acara Memantik Baskara TEDxUniversitasBrawijaya 2023?',
+    answer:
+      '<li> Interactive TEDx Talks with all speakers </li> <li> TEDx Kit </li> <li> Art Exhibition </li> <li> Live painting by </li> <li> Theatrical dance by Teater Komunitas </li>',
+  },
+  {
+    question:
+      'Apakah saya dapat membeli lebih dari satu tiket dengan satu kali pengisian form data diri?',
+    answer:
+      'Tentu saja! Dengan satu kali pengisian form data diri, setiap audiens dapat membeli lebih dari satu tiket yang dapat disesuaikan dengan kebutuhan audiens tersebut.',
+  },
+  {
+    question:
+      'Jika saya memiliki tiket dan dalam kondisi tertentu saya tidak dapat menghadiri acara tersebut, apakah saya dapat melakukan refund tiket?',
+    answer: 'Tidak, tiket yang sudah dibeli tidak dapat dikembalikan.',
+  },
+  {
+    question: 'Apakah tiket dapat dipindahtangankan?',
+    answer:
+      'Iya, silakan tunjukan bukti penguat berupa foto kartu identitas dari pihak pertama, kepada panitia yang bertugas saat mendatangi entrance gate.',
+  },
+  {
+    question:
+      'Apakah saya tetap diperbolehkan melakukan penukaran tiket setelah sesi open gate?',
+    answer:
+      'Tidak, penukaran tiket hanya dapat dilakukan pada sesi open gate yakni pukul 09.00 - 10.00 WIB. Jika audiens datang setelah sesi tersebut berakhir, maka otomatis tiket yang dimiliki audiens akan hangus dan audiens dilarang untuk memasuki venue acara.',
+  },
+  {
+    question:
+      'Apakah ada kegiatan atau sesi khusus yang melibatkan partisipasi dari para peserta?',
+    answer:
+      '<li> Setiap audiens dipersilakan untuk aktif dalam sesi diskusi dengan memberikan pertanyaan dalam konteks talks yang disampaikan oleh setiap Speakers tanpa menyinggung ranah privasi dari speakers yang ada. Diharapkan juga, setiap audiens yang hadir dapat memperhatikan ide dan gagasan yang disampaikan pada talks dari seluruh speakers. </li> <li> Setiap audiens juga dapat berpartisipasi dalam berbagai interactive installation yang dihadirkan pada acara Memantik Baskara TEDxUniversitasBrawijaya 2023. </li>',
+  },
+  {
+    question:
+      'Bagaimana saya dapat menghubungi TEDxUniversitasBrawijaya, jika saya memiliki pertanyaan lebih lanjut tentang acara Memantik Baskara TEDxUniversitasBrawijaya 2023?',
+    answer:
+      '<p>Segala bentuk pertanyaan mengenai kegiatan yang berhubungan dengan TEDxUniversitasBrawijaya dapat disampaikan melalui : </p> <ul className="list-disc ml-5"> <li> Instagram <a href="https://www.instagram.com/tedxuniversitasbrawijaya" className="font-bold underline"> @tedxuniversitasbrawijaya </a> </li> <li> Contact Person  <span className="font-bold"> Maria Desvita - 081234847606 </span> </li> </ul>',
+  },
+];

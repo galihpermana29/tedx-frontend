@@ -313,7 +313,7 @@ function SemayamAsa() {
           </div>
         </div>
         <Carousel
-          containerClassName="w-full px-5 md:px-20 lg:px-[100px] mb-[100px]"
+          containerClassName="w-full px-5 sm:px-20 md:px-44 lg:px-[100px] mb-[100px]"
           className="w-1/2 text-black-primary cursor-grab"
           options={{ dragFree: false, align: 'center' }}>
           <div className="rounded-xl shrink-0 w-full lg:w-[400px] overflow-hidden relative aspect-square">
