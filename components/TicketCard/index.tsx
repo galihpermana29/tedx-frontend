@@ -7,7 +7,7 @@ type DataT = {
   name: string;
   price: string;
   dateOrder: string;
-  venue: string;
+  venue?: string;
   dateEvent: string;
   theme: string;
   capacity: string;
@@ -50,10 +50,12 @@ export default function TicketCard({ data }: TicketCardI) {
             <div className="xs:min-w-[110px] md:min-w-[200px] ">Tema</div>
             <div>: {data.theme}</div>
           </div>
-          <div className="flex gap-[10px] md:text-[20px] xs:text-[17px]">
-            <div className="xs:min-w-[110px] md:min-w-[200px] ">Venue</div>
-            <div>: {data.venue}</div>
-          </div>
+          {data.venue !== '' && (
+            <div className="flex gap-[10px] md:text-[20px] xs:text-[17px]">
+              <div className="xs:min-w-[110px] md:min-w-[200px] ">Venue</div>
+              <div>: {data.venue}</div>
+            </div>
+          )}
           <div className="flex gap-[10px] md:text-[20px] xs:text-[17px]">
             <div className="xs:min-w-[110px] md:min-w-[200px] ">
               Tanggal Event

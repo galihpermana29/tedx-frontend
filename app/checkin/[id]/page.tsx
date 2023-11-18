@@ -37,7 +37,10 @@ export default function CheckInDetail() {
   const handleCheckIn = async () => {
     try {
       setLoading(true);
-      await WebsiteAPI.checkInTiket(Number(id), `?ticket_number=${search}`);
+      await WebsiteAPI.checkInTiketMainEvent(
+        Number(id),
+        `?ticket_number=${search}`
+      );
       message.success('Checkin has succeed');
       getDetailTransaction();
     } catch (error) {

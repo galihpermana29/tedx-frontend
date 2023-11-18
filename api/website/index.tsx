@@ -66,6 +66,16 @@ async function checkInTiket(
   return data;
 }
 
+async function checkInTiketMainEvent(
+  id_trans: number,
+  filter: string
+): Promise<{ data: string }> {
+  const { data } = await api.patch<{ data: string }>(
+    `/checkin/mainevent/${id_trans}${filter !== '' ? filter : ''}`
+  );
+  return data;
+}
+
 async function getAllTransaction(): Promise<AllTransactionI> {
   const { data } = await api.get<AllTransactionI>(`/transactions`);
   return data;
@@ -121,6 +131,7 @@ const WebsiteAPI = {
   editTransactionByIdMainEvent,
   getAllTransactionMainEvent,
   getCounter,
+  checkInTiketMainEvent,
 };
 
 export default WebsiteAPI;
