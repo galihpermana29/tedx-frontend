@@ -5,8 +5,8 @@ function MainEventSpeakersCarouselDesktop() {
   return (
     <Carousel hideButton className="cursor-grab active:cursor-grabbing">
       {/* speaker 1 */}
-      <div className="text-orange-darker flex flex-col lg:max-w-md shrink-0 gap-5 mx-20">
-        <div className="bg-yellow-primary w-96 shrink-0 aspect-[3/4] p-5 relative">
+      <div className=" flex flex-col lg:max-w-md shrink-0 gap-5 mx-20">
+        <div className="bg-green-primary w-96 shrink-0 aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute -right-[38%] top-32 -rotate-90">
             “Melayani dengan belas kasih”
           </span>
@@ -36,8 +36,8 @@ function MainEventSpeakersCarouselDesktop() {
       </div>
 
       {/* speaker 2 */}
-      <div className="text-orange-darker shrink-0 max-w-md flex flex-col gap-5 mt-32 mr-20">
-        <div className="bg-yellow-primary w-96 aspect-[3/4] p-5 relative">
+      <div className=" shrink-0 max-w-md flex flex-col gap-5 mt-32 mr-20">
+        <div className="bg-green-primary w-96 aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute text-center w-[95%] -right-[55%] top-40 -rotate-90">
             “Keseimbangan Psikologis di Era Modern. Menerobos Stigma dan
             Pseudoscience”
@@ -68,8 +68,8 @@ function MainEventSpeakersCarouselDesktop() {
       </div>
 
       {/* speaker 3 */}
-      <div className="text-orange-darker shrink-0 max-w-md flex flex-col gap-5 mr-20">
-        <div className="bg-yellow-primary w-96 aspect-[3/4] p-5 relative">
+      <div className=" shrink-0 max-w-md flex flex-col gap-5 mr-20">
+        <div className="bg-green-primary w-96 aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute -right-[41%] top-36 -rotate-90">
             “The World of Pictolo: Alter Ego”
           </span>
@@ -99,8 +99,8 @@ function MainEventSpeakersCarouselDesktop() {
       </div>
 
       {/* speaker 4 */}
-      <div className="text-orange-darker shrink-0 max-w-md flex flex-col gap-5 mt-32 mr-40">
-        <div className="bg-yellow-primary w-96 aspect-[3/4] p-5 relative">
+      <div className=" shrink-0 max-w-md flex flex-col gap-5 mt-32 mr-40">
+        <div className="bg-green-primary w-96 aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute text-center w-[95%] -right-[55%] top-40 -rotate-90">
             “Merayakan Keunikan Penerimaan Diri sebagai Revolusi Martabat
             Manusia”

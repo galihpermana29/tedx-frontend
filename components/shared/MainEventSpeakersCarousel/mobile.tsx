@@ -6,7 +6,7 @@ function MainEventSpeakersCarouselMobile() {
     <Carousel hideButton className="cursor-grab active:cursor-grabbing">
       {/* speaker 1 */}
       <div className="w-[87%] sm:w-[80%] md:w-[50%] flex flex-col shrink-0 gap-5 mx-20">
-        <div className="bg-yellow-primary w-full shrink-0 aspect-[3/4] p-5 relative">
+        <div className="bg-green-primary w-full shrink-0 aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute -right-[57%] min-[300px]:-right-[52%] min-[400px]:-right-[45%] min-[500px]:-right-[35%] min-[600px]:-right-[30%] min-[700px]:-right-[30%] min-[800px]:-right-[37%] min-[900px]:-right-[32%] top-32 -rotate-90">
             “Melayani dengan belas kasih”
           </span>
@@ -37,7 +37,7 @@ function MainEventSpeakersCarouselMobile() {
 
       {/* speaker 2 */}
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5 mr-20">
-        <div className="bg-yellow-primary w-full aspect-[3/4] p-5 relative">
+        <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute text-center w-full -right-[65%] min-[400px]:-right-[60%] min-[500px]:-right-[58%] min-[600px]:-right-[58%] min-[700px]:-right-[58%] min-[800px]:-right-[57%] min-[900px]:-right-[57%] top-28 min-[500px]:top-52 -rotate-90">
             “Keseimbangan Psikologis di Era Modern. Menerobos Stigma dan
             Pseudoscience”
@@ -69,7 +69,7 @@ function MainEventSpeakersCarouselMobile() {
 
       {/* speaker 3 */}
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5 mr-20">
-        <div className="bg-yellow-primary w-full aspect-[3/4] p-5 relative">
+        <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute -right-[57%] min-[400px]:-right-[45%] min-[500px]:-right-[35%] min-[600px]:-right-[30%] min-[700px]:-right-[30%] min-[800px]:-right-[37%] min-[900px]:-right-[35%] top-36 -rotate-90">
             “The World of Pictolo: Alter Ego”
           </span>
@@ -98,7 +98,7 @@ function MainEventSpeakersCarouselMobile() {
 
       {/* speaker 4 */}
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5 mr-40">
-        <div className="bg-yellow-primary w-full aspect-[3/4] p-5 relative">
+        <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <span className="linux-libertine-slanted italic text-xl font-bold absolute w-full -right-[65%] min-[400px]:-right-[60%] min-[500px]:-right-[58%] min-[600px]:-right-[58%] min-[700px]:-right-[58%] min-[800px]:-right-[57%] min-[900px]:-right-[57%] text-center  top-32 min-[400px]:top-40 min-[500px]:top-52 -rotate-90">
             “Merayakan Keunikan Penerimaan Diri sebagai Revolusi Martabat
             Manusia”
