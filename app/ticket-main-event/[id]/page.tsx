@@ -235,6 +235,17 @@ export default function DetailTicketMainEvent() {
                       </div>
                     </div>
                     <div className="w-full">
+                      <div className="creato text-[18px] font-[700]">Note:</div>
+                      <div className="creato text-[18px] font-[400] mt-[10px]">
+                        Harap segera lakukan pembayaran dan mengunggah bukti
+                        pembayaran, dengan maksimal waktu
+                        <span className="font-[700]">5 menit</span> sejak
+                        rangkuman pemesanan kamu muncul pada laman website kami,
+                        jika melewati batas waktu tersebut data yang telah kamu
+                        submit sebelumnya akan terhapus.
+                      </div>
+                    </div>
+                    <div className="w-full">
                       <div className="creato text-[18px] font-[700]">
                         Pilih salah satu metode pembayaran:
                       </div>
@@ -243,7 +254,7 @@ export default function DetailTicketMainEvent() {
                         <span className="creato text-[18px] font-[700]">
                           2302817449
                         </span>{' '}
-                        a/n Kezia Agustina Hatiuran:{' '}
+                        a/n Kezia Agustina Hatiuran
                       </div>
                     </div>
                     <div>
