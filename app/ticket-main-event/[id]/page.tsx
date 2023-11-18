@@ -167,7 +167,7 @@ export default function DetailTicketMainEvent() {
                       <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
                         Memantik Baskara | TEDxUniversitas Brawijaya 2023
                       </h1>
-                      <p className="creato text-[18px] font-[400]">Venue TBA</p>
+                      {/* <p className="creato text-[18px] font-[400]">Venue TBA</p> */}
                     </div>
                     <div>
                       <p className="creato text-[18px] font-[400]">Nama</p>
@@ -241,9 +241,9 @@ export default function DetailTicketMainEvent() {
                       <div className="creato text-[18px] font-[400] mt-[10px]">
                         Bank BCA <br />
                         <span className="creato text-[18px] font-[700]">
-                          5735380165
+                          2302817449
                         </span>{' '}
-                        a/n Maria Desvita Sari:{' '}
+                        a/n Kezia Agustina Hatiuran:{' '}
                       </div>
                     </div>
                     <div>

@@ -320,13 +320,13 @@ export default function MemantikDesktop() {
               className="w-max">
               Apa itu Pre-Event?
             </Button>
-            <Button
+            {/* <Button
               as="client-link"
               type="primary"
               href="/ticket-semayam-asa"
               className="w-max">
               Grab Ticket
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className="flex flex-row-reverse justify-between items-center gap-[50px] mt-10 bg-cover bg-no-repeat">
@@ -341,7 +341,7 @@ export default function MemantikDesktop() {
               className="font-[800] text-[90px] max-w-[20vw] creato-display">
               Tickets Dropping Soon!
             </motion.h2>
-            <Link href={'/ticket-pre-event'}>
+            <Link href={'/ticket'}>
               <Button
                 as="button"
                 type="primary"

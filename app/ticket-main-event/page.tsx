@@ -62,7 +62,7 @@ const formData: FormFieldI[] = [
     data: [
       {
         label: 'Tidak Berkebutuhan Khusus',
-        value: '',
+        value: 'Tidak ada',
       },
       {
         label: 'Disabilitas Sensorik',
@@ -124,7 +124,7 @@ export default function TicketMainEvent() {
         router.push(
           `/ticket-main-event/${encryptNumber(data.toString(), 144)}`
         );
-      }, 1000);
+      }, 500);
     } catch (error) {
       if (error) {
         const axiosError = error as AxiosError; // Cast error to AxiosError
