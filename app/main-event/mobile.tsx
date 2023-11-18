@@ -7,6 +7,8 @@ import { mainEventFAQContent } from '@/utils/data/faq';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import TimeCountdown from '@/components/shared/TimeCountdown';
+import MainEventExperience from '@/components/shared/MainEventExperience';
 
 function MainEventMobile() {
   const [textFullColorIndex, setTextFullColorIndex] = useState<number>(0);
@@ -128,7 +130,7 @@ function MainEventMobile() {
           satu cerita, dan berjalan bersama.
         </p>
       </section>
-      <section className="relative flex flex-col gap-5">
+      <section className="relative flex flex-col gap-7">
         <div className="absolute -bottom-44 w-full aspect-video">
           <Image
             src={'/assets/images/main-event-roots-2.png'}
@@ -137,40 +139,21 @@ function MainEventMobile() {
           />
         </div>
         <div className="w-full px-5 sm:px-20 md:px-44 flex justify-center">
-          <h1 className="rosela w-full sm:w-2/3 text-center text-xl sm:text-3xl">
+          <h1 className="rosela w-full text-center text-xl sm:text-3xl">
             Jadilah Bagian dari Ekspedisi TEDxUniversitasBrawijaya 2023!
           </h1>
         </div>
-        <div className="flex flex-col gap-5 px-5 sm:px-20 md:px-44">
-          <div className="relative w-full aspect-square">
-            <Image
-              src={'/assets/images/main-event-tba.png'}
-              alt="Event info"
-              fill
-            />
-          </div>
-          <div className="relative w-full aspect-square">
-            <Image
-              src={'/assets/images/main-event-tba.png'}
-              alt="Event info"
-              fill
-            />
-          </div>
-          <div className="relative w-full aspect-square">
-            <Image
-              src={'/assets/images/main-event-tba.png'}
-              alt="Event info"
-              fill
-            />
-          </div>
-        </div>
+        <TimeCountdown
+          date={new Date(2023, 11, 2, 23, 59, 0)}
+          className="text-center text-6xl sm:text-7xl"
+        />
       </section>
       <section>
         <h1 className="text-3xl mb-5 text-center rosela">Speakers List</h1>
         <MainEventSpeakersCarouselMobile />
       </section>
       <section className="px-5 sm:px-20 md:px-44">
-        <div className="w-full aspect-[3/4] bg-zinc-700 rounded-xl"></div>
+        <MainEventExperience />
       </section>
       <section className="px-5 sm:px-20">
         {[...Array(5)].map((_, index) => {
