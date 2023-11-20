@@ -175,7 +175,7 @@ function MainEvent() {
             </div>
           );
         })}
-        <div className="flex flex-col md:flex-row mt-10">
+        <div className="flex flex-col md:flex-row mt-10 font-bold">
           <div className="w-full relative aspect-[3/4] bg-zinc-700 overflow-hidden">
             <Image
               src={'/assets/images/about-us-photo.png'}
@@ -186,7 +186,7 @@ function MainEvent() {
             <div className="absolute w-full bottom-0 p-2 text-sm bg-red-primary bg-opacity-50 text-center">
               <span>THEATRICAL DANCE</span>
               <br />
-              <span>BY TEATER KOMUNITAS</span>
+              <span>BY SANGGAR SENI MAHASISWA</span>
             </div>
           </div>
           <div className="w-full relative aspect-[3/4] bg-zinc-700 overflow-hidden">
@@ -205,23 +205,29 @@ function MainEvent() {
         </div>
       </section>
       <section className="px-5 sm:px-20 text-black-primary">
-        <div className="w-full bg-paper-main px-4 lg:px-5 py-7 flex flex-col gap-10">
-          <h1 className="rosela py-2 border-y text-2xl md:text-4xl lg:text-5xl text-center font-bold border-black-primary">
+        <div className="w-full bg-paper-green text-white rounded-2xl px-4 lg:px-5 py-7 flex flex-col gap-10">
+          <h1 className="rosela py-2 text-2xl md:text-4xl lg:text-5xl text-center font-bold">
             VENUE
           </h1>
-          <div className="w-full aspect-video bg-zinc-700"></div>
+          <div className="w-full flex justify-center items-center aspect-video bg-zinc-600">
+            <span className="rosela text-orange-primary px-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center">
+              {' '}
+              To Be Announced
+            </span>
+          </div>
           <div>
             <h2 className="rosela mb-2 font-bold text-center text-xl md:text-3xl lg:text-4xl">
               Tata Cara Penukaran Tiket dan Alur Masuk Audiens
             </h2>
             <ol className="list-decimal ml-4">
               <li>
-                Silahkan kunjungi entrance gate dan tunjukan unique barcode yang
-                telah kamu dapatkan untuk di-scan oleh panitia yang bertugas;
+                Silahkan kunjungi <i>entrance gate</i> dan tunjukan{' '}
+                <i>unique barcode</i> yang telah kamu dapatkan untuk di-
+                <i>scan</i> oleh panitia yang bertugas;
               </li>
               <li>
-                Setelah unique barcode terverifikasi, kamu akan mendapatkan
-                wristband dan juga TEDx Kit
+                Setelah <i>unique barcode</i> terverifikasi, kamu akan
+                mendapatkan <i>wristband</i> dan juga <b>TEDx Kit</b>
               </li>
               <li>
                 Panitia yang bertugas akan mengarahkanmu untuk menempati kursi
@@ -230,12 +236,12 @@ function MainEvent() {
               <li>
                 Jika tiket kamu digunakan oleh orang lain, orang tersebut harus
                 menunjukan bukti berupa foto kartu identitas (nama yang tertera
-                pada kartu identitas harus sesuai dengan yang tertera pada
-                e-ticket).
+                pada kartu identitas harus sesuai dengan yang tertera pada{' '}
+                <i>e-ticket</i>).
               </li>
             </ol>
           </div>
-          <hr className="border-black-primary" />
+          <hr className="border-white" />
           <div className="flex flex-col md:flex-row gap-5">
             <div className="md:basis-1/2">
               <h2 className="rosela mb-2 font-bold text-center text-xl md:text-3xl lg:text-4xl">
