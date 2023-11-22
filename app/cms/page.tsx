@@ -1,13 +1,14 @@
 'use client';
 import WebsiteAPI from '@/api/website';
 import { Data } from '@/utils/interface';
-import { Button, Modal, Spin, Table, message } from 'antd';
+import { Button, Modal, Select, Spin, Table, message } from 'antd';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function CMS() {
   const [loading, setLoading] = useState<boolean>(false);
   const [datas, setDatas] = useState<Data[] | null>(null);
+  const [query, setQuery] = useState<string | null>(null);
 
   const [active, setActive] = useState<{
     id: number;
@@ -67,7 +68,7 @@ export default function CMS() {
   const getAllTrans = async () => {
     try {
       setLoading(true);
-      const data = await WebsiteAPI.getAllTransactionMainEvent();
+      const data = await WebsiteAPI.getAllTransactionMainEvent(query);
       setDatas(data.data);
     } catch (error) {
       console.log(error, 'error');
@@ -94,7 +95,7 @@ export default function CMS() {
 
   useEffect(() => {
     getAllTrans();
-  }, []);
+  }, [query]);
 
   return (
     <div className="p-[50px] bg-wall-texture overflow-hidden lg:px-[100px] lg:pb-[200px] xs:p-[20px] min-h-screen">
@@ -122,13 +123,25 @@ export default function CMS() {
         </div>
       </Modal>
       <div className="bg-white rounded-md mt-[100px] p-10 min-h-[80vh]">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div>
             <h1 className="text-[32px] font-[600] text-black my-[20px] text-red-500">
               All Ticket Transactions
             </h1>
           </div>
-          <div></div>
+          <div>
+            <Select
+              defaultValue="All"
+              style={{ width: 200 }}
+              onChange={(val) => setQuery(val === '' ? null : `?type=${val}`)}
+              options={[
+                { value: 'early-bird', label: 'Early Bird' },
+                { value: 'pre-sale', label: 'Pre Sale' },
+                { value: 'normal', label: 'Normal' },
+                { value: '', label: 'All' },
+              ]}
+            />
+          </div>
         </div>
         <div>
           <Table

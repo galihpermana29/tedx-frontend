@@ -80,8 +80,12 @@ async function getAllTransaction(): Promise<AllTransactionI> {
   const { data } = await api.get<AllTransactionI>(`/transactions`);
   return data;
 }
-async function getAllTransactionMainEvent(): Promise<AllTransactionI> {
-  const { data } = await api.get<AllTransactionI>(`/mainevents`);
+async function getAllTransactionMainEvent(
+  query: string | null
+): Promise<AllTransactionI> {
+  const { data } = await api.get<AllTransactionI>(
+    `/mainevents${query ? query : ''}`
+  );
   return data;
 }
 
