@@ -91,4 +91,5 @@ export interface Data {
   checkin_status: boolean;
   checkin_nomor_tiket: any;
   type?: string;
+  status?: string;
 }

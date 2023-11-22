@@ -13,6 +13,7 @@ export default function CMS() {
   const [active, setActive] = useState<{
     id: number;
     image_uri: string;
+    status: string;
   } | null>(null);
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -56,7 +57,11 @@ export default function CMS() {
       render: (data: Data) => (
         <Button
           onClick={() => {
-            setActive({ id: data.id, image_uri: data.image_uri });
+            setActive({
+              id: data.id,
+              image_uri: data.image_uri,
+              status: data.status,
+            });
             setIsModalOpen(true);
           }}>
           Detail
@@ -98,17 +103,19 @@ export default function CMS() {
   }, [query]);
 
   return (
-    <div className="p-[50px] bg-wall-texture overflow-hidden lg:px-[100px] lg:pb-[200px] xs:p-[20px] min-h-screen">
+    <div className="p-[50px] bg-wall-texture overflow-hidden lg:px-[100px] lg:pb-[200px] xs:p-[20px] min-h-screen ">
       <Modal
         title="Payment Approval"
         okText={'Approve'}
         okButtonProps={{
-          className: 'bg-red-500',
+          className: `bg-red-500 ${
+            active ? (active.status === 'settlement' ? 'hidden' : '') : ''
+          }`,
         }}
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
         onOk={handleOk}>
-        <div className="mt-[10px]">
+        <div className="mt-[10px] h-[500px] overflow-scroll">
           {loadingApprove && <Spin />}
           {!loadingApprove && (
             <Image
