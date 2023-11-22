@@ -130,16 +130,16 @@ export default function CMS() {
         </div>
       </Modal>
       <div className="bg-white rounded-md mt-[100px] p-10 min-h-[80vh]">
-        <div className="flex justify-between items-center">
+        <div className="flex md:flex-row justify-between items-center xs:flex-col flex-wrap">
           <div>
-            <h1 className="text-[32px] font-[600] text-black my-[20px] text-red-500">
+            <h1 className="text-[32px] font-[600] text-black my-[20px] text-red-500 xs:text-center sm:text-start">
               All Ticket Transactions
             </h1>
           </div>
-          <div>
+          <div className="my-[20px]">
             <Select
               defaultValue="All"
-              style={{ width: 200 }}
+              style={{ width: 180 }}
               onChange={(val) => setQuery(val === '' ? null : `?type=${val}`)}
               options={[
                 { value: 'early-bird', label: 'Early Bird' },

@@ -4,7 +4,7 @@ import MediaQuerySwitcher from '@/components/shared/Loader';
 import MainEvent from './desktop';
 import MainEventMobile from './mobile';
 
-export default function PreEvent() {
+export default function MainEventWrap() {
   return (
     <div>
       <MediaQuerySwitcher
