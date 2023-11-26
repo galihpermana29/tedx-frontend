@@ -23,7 +23,7 @@ import {
   textFadeUpAnimationProps,
 } from '@/utils/data/animation';
 
-import MainEventSpeakers from '@/components/home/MainEventSpeakers';
+import MainEventSpeakersCarousel from '@/components/shared/MainEventSpeakersCarousel';
 import SpeakerCard from '@/components/shared/SpeakerCard';
 import Photo from '@/images/home-photo.png';
 import X from '@/images/home-x-2.png';
@@ -341,8 +341,8 @@ export default function MemantikDesktop() {
           <h2 className="text-6xl text-outline-yellow text-center rosela">
             List Speakers
           </h2>
-          <div className="mt-20">
-            <MainEventSpeakers />
+          <div className="mt-20 text-orange-darker">
+            <MainEventSpeakersCarousel />
           </div>
           <div className="flex gap-3 mt-10 justify-center">
             <Button
