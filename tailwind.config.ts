@@ -33,6 +33,7 @@ const config: Config = {
         'yellow-merch': "url('/assets/images/bg-yellow-merch.png')",
         ticket: "url('/assets/images/bg-ticket.png')",
         'main-event': "url('/assets/images/bg-main-event.jpg')",
+        'main-event-venue': "url('/assets/images/bg-main-event-venue.png')",
         'green-main': "url('/assets/images/green-main.png')",
       },
       colors: {
