@@ -61,7 +61,7 @@ body {
     }
 
     .text-outline-red {
-      color: var(--cream);
+      color: var(--cream) !important;
       text-shadow:
         -1px -1px 0 var(--secondary-dark-orange),
         1px -1px 0 var(--secondary-dark-orange),

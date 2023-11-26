@@ -11,6 +11,7 @@ import Pattern1 from '@/images/memantik-bg.png';
 import Pattern2 from '@/images/pattern-2.png';
 import Image from 'next/image';
 
+import MainEventSpeakersCarousel from '@/components/shared/MainEventSpeakersCarousel';
 import SpeakerCard from '@/components/shared/SpeakerCard';
 import {
   textBlurAnimationProps,
@@ -18,7 +19,6 @@ import {
 } from '@/utils/data/animation';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player/lazy';
-import MainEventSpeakers from '@/components/home/MainEventSpeakers';
 
 function MemantikMobile() {
   return (
@@ -180,8 +180,8 @@ function MemantikMobile() {
           <h2 className="text-5xl text-outline-yellow text-center rosela">
             List Speakers
           </h2>
-          <div className="mt-20">
-            <MainEventSpeakers />
+          <div className="mt-20 text-orange-darker">
+            <MainEventSpeakersCarousel />
           </div>
           <div className="flex px-5 sm:px-20 md:px-44 gap-3 mt-10 justify-center">
             <Button
