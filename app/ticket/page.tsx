@@ -14,7 +14,7 @@ export default function Ticket() {
   const getCapacity = async () => {
     try {
       setLoading(true);
-      const data = await WebsiteAPI.getCounter('pre-sale');
+      const data = await WebsiteAPI.getCounter('normal-sale');
       setEarlyBird(data.data);
     } catch (error) {
       console.log(error, 'error');

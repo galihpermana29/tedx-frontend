@@ -144,7 +144,7 @@ export default function CMS() {
               options={[
                 { value: 'early-bird', label: 'Early Bird' },
                 { value: 'pre-sale', label: 'Pre Sale' },
-                { value: 'normal', label: 'Normal' },
+                { value: 'normal-sale', label: 'Normal' },
                 { value: '', label: 'All' },
               ]}
             />
