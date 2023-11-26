@@ -19,6 +19,7 @@ import {
 } from '@/utils/data/animation';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player/lazy';
+import MainEventSpeakers from '@/components/home/MainEventSpeakers';
 
 function MemantikMobile() {
   return (
@@ -129,6 +130,7 @@ function MemantikMobile() {
           <div className="flex flex-col gap-3">
             <Button
               as="client-link"
+              type="primary"
               type="primary"
               href="/pre-event"
               className="w-full">
