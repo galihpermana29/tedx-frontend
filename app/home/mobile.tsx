@@ -11,6 +11,7 @@ import Pattern1 from '@/images/memantik-bg.png';
 import Pattern2 from '@/images/pattern-2.png';
 import Image from 'next/image';
 
+import MainEventSpeakersCarousel from '@/components/shared/MainEventSpeakersCarousel';
 import SpeakerCard from '@/components/shared/SpeakerCard';
 import {
   textBlurAnimationProps,
@@ -106,7 +107,7 @@ function MemantikMobile() {
             <motion.h2
               {...textBlurAnimationProps}
               className="font-bold text-2xl mb-3">
-              Segera Hadir: <br /> Panggung Swara Insan
+              Panggung Swara Insan
             </motion.h2>
             <motion.p
               {...textFadeUpAnimationProps}
@@ -128,19 +129,78 @@ function MemantikMobile() {
           <div className="flex flex-col gap-3">
             <Button
               as="client-link"
-              type="secondary"
+              type="primary"
               href="/pre-event"
               className="w-full">
               Apa itu Pre-Event?
             </Button>
+          </div>
+        </div>
+
+        <div className="flex relative text-black-primary flex-col items-center">
+          <div className="relative select-none w-full aspect-[16/5]">
+            <Image src={'/assets/images/home-notes.png'} alt="notes" fill />
+          </div>
+          <div className="px-5 sm:px-20 md:px-44">
+            <h2 className="rosela text-center text-5xl">
+              <span>Memantik Baskara</span>
+              <br />
+              <span className="text-3xl">
+                Tak Membara, Terbakar Tak Bersuara
+              </span>
+            </h2>
+            <p className="text-center mt-14">
+              Penantian akan segera berakhir. Di puncak acara
+              TEDxUniversitasBrawijaya 2023, kami menghadirkan “Memantik
+              Baskara: Tersulut Tak Membara, Terbakar Tak Bersuara”. Beberapa
+              insan yang berjuang di tengah ambiguitas atas jati dirinya hingga
+              akhirnya memantik sebuah pencerahan maupun melahirkan gagasan baru
+              yang berkembang dari serangkaian variabel yang saling terhubung.
+              Era dunia saat ini menuju era inovasi dan kolaborasi, di mana ide
+              dan sumber daya dapat dibagikan secara global untuk mencapai
+              tujuan yang lebih besar. Dengan potensi yang ada, pelibatan alam,
+              sesama, dan entitas manusia bersama berusaha untuk membaca,
+              memahami, meneliti, dan menghayati fenomena-fenomena dalam upaya
+              penerimaan diri seutuhnya. Dalam pencarian kali ini, audiens akan
+              dibawa ke dalam perjalanan menarik melalui instalasi interaktif
+              yang dipadukan dengan panggung inspiratif yaitu talks, oleh para
+              speaker TEDxUniversitasBrawijaya 2023 yang akan menjadikan sebuah
+              pengalaman tak terlupakan, merajut satu cerita, dan berjalan
+              bersama.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div className="w-full h-48 relative">
+            <div className="absolute -mt-10 w-full aspect-[16/11]">
+              <Image src={'/assets/images/home-root.png'} alt="roots" fill />
+            </div>
+          </div>
+          <h2 className="text-5xl text-outline-yellow text-center rosela">
+            List Speakers
+          </h2>
+          <div className="mt-20 text-orange-darker">
+            <MainEventSpeakersCarousel />
+          </div>
+          <div className="flex px-5 sm:px-20 md:px-44 gap-3 mt-10 justify-center">
             <Button
               as="client-link"
               type="primary"
-              href="/ticket-semayam-asa"
+              href="/main-event"
               className="w-full">
-              Grab Ticket
+              Apa itu Main Event?
             </Button>
           </div>
+        </div>
+
+        <div className="relative w-full aspect-[16/4] flex justify-end items-center">
+          <Image
+            src={'/assets/images/home-cloud-separator.png'}
+            alt="Cloud"
+            fill
+            className="object-cover"
+          />
         </div>
 
         <div className="relative w-full flex justify-center aspect-square mt-10 z-0 overflow-hidden">
@@ -154,16 +214,17 @@ function MemantikMobile() {
             />
           </div>
         </div>
+
         <div className="px-5 sm:px-20 md:px-44 flex flex-col gap-10 mt-10">
           <motion.h2
             {...textBlurAnimationProps}
-            className="font-extrabold text-5xl">
-            Tickets Dropping Soon!
+            className="font-extrabold text-5xl italic">
+            Secure Your Spot. Grab Your Tickets Here!
           </motion.h2>
           <Button
             as="client-link"
             type="primary"
-            href="/ticket-pre-event"
+            href="/ticket-main-event"
             disabled
             className="w-full">
             Grab Yours

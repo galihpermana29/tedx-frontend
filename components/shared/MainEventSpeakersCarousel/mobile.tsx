@@ -7,9 +7,9 @@ function MainEventSpeakersCarouselMobile() {
       <div className="w-[87%] sm:w-[80%] md:w-[50%] flex flex-col shrink-0 gap-5">
         <div className="bg-green-primary w-full shrink-0 aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <div className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
               “The World of Pictolo: Alter Ego”
-            </span>
+            </div>
             <Image
               src={'/assets/images/speaker-main-watoni.png'}
               alt="roots"
@@ -36,7 +36,7 @@ function MainEventSpeakersCarouselMobile() {
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5">
         <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1] text-cream">
               “Keseimbangan Psikologis di Era Modern. Menerobos Stigma dan
               Pseudoscience”
             </span>
@@ -69,7 +69,7 @@ function MainEventSpeakersCarouselMobile() {
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5">
         <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1] text-cream">
               ”Spektator Menjadi Aktor: Mengoyak Tirai Keterbatasan”
             </span>
             <Image
@@ -100,7 +100,7 @@ function MainEventSpeakersCarouselMobile() {
       <div className="w-[87%] sm:w-[80%] md:w-[50%] flex flex-col shrink-0 gap-5">
         <div className="bg-green-primary w-full shrink-0 aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1] text-cream">
               “Melayani dengan belas kasih”
             </span>
             <Image
@@ -132,7 +132,7 @@ function MainEventSpeakersCarouselMobile() {
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5">
         <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1] text-cream">
               “Merayakan Keunikan Penerimaan Diri sebagai Revolusi Martabat
               Manusia”
             </span>
@@ -165,7 +165,7 @@ function MainEventSpeakersCarouselMobile() {
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5">
         <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1] text-cream">
               ”Warita Masa Kini: Mengatasi Titik Nadir”
             </span>
             <Image
@@ -195,7 +195,7 @@ function MainEventSpeakersCarouselMobile() {
       <div className="shrink-0 w-[87%] sm:w-[80%] md:w-[50%] flex flex-col gap-5">
         <div className="bg-green-primary w-full aspect-[3/4] p-5 relative">
           <div className="w-full group overflow-hidden relative h-full">
-            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1]">
+            <span className="linux-libertine-slanted p-2 bottom-0 text-outline-red italic text-lg font-bold absolute text-center w-full z-[1] text-cream">
               “.....”
             </span>
             <Image
@@ -210,7 +210,7 @@ function MainEventSpeakersCarouselMobile() {
           </div>
         </div>
         <div>
-          <h3 className="rosela text-3xl">Irza Khurun’in</h3>
+          <h3 className="rosela text-3xl">Irza Khurun&apos;in</h3>
           <p className="linux-libertine-slanted italic font-bold">Dosen UB</p>
         </div>
       </div>
