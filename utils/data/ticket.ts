@@ -1,4 +1,4 @@
-export const data = (earlyBird: number) => [
+export const data = (presale: number) => [
   {
     name: 'Main Event - Early Bird',
     price: 'Rp. 49.000-',
@@ -6,21 +6,21 @@ export const data = (earlyBird: number) => [
     venue: '',
     dateEvent: '03 Desember 2023',
     theme: 'Memantik Baskara',
-    capacity: `${earlyBird}/15`,
+    capacity: `15/15`,
     statusActive: true,
-    statusSold: earlyBird === 15,
+    statusSold: true,
     route: '',
   },
   {
     name: 'Main Event - Pre Sale ',
-    price: '-',
+    price: 'Rp. 69.000-',
     dateOrder: '22 November - 24 November 2023',
     venue: '',
     dateEvent: '03 Desember 2023',
     theme: 'Memantik Baskara',
-    capacity: '-',
-    statusActive: false,
-    statusSold: false,
+    capacity: `${presale}/35`,
+    statusActive: true,
+    statusSold: presale === 35,
     route: '',
   },
   {
