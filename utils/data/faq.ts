@@ -70,7 +70,7 @@ export const mainEventFAQContent: Array<FAQContent> = [
     question:
       'Apa yang akan saya dapatkan saat menghadiri acara Memantik Baskara TEDxUniversitasBrawijaya 2023?',
     answer:
-      '<li> Interactive TEDx Talks with all speakers </li> <li> TEDx Kit </li> <li> Art Exhibition </li> <li> Live painting by </li> <li> Theatrical dance by Teater Komunitas </li>',
+      '<li> Interactive TEDx Talks with all speakers </li> <li> TEDx Kit for Special Ticket </li> <li> Art Exhibition </li> <li> Live painting</li> <li> Theatrical dance</li>',
   },
   {
     question:

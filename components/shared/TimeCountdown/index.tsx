@@ -2,8 +2,14 @@
 
 import { useCountdown } from '@/utils/useCountdown';
 
-function TimeCountdown({ className }: { className?: string }) {
-  const targetDate = new Date(2023, 8, 23, 16, 0, 0);
+function TimeCountdown({
+  className,
+  date,
+}: {
+  className?: string;
+  date: Date;
+}) {
+  const targetDate = date;
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
   return (

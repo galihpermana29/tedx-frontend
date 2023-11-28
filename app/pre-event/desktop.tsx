@@ -244,7 +244,10 @@ function PreEventDesktop() {
                   </tr>
                 </table>
               </div>
-              <TimeCountdown className="mt-[150px] text-8xl" />
+              <TimeCountdown
+                date={new Date(2023, 8, 23, 16, 0, 0)}
+                className="mt-[150px] text-8xl"
+              />
             </div>
             <div className="flex-1 relative">
               <div className="min-h-[80vh]">

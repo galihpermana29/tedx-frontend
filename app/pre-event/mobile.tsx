@@ -223,7 +223,10 @@ function PreEventMobile() {
             </table>
           </div>
         </div>
-        <TimeCountdown className="text-6xl pt-10 px-5 sm:px-20 md:px-44" />
+        <TimeCountdown
+          date={new Date(2023, 8, 23, 16, 0, 0)}
+          className="text-6xl pt-10 px-5 sm:px-20 md:px-44"
+        />
         <div className="flex-1 min-[900px]:mt-20 relative w-full">
           <div className="min-h-[70vh] mt-0 sm:-translate-y-[5rem]">
             <div className="absolute z-[1] mt-44 translate-x-7 w-full right-0">
