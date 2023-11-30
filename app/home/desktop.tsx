@@ -188,7 +188,9 @@ export default function MemantikDesktop() {
                   width={'100%'}
                   height={'100%'}
                   controls={true}
-                  url={require('../../public/assets/video/propa1.mp4')}
+                  url={
+                    'https://res.cloudinary.com/braiwjaya-university/video/upload/v1701333730/osd6qqsk2u7yvhqukz1j.mp4'
+                  }
                 />
               </motion.div>
             </motion.div>

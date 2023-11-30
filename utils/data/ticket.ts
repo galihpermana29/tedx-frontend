@@ -1,5 +1,17 @@
 export const data = (presale: number) => [
   {
+    name: 'Main Event - Normal Price',
+    price: 'Rp. 79.000-',
+    dateOrder: '26 November - 2 Desember 2023',
+    venue: '',
+    dateEvent: '03 Desember 2023',
+    theme: 'Memantik Baskara',
+    capacity: `${presale}/50`,
+    statusActive: true,
+    statusSold: presale === 50,
+    route: '/main-event',
+  },
+  {
     name: 'Main Event - Early Bird',
     price: 'Rp. 49.000-',
     dateOrder: '18 November - 20 November 2023',
@@ -23,18 +35,7 @@ export const data = (presale: number) => [
     statusSold: true,
     route: '',
   },
-  {
-    name: 'Main Event - Normal Price',
-    price: 'Rp. 79.000-',
-    dateOrder: '26 November - 2 Desember 2023',
-    venue: '',
-    dateEvent: '03 Desember 2023',
-    theme: 'Memantik Baskara',
-    capacity: `${presale}/50`,
-    statusActive: true,
-    statusSold: presale === 50,
-    route: '',
-  },
+
   {
     name: 'Propaganda 2',
     price: 'Rp. 25.000-',
