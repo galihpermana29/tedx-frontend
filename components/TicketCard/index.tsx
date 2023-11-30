@@ -66,7 +66,7 @@ export default function TicketCard({ data }: TicketCardI) {
         <div className="flex gap-[30px] mt-[20px] xs:flex-col md:flex-row xs:gap-[10px]">
           <Button
             onClick={() => {
-              if (!data.statusActive && data.statusSold)
+              if (data.statusActive && !data.statusSold)
                 router.push(data.route);
             }}
             htmlType="button"
