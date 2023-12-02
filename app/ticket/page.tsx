@@ -42,7 +42,7 @@ export default function Ticket() {
           Pilih Tiket Kamu
         </h1>
 
-        <div className="w-full flex justify-center flex-col gap-[40px] mt-[70px] items-center xs:px-[30px]">
+        <div className="w-full flex justify-center flex-col gap-[40px] mt-[70px] items-center px-[15px]">
           {loading && <Spin />}
           {!loading &&
             data(earlyBird).map((d, idx) => (

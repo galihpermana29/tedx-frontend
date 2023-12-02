@@ -66,7 +66,7 @@ export default function TicketCard({ data }: TicketCardI) {
                 router.push(data.route);
             }}
             htmlType="button"
-            className="bg-transparent border-2 border-orange-primary h-max text-orange-primary text-center text-[20px] text-[17px] w-full rounded-[6px] p-[10px] ">
+            className="bg-transparent border-2 border-orange-primary h-max text-orange-primary text-center sm:text-[20px] text-[17px] w-full rounded-[6px] p-[10px] ">
             Lihat Detail Event
           </Button>
           <Button
@@ -76,7 +76,7 @@ export default function TicketCard({ data }: TicketCardI) {
               router.push('/ticket-main-event');
             }}
             htmlType="button"
-            className="bg-orange-primary h-max text-white text-center text-[20px] text-[17px] w-full rounded-[6px] p-[10px] ">
+            className="bg-orange-primary h-max text-white text-center sm:text-[20px] text-[17px] w-full rounded-[6px] p-[10px] ">
             Pilih Tiket
           </Button>
         </div>
