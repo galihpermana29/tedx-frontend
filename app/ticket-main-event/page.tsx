@@ -156,19 +156,19 @@ export default function TicketMainEvent() {
     <div className="">
       <ToastContainer />
 
-      <main className="bg-wall-texture overflow-hidden lg:px-[100px] lg:py-[200px] xs:p-[20px]">
-        <div className="relative p-5 rounded-xl w-full bg-flower max-h-max xs:my-[80px] lg:my-0">
+      <main className="bg-wall-texture overflow-hidden lg:px-[100px] lg:py-[200px] p-[20px]">
+        <div className="relative p-5 rounded-xl w-full bg-flower max-h-max my-[80px] lg:my-0">
           <div className="bg-white rounded-md p-5 border-2 max-h-max">
             <div>
-              <h1 className="text-[48px] mb-5 rosela text-blue-primary text-center">
+              <h1 className="text-[38px] sm:text-[48px] mb-5 rosela text-blue-primary text-center">
                 Dapatkan Tiketmu Sekarang
               </h1>
-              <form className="lg:p-[20px] xs:p-0" onSubmit={handleSubmit}>
-                <div className="grid lg:grid-cols-2 xs:grid-cols-1 gap-x-[30px] gap-y-[10px] ">
+              <form className="lg:p-[20px] p-0" onSubmit={handleSubmit}>
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-[30px] gap-y-[10px] ">
                   {formData.map((d) => {
                     return d.type === 'radio' ? (
                       <div className="flex flex-col h-auto">
-                        <p className="creato font-[700] text-[20px] xs:text-[17px]">
+                        <p className="creato font-[700] sm:text-[20px] text-[17px]">
                           {d.label}
                         </p>
                         <div
@@ -200,7 +200,7 @@ export default function TicketMainEvent() {
                     ) : d.type === 'increement' ? (
                       <div key={d.name} className="h-auto">
                         <label
-                          className="creato font-[700] text-[20px] xs:text-[17px]"
+                          className="creato font-[700] text-[20px] text-[17px]"
                           htmlFor={d.name}>
                           {d.label}
                         </label>
@@ -224,7 +224,7 @@ export default function TicketMainEvent() {
                               />
                             </svg>
                           </div>
-                          <div className="creato font-[700] text-[20px] xs:text-[17px]">
+                          <div className="creato font-[700] text-[20px] text-[17px]">
                             {counter}
                           </div>
                           <div>
@@ -250,7 +250,7 @@ export default function TicketMainEvent() {
                     ) : (
                       <div key={d.name} className="">
                         <label
-                          className="creato font-[700] text-[20px] xs:text-[17px]"
+                          className="creato font-[700] text-[20px] text-[17px]"
                           htmlFor={d.name}>
                           {d.label}
                         </label>
