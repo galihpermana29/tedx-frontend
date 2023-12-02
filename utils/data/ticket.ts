@@ -8,7 +8,7 @@ export const data = (presale: number) => [
     theme: 'Memantik Baskara',
     capacity: `${presale}/50`,
     statusActive: true,
-    statusSold: presale === 50,
+    statusSold: presale === 80,
     route: '/main-event',
   },
   {
@@ -21,7 +21,7 @@ export const data = (presale: number) => [
     capacity: `15/15`,
     statusActive: true,
     statusSold: true,
-    route: '',
+    route: '/main-event',
   },
   {
     name: 'Main Event - Pre Sale ',
@@ -33,7 +33,7 @@ export const data = (presale: number) => [
     capacity: `35/35`,
     statusActive: true,
     statusSold: true,
-    route: '',
+    route: '/main-event',
   },
 
   {

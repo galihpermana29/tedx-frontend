@@ -38,7 +38,7 @@ export default function Ticket() {
         />
       </div>
       <div className="flex flex-col justify-center items-center mt-[15%] text-center w-full">
-        <h1 className="md:text-[96px] xs:text-[50px] text-orange-primary rosela flex-1">
+        <h1 className="md:text-[96px] text-[40px] text-orange-primary rosela flex-1">
           Pilih Tiket Kamu
         </h1>
 
