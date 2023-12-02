@@ -6,7 +6,7 @@ export const data = (presale: number) => [
     venue: '',
     dateEvent: '03 Desember 2023',
     theme: 'Memantik Baskara',
-    capacity: `${presale}/50`,
+    capacity: `${presale}/80`,
     statusActive: true,
     statusSold: presale === 80,
     route: '/main-event',
