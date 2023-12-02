@@ -64,8 +64,8 @@ function MainEvent() {
             alt="Cloud"
           />
         </div>
-        <div className="relative sm:mt-0 flex justify-center items-center rosela z-[2] text-center text-2xl xs:text-4xl sm:text-6xl lg:text-8xl font-bold">
-          Hadir Untukmu
+        <div className="relative sm:mt-0 flex justify-center items-center rosela z-[2] text-center text-3xl xs:text-4xl sm:text-6xl lg:text-8xl font-bold">
+          Main Event
           <div className="absolute w-full aspect-video -z-10">
             <Image
               className="w-full "
@@ -113,7 +113,7 @@ function MainEvent() {
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </div>
-          <div className="basis-[45%] flex flex-col gap-2">
+          <div className="basis-[45%] flex flex-col gap-2 text-center md:text-start md:text-[18px]">
             <p>
               Penantian akan segera berakhir. Di puncak acara
               TEDxUniversitasBrawijaya 2023, kami menghadirkan “Memantik
@@ -133,7 +133,7 @@ function MainEvent() {
           </div>
         </div>
         <div className="flex justify-end">
-          <p className="w-full lg:w-[40%]">
+          <p className="w-full lg:w-[50%] text-center md:text-start md:text-[18px]">
             Dalam pencarian kali ini, audiens akan dibawa ke dalam perjalanan
             menarik melalui instalasi interaktif yang dipadukan dengan panggung
             inspiratif yaitu talks, oleh para speaker TEDxUniversitasBrawijaya
@@ -176,7 +176,7 @@ function MainEvent() {
           return (
             <div
               key={index}
-              className={`text-center font-black text-2xl sm:text-4xl md:text-5xl lg:text-7xl whitespace-nowrap uppercase ${
+              className={`text-center  font-black text-2xl sm:text-4xl md:text-5xl lg:text-8xl 2xl:text-9xl whitespace-nowrap uppercase ${
                 textFullColorIndex >= index ? '' : 'text-outline-white'
               }`}>
               Special Performance
