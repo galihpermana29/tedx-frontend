@@ -155,6 +155,12 @@ export default function CheckInDetail() {
                   </h1>
                 </div>
                 <div>
+                  <p className="creato text-[18px] font-[400]">Type</p>
+                  <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
+                    {data.type}
+                  </h1>
+                </div>
+                <div>
                   <p className="creato text-[18px] font-[400]">Email</p>
                   <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
                     {data.email}
