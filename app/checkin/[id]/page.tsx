@@ -154,12 +154,12 @@ export default function CheckInDetail() {
                     {data.disabilitas}
                   </h1>
                 </div>
-                <div>
+                {/* <div>
                   <p className="creato text-[18px] font-[400]">Type</p>
                   <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
                     {data.type}
                   </h1>
-                </div>
+                </div> */}
                 <div>
                   <p className="creato text-[18px] font-[400]">Email</p>
                   <h1 className="creato xs:text-[20px] lg:text-[24px] font-[700]">
