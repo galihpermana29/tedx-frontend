@@ -140,11 +140,18 @@ export default function CMS() {
             <Select
               defaultValue="All"
               style={{ width: 180 }}
-              onChange={(val) => setQuery(val === '' ? null : `?type=${val}`)}
+              onChange={(val) => {
+                if (val === 'checkin') {
+                  setQuery(`?checkin=${true}`);
+                } else {
+                  setQuery(val === '' ? null : `?type=${val}`);
+                }
+              }}
               options={[
                 { value: 'early-bird', label: 'Early Bird' },
                 { value: 'pre-sale', label: 'Pre Sale' },
                 { value: 'normal-sale', label: 'Normal' },
+                { value: 'checkin', label: 'Checked-In' },
                 { value: '', label: 'All' },
               ]}
             />
