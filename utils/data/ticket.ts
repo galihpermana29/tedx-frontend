@@ -8,7 +8,7 @@ export const data = (presale: number) => [
     theme: 'Memantik Baskara',
     capacity: `${presale}/80`,
     statusActive: true,
-    statusSold: presale === 80,
+    statusSold: true,
     route: '/main-event',
   },
   {
