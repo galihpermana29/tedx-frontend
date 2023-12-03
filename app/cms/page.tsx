@@ -18,6 +18,7 @@ export default function CMS() {
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [loadingApprove, setLoadingApprove] = useState<boolean>(false);
+  const [counterVisitor, setCounterVisitor] = useState<number>(0);
 
   const columns = [
     {
@@ -75,6 +76,14 @@ export default function CMS() {
       setLoading(true);
       const data = await WebsiteAPI.getAllTransactionMainEvent(query);
       setDatas(data.data);
+      const totalTickets = data.data.reduce(
+        (sum, item) => sum + item.jumlah_tiket,
+        0
+      );
+
+      setCounterVisitor(totalTickets);
+
+      console.log(totalTickets, 'data');
     } catch (error) {
       console.log(error, 'error');
     } finally {
@@ -133,7 +142,7 @@ export default function CMS() {
         <div className="flex md:flex-row justify-between items-center xs:flex-col flex-wrap">
           <div>
             <h1 className="text-[32px] font-[600] text-black my-[20px] text-red-500 xs:text-center sm:text-start">
-              All Ticket Transactions
+              All Ticket Transactions {counterVisitor}
             </h1>
           </div>
           <div className="my-[20px]">
